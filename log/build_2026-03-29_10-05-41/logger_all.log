@@ -1,0 +1,586 @@
+[0.208s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.208s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff8ae5a810>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff8ae5a750>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff8ae5a750>>)
+[0.285s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.286s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/neorobot/ros2_ws'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.287s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extension 'ignore_ament_install'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extensions ['colcon_pkg']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extension 'colcon_pkg'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extensions ['colcon_meta']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/cam_vision_control) by extension 'ros'
+[0.343s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cam_vision_control' with type 'ros.ament_cmake' and name 'cam_vision_control'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore_ament_install'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_pkg']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_pkg'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_meta']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_meta'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ros']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ros'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['cmake', 'python']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'cmake'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'python'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['python_setup_py']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'python_setup_py'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['ignore', 'ignore_ament_install']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'ignore'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'ignore_ament_install'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['colcon_pkg']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'colcon_pkg'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['colcon_meta']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'colcon_meta'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['ros']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'ros'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['cmake', 'python']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'cmake'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'python'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extensions ['python_setup_py']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera/config) by extension 'python_setup_py'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extensions ['ignore', 'ignore_ament_install']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extension 'ignore'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extension 'ignore_ament_install'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extensions ['colcon_pkg']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extension 'colcon_pkg'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extensions ['colcon_meta']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extension 'colcon_meta'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extensions ['ros']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/laser_geometry) by extension 'ros'
+[0.350s] DEBUG:colcon.colcon_core.package_identification:Package 'src/laser_geometry' with type 'ros.ament_cmake' and name 'laser_geometry'
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extension 'ignore'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extension 'ignore_ament_install'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extensions ['colcon_pkg']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extension 'colcon_pkg'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extensions ['colcon_meta']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extension 'colcon_meta'
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extensions ['ros']
+[0.351s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_controller) by extension 'ros'
+[0.353s] DEBUG:colcon.colcon_core.package_identification:Package 'src/neo_robot_controller' with type 'ros.ament_cmake' and name 'neo_robot_controller'
+[0.353s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extensions ['ignore', 'ignore_ament_install']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extension 'ignore'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extension 'ignore_ament_install'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extensions ['colcon_pkg']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extension 'colcon_pkg'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extensions ['colcon_meta']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extension 'colcon_meta'
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extensions ['ros']
+[0.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/neo_robot_safety) by extension 'ros'
+[0.356s] DEBUG:colcon.colcon_core.package_identification:Package 'src/neo_robot_safety' with type 'ros.ament_cmake' and name 'neo_robot_safety'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extension 'ignore'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extension 'ignore_ament_install'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extensions ['colcon_pkg']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extension 'colcon_pkg'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extensions ['colcon_meta']
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extension 'colcon_meta'
+[0.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extensions ['ros']
+[0.358s] Level 1:colcon.colcon_core.package_identification:_identify(src/neorobot_bringup) by extension 'ros'
+[0.358s] DEBUG:colcon.colcon_core.package_identification:Package 'src/neorobot_bringup' with type 'ros.ament_cmake' and name 'neorobot_bringup'
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extension 'ignore'
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extension 'ignore_ament_install'
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extensions ['colcon_pkg']
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extension 'colcon_pkg'
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extensions ['colcon_meta']
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extension 'colcon_meta'
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extensions ['ros']
+[0.359s] Level 1:colcon.colcon_core.package_identification:_identify(src/uart_driver) by extension 'ros'
+[0.361s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uart_driver' with type 'ros.ament_cmake' and name 'uart_driver'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ignore'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ignore_ament_install'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['colcon_pkg']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'colcon_pkg'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['colcon_meta']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'colcon_meta'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extensions ['ros']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(src/ydlidar_ros2_driver) by extension 'ros'
+[0.363s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ydlidar_ros2_driver' with type 'ros.ament_cmake' and name 'ydlidar_ros2_driver'
+[0.363s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.397s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.397s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.402s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/neorobot/ros2_ws/install
+[0.406s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 493 installed packages in /opt/ros/jazzy
+[0.409s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.535s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'laser_geometry' is in: /home/neorobot/ros2_ws/install/laser_geometry, /opt/ros/jazzy
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding laser_geometry
+
+This may be promoted to an error in a future release of colcon-override-check.
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_args' from command line to 'None'
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_target' from command line to 'None'
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.538s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.539s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.539s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.539s] Level 5:colcon.colcon_core.verb:set package 'cam_vision_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.539s] DEBUG:colcon.colcon_core.verb:Building package 'cam_vision_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/cam_vision_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/cam_vision_control', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/cam_vision_control', 'symlink_install': False, 'test_result_base': None}
+[0.539s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_args' from command line to 'None'
+[0.539s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_target' from command line to 'None'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_clean_cache' from command line to 'False'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_clean_first' from command line to 'False'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'cmake_force_configure' from command line to 'False'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'ament_cmake_args' from command line to 'None'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'catkin_cmake_args' from command line to 'None'
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'laser_geometry' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.540s] DEBUG:colcon.colcon_core.verb:Building package 'laser_geometry' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/laser_geometry', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/laser_geometry', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/laser_geometry', 'symlink_install': False, 'test_result_base': None}
+[0.540s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_args' from command line to 'None'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_target' from command line to 'None'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.541s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.541s] DEBUG:colcon.colcon_core.verb:Building package 'neo_robot_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/neo_robot_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/neo_robot_controller', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/neo_robot_controller', 'symlink_install': False, 'test_result_base': None}
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_args' from command line to 'None'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_target' from command line to 'None'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_clean_cache' from command line to 'False'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_clean_first' from command line to 'False'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'cmake_force_configure' from command line to 'False'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'ament_cmake_args' from command line to 'None'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'catkin_cmake_args' from command line to 'None'
+[0.542s] Level 5:colcon.colcon_core.verb:set package 'neo_robot_safety' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.542s] DEBUG:colcon.colcon_core.verb:Building package 'neo_robot_safety' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/neo_robot_safety', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/neo_robot_safety', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/neo_robot_safety', 'symlink_install': False, 'test_result_base': None}
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.543s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'neorobot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.544s] DEBUG:colcon.colcon_core.verb:Building package 'neorobot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/neorobot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/neorobot_bringup', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/neorobot_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_args' from command line to 'None'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_target' from command line to 'None'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.544s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'uart_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.545s] DEBUG:colcon.colcon_core.verb:Building package 'uart_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/uart_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/uart_driver', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/uart_driver', 'symlink_install': False, 'test_result_base': None}
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_args' from command line to 'None'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_target' from command line to 'None'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.545s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.546s] Level 5:colcon.colcon_core.verb:set package 'ydlidar_ros2_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.546s] DEBUG:colcon.colcon_core.verb:Building package 'ydlidar_ros2_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/neorobot/ros2_ws/build/ydlidar_ros2_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver', 'merge_install': False, 'path': '/home/neorobot/ros2_ws/src/ydlidar_ros2_driver', 'symlink_install': False, 'test_result_base': None}
+[0.546s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.547s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.548s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/cam_vision_control' with build type 'ament_cmake'
+[0.550s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/cam_vision_control'
+[0.557s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.559s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.559s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.568s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/laser_geometry' with build type 'ament_cmake'
+[0.569s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/laser_geometry'
+[0.569s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.570s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.579s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/neo_robot_controller' with build type 'ament_cmake'
+[0.579s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/neo_robot_controller'
+[0.579s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.580s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.589s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/neo_robot_safety' with build type 'ament_cmake'
+[0.589s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/neo_robot_safety'
+[0.591s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.591s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.615s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/cam_vision_control -- -j4 -l4
+[0.619s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+[0.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_controller -- -j4 -l4
+[0.713s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[1.027s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_controller -- -j4 -l4
+[1.086s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_controller
+[1.091s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/cam_vision_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/cam_vision_control -- -j4 -l4
+[1.099s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/cam_vision_control
+[1.183s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neo_robot_controller)
+[1.184s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_controller
+[1.196s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller' for CMake module files
+[1.197s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller' for CMake config files
+[1.199s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_controller', 'cmake_prefix_path')
+[1.199s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.ps1'
+[1.204s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.dsv'
+[1.209s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.sh'
+[1.218s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib'
+[1.218s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/bin'
+[1.219s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib/pkgconfig/neo_robot_controller.pc'
+[1.219s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib/python3.12/site-packages'
+[1.226s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/bin'
+[1.227s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.ps1'
+[1.229s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.dsv'
+[1.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.sh'
+[1.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.bash'
+[1.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.zsh'
+[1.237s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neo_robot_controller/share/colcon-core/packages/neo_robot_controller)
+[1.238s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neo_robot_controller)
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller' for CMake module files
+[1.241s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller' for CMake config files
+[1.242s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_controller', 'cmake_prefix_path')
+[1.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.ps1'
+[1.244s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.dsv'
+[1.245s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/hook/cmake_prefix_path.sh'
+[1.247s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib'
+[1.247s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/bin'
+[1.247s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib/pkgconfig/neo_robot_controller.pc'
+[1.248s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/lib/python3.12/site-packages'
+[1.248s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_controller/bin'
+[1.249s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.ps1'
+[1.253s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.dsv'
+[1.255s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.sh'
+[1.256s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.bash'
+[1.257s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.zsh'
+[1.259s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neo_robot_controller/share/colcon-core/packages/neo_robot_controller)
+[1.262s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/neorobot_bringup' with build type 'ament_cmake'
+[1.262s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/neorobot_bringup'
+[1.263s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.264s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.285s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cam_vision_control)
+[1.286s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control' for CMake module files
+[1.289s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/cam_vision_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/cam_vision_control
+[1.290s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control' for CMake config files
+[1.293s] Level 1:colcon.colcon_core.shell:create_environment_hook('cam_vision_control', 'cmake_prefix_path')
+[1.293s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.ps1'
+[1.297s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.dsv'
+[1.299s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.sh'
+[1.302s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib'
+[1.302s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/bin'
+[1.302s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib/pkgconfig/cam_vision_control.pc'
+[1.305s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib/python3.12/site-packages'
+[1.308s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/bin'
+[1.309s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.ps1'
+[1.312s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.dsv'
+[1.313s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.sh'
+[1.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.bash'
+[1.317s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.zsh'
+[1.318s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/cam_vision_control/share/colcon-core/packages/cam_vision_control)
+[1.319s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cam_vision_control)
+[1.322s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control' for CMake module files
+[1.330s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control' for CMake config files
+[1.331s] Level 1:colcon.colcon_core.shell:create_environment_hook('cam_vision_control', 'cmake_prefix_path')
+[1.334s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.ps1'
+[1.335s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.dsv'
+[1.336s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/hook/cmake_prefix_path.sh'
+[1.337s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib'
+[1.337s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/bin'
+[1.337s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib/pkgconfig/cam_vision_control.pc'
+[1.338s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/lib/python3.12/site-packages'
+[1.340s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/cam_vision_control/bin'
+[1.343s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.ps1'
+[1.344s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.dsv'
+[1.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.sh'
+[1.346s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.bash'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.zsh'
+[1.349s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/cam_vision_control/share/colcon-core/packages/cam_vision_control)
+[1.353s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/uart_driver' with build type 'ament_cmake'
+[1.354s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/uart_driver'
+[1.354s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.355s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.377s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neorobot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neorobot_bringup -- -j4 -l4
+[1.387s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/uart_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/uart_driver -- -j4 -l4
+[1.545s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neorobot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neorobot_bringup -- -j4 -l4
+[1.548s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neorobot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neorobot_bringup
+[1.593s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neorobot_bringup)
+[1.594s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup' for CMake module files
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup' for CMake config files
+[1.597s] Level 1:colcon.colcon_core.shell:create_environment_hook('neorobot_bringup', 'cmake_prefix_path')
+[1.597s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.ps1'
+[1.596s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neorobot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neorobot_bringup
+[1.598s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.dsv'
+[1.599s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.sh'
+[1.602s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/bin'
+[1.602s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/lib/pkgconfig/neorobot_bringup.pc'
+[1.602s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/lib/python3.12/site-packages'
+[1.604s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/bin'
+[1.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.ps1'
+[1.606s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.dsv'
+[1.607s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.sh'
+[1.608s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.bash'
+[1.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.zsh'
+[1.610s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neorobot_bringup/share/colcon-core/packages/neorobot_bringup)
+[1.613s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neorobot_bringup)
+[1.613s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup' for CMake module files
+[1.614s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup' for CMake config files
+[1.615s] Level 1:colcon.colcon_core.shell:create_environment_hook('neorobot_bringup', 'cmake_prefix_path')
+[1.615s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.ps1'
+[1.616s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.dsv'
+[1.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/hook/cmake_prefix_path.sh'
+[1.621s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/bin'
+[1.621s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/lib/pkgconfig/neorobot_bringup.pc'
+[1.624s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/lib/python3.12/site-packages'
+[1.626s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neorobot_bringup/bin'
+[1.627s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.ps1'
+[1.628s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.dsv'
+[1.629s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.sh'
+[1.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.bash'
+[1.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.zsh'
+[1.636s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neorobot_bringup/share/colcon-core/packages/neorobot_bringup)
+[1.636s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/neorobot/ros2_ws/src/ydlidar_ros2_driver' with build type 'ament_cmake'
+[1.637s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/neorobot/ros2_ws/src/ydlidar_ros2_driver'
+[1.637s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.639s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.674s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/ydlidar_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/ydlidar_ros2_driver -- -j4 -l4
+[1.733s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/uart_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/uart_driver -- -j4 -l4
+[1.737s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/uart_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/uart_driver
+[1.820s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uart_driver)
+[1.822s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver' for CMake module files
+[1.831s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/uart_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/uart_driver
+[1.832s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver' for CMake config files
+[1.832s] Level 1:colcon.colcon_core.shell:create_environment_hook('uart_driver', 'cmake_prefix_path')
+[1.832s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.ps1'
+[1.841s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.dsv'
+[1.844s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.sh'
+[1.857s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib'
+[1.857s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/bin'
+[1.857s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib/pkgconfig/uart_driver.pc'
+[1.858s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib/python3.12/site-packages'
+[1.862s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/bin'
+[1.864s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.ps1'
+[1.868s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.dsv'
+[1.869s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.sh'
+[1.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.bash'
+[1.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.zsh'
+[1.875s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/uart_driver/share/colcon-core/packages/uart_driver)
+[1.879s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uart_driver)
+[1.883s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver' for CMake module files
+[1.884s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver' for CMake config files
+[1.885s] Level 1:colcon.colcon_core.shell:create_environment_hook('uart_driver', 'cmake_prefix_path')
+[1.886s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.ps1'
+[1.891s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.dsv'
+[1.892s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/hook/cmake_prefix_path.sh'
+[1.896s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib'
+[1.896s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/bin'
+[1.896s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib/pkgconfig/uart_driver.pc'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/lib/python3.12/site-packages'
+[1.897s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/uart_driver/bin'
+[1.901s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.ps1'
+[1.904s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.dsv'
+[1.908s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.sh'
+[1.909s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.bash'
+[1.913s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.zsh'
+[1.915s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/uart_driver/share/colcon-core/packages/uart_driver)
+[2.067s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/ydlidar_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/ydlidar_ros2_driver -- -j4 -l4
+[2.067s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/ydlidar_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/ydlidar_ros2_driver
+[2.124s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ydlidar_ros2_driver)
+[2.125s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver' for CMake module files
+[2.127s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/ydlidar_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/ydlidar_ros2_driver
+[2.130s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver' for CMake config files
+[2.131s] Level 1:colcon.colcon_core.shell:create_environment_hook('ydlidar_ros2_driver', 'cmake_prefix_path')
+[2.132s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.ps1'
+[2.135s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.dsv'
+[2.137s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.sh'
+[2.141s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib'
+[2.142s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/bin'
+[2.142s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib/pkgconfig/ydlidar_ros2_driver.pc'
+[2.143s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib/python3.12/site-packages'
+[2.143s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/bin'
+[2.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.ps1'
+[2.149s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.dsv'
+[2.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.sh'
+[2.160s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.bash'
+[2.167s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.zsh'
+[2.168s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/colcon-core/packages/ydlidar_ros2_driver)
+[2.170s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ydlidar_ros2_driver)
+[2.170s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver' for CMake module files
+[2.172s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver' for CMake config files
+[2.173s] Level 1:colcon.colcon_core.shell:create_environment_hook('ydlidar_ros2_driver', 'cmake_prefix_path')
+[2.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.ps1'
+[2.175s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.dsv'
+[2.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/hook/cmake_prefix_path.sh'
+[2.179s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib'
+[2.179s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/bin'
+[2.180s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib/pkgconfig/ydlidar_ros2_driver.pc'
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/lib/python3.12/site-packages'
+[2.182s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/bin'
+[2.183s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.ps1'
+[2.184s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.dsv'
+[2.186s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.sh'
+[2.187s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.bash'
+[2.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/ydlidar_ros2_driver/package.zsh'
+[2.192s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/ydlidar_ros2_driver/share/colcon-core/packages/ydlidar_ros2_driver)
+[2.572s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+[2.574s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/laser_geometry
+[2.877s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(laser_geometry)
+[2.877s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry' for CMake module files
+[2.878s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/laser_geometry
+[2.882s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry' for CMake config files
+[2.883s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'cmake_prefix_path')
+[2.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.ps1'
+[2.886s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.dsv'
+[2.889s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.sh'
+[2.893s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib'
+[2.893s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'ld_library_path_lib')
+[2.894s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.ps1'
+[2.896s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.dsv'
+[2.897s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.sh'
+[2.899s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/bin'
+[2.900s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib/pkgconfig/laser_geometry.pc'
+[2.901s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages'
+[2.901s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'pythonpath')
+[2.902s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.ps1'
+[2.905s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.dsv'
+[2.906s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.sh'
+[2.909s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/bin'
+[2.912s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.ps1'
+[2.915s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.dsv'
+[2.917s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.sh'
+[2.920s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.bash'
+[2.923s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.zsh'
+[2.926s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/laser_geometry/share/colcon-core/packages/laser_geometry)
+[2.929s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(laser_geometry)
+[2.929s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry' for CMake module files
+[2.932s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry' for CMake config files
+[2.933s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'cmake_prefix_path')
+[2.934s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.ps1'
+[2.937s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.dsv'
+[2.939s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/cmake_prefix_path.sh'
+[2.946s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib'
+[2.947s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'ld_library_path_lib')
+[2.947s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.ps1'
+[2.950s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.dsv'
+[2.953s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/ld_library_path_lib.sh'
+[2.954s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/bin'
+[2.955s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib/pkgconfig/laser_geometry.pc'
+[2.955s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages'
+[2.956s] Level 1:colcon.colcon_core.shell:create_environment_hook('laser_geometry', 'pythonpath')
+[2.956s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.ps1'
+[2.958s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.dsv'
+[2.961s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/hook/pythonpath.sh'
+[2.963s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/laser_geometry/bin'
+[2.964s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.ps1'
+[2.966s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.dsv'
+[2.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.sh'
+[2.975s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.bash'
+[2.978s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.zsh'
+[2.984s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/laser_geometry/share/colcon-core/packages/laser_geometry)
+[35.019s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[35.023s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety
+[35.083s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neo_robot_safety)
+[35.084s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety' for CMake module files
+[35.085s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety' for CMake config files
+[35.085s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_safety', 'cmake_prefix_path')
+[35.085s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.ps1'
+[35.087s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.dsv'
+[35.087s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety
+[35.088s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.sh'
+[35.089s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib'
+[35.089s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_safety', 'ld_library_path_lib')
+[35.089s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.ps1'
+[35.090s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.dsv'
+[35.092s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.sh'
+[35.094s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/bin'
+[35.094s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib/pkgconfig/neo_robot_safety.pc'
+[35.094s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib/python3.12/site-packages'
+[35.095s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/bin'
+[35.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.ps1'
+[35.096s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.dsv'
+[35.097s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.sh'
+[35.097s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.bash'
+[35.098s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.zsh'
+[35.098s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neo_robot_safety/share/colcon-core/packages/neo_robot_safety)
+[35.099s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(neo_robot_safety)
+[35.100s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety' for CMake module files
+[35.101s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety' for CMake config files
+[35.102s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_safety', 'cmake_prefix_path')
+[35.102s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.ps1'
+[35.104s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.dsv'
+[35.105s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/cmake_prefix_path.sh'
+[35.109s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib'
+[35.109s] Level 1:colcon.colcon_core.shell:create_environment_hook('neo_robot_safety', 'ld_library_path_lib')
+[35.109s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.ps1'
+[35.112s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.dsv'
+[35.113s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/hook/ld_library_path_lib.sh'
+[35.114s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/bin'
+[35.114s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib/pkgconfig/neo_robot_safety.pc'
+[35.115s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/lib/python3.12/site-packages'
+[35.116s] Level 1:colcon.colcon_core.environment:checking '/home/neorobot/ros2_ws/install/neo_robot_safety/bin'
+[35.116s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.ps1'
+[35.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.dsv'
+[35.120s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.sh'
+[35.122s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.bash'
+[35.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.zsh'
+[35.125s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/neorobot/ros2_ws/install/neo_robot_safety/share/colcon-core/packages/neo_robot_safety)
+[35.126s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[35.127s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[35.129s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[35.129s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[35.149s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[35.150s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[35.150s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[35.150s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[35.153s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[35.155s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[35.156s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/neorobot/ros2_ws/install/local_setup.ps1'
+[35.158s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/neorobot/ros2_ws/install/_local_setup_util_ps1.py'
+[35.161s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/neorobot/ros2_ws/install/setup.ps1'
+[35.163s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/neorobot/ros2_ws/install/local_setup.sh'
+[35.168s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/neorobot/ros2_ws/install/_local_setup_util_sh.py'
+[35.170s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/neorobot/ros2_ws/install/setup.sh'
+[35.174s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/neorobot/ros2_ws/install/local_setup.bash'
+[35.177s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/neorobot/ros2_ws/install/setup.bash'
+[35.180s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/neorobot/ros2_ws/install/local_setup.zsh'
+[35.188s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/neorobot/ros2_ws/install/setup.zsh'

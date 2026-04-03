@@ -1,0 +1,55 @@
+[0.088s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[0.392s] [ 33%] Built target lidar_human_detect
+[0.415s] [ 50%] [32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o[0m
+[0.417s] [ 83%] Built target human_n_obstacle_layer
+[5.057s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KscanCallback[m[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[5.057s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:331:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.057s]   331 |     float [01;35m[Kangle[m[K = M_PI / 4.0;     // 45도
+[5.057s]       |           [01;35m[K^~~~~[m[K
+[5.057s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:332:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kwidth[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.057s]   332 |     float [01;35m[Kwidth[m[K = 0.15;           // ±범위
+[5.057s]       |           [01;35m[K^~~~~[m[K
+[5.057s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:333:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kthreshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.057s]   333 |     float [01;35m[Kthreshold[m[K = 0.8;        // 개입 거리 (m)
+[5.058s]       |           [01;35m[K^~~~~~~~~[m[K
+[5.058s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:334:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.058s]   334 |     float [01;35m[Kk[m[K = 1.2;                // gain
+[5.058s]       |           [01;35m[K^[m[K
+[5.058s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:328:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[5.058s]   328 | void scanCallback([01;35m[Kconst sensor_msgs::msg::LaserScan::SharedPtr msg[m[K)
+[5.058s]       |                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[5.058s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[5.058s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:404:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.059s]   404 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+[5.059s]       |              [01;35m[K^~~~~~~~~~~~[m[K
+[5.060s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[5.060s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:553:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.060s]   553 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+[5.060s]       |              [01;35m[K^~~~~~~~~~~[m[K
+[25.033s] [100%] [32m[1mLinking CXX executable motion_arbiter[0m
+[27.257s] [100%] Built target motion_arbiter
+[27.280s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[27.282s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety
+[27.299s] -- Install configuration: ""
+[27.300s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/plugin.xml
+[27.300s] -- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter
+[27.332s] -- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter" to ""
+[27.332s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/lidar_human_detect
+[27.333s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/libhuman_n_obstacle_layer.so
+[27.333s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/package_run_dependencies/neo_robot_safety
+[27.333s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/parent_prefix_path/neo_robot_safety
+[27.333s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.sh
+[27.333s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.dsv
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.sh
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.dsv
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.bash
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.sh
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.zsh
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.dsv
+[27.334s] -- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.dsv
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/packages/neo_robot_safety
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/neo_robot_safety
+[27.334s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig.cmake
+[27.335s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig-version.cmake
+[27.335s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.xml
+[27.338s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety

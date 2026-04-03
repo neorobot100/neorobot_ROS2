@@ -1,0 +1,32 @@
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:[m[K In member function ‘[01m[Kvoid UARTNode::[01;32m[Kopen_serial[m[K(const char*, int)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:214:43:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kbaud[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  214 |     void open_serial(const char *dev, [01;35m[Kint baud[m[K)
+      |                                       [01;35m[K~~~~^~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:[m[K In member function ‘[01m[Kvoid UARTNode::[01;32m[Khandle_Odom[m[K(const uint8_t*)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:354:33:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  354 |         int16_t left  = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                              [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:355:33:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  355 |         int16_t right = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                              [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:380:46:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  380 |         uint16_t Battery_Volt_raw  = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                                           [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:382:44:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  382 |         uint16_t ultra_left_raw  = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                                         [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:383:44:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  383 |         uint16_t ultra_right_raw = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                                         [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:389:42:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  389 |         uint16_t PSD_left_raw  = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                                       [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:390:42:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[Kidx[m[K’ may be undefined [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsequence-point-Wsequence-point]8;;[m[K]
+  390 |         uint16_t PSD_right_raw = (pkt[[01;35m[Kidx++[m[K] << 8) | pkt[idx++];
+      |                                       [01;35m[K~~~^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:353:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KFW_index[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  353 |         uint8_t [01;35m[KFW_index[m[K = pkt[idx++];
+      |                 [01;35m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/uart_driver/src/uart_node.cpp:380:18:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KBattery_Volt_raw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  380 |         uint16_t [01;35m[KBattery_Volt_raw[m[K  = (pkt[idx++] << 8) | pkt[idx++];
+      |                  [01;35m[K^~~~~~~~~~~~~~~~[m[K

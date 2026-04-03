@@ -1,0 +1,4 @@
+Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/laser_geometry -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/laser_geometry
+Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/laser_geometry -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/laser_geometry
+Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4

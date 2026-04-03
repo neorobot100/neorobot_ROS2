@@ -1,0 +1,56 @@
+[0.039s] Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+[0.244s] [  0%] Built target ament_cmake_python_copy_laser_geometry
+[0.247s] [ 25%] Built target gtest
+[0.252s] [ 50%] Built target gtest_main
+[0.275s] [ 75%] Built target laser_geometry
+[0.418s] [100%] Built target projection_test
+[0.932s] running egg_info
+[0.967s] writing laser_geometry.egg-info/PKG-INFO
+[0.969s] writing dependency_links to laser_geometry.egg-info/dependency_links.txt
+[0.969s] writing top-level names to laser_geometry.egg-info/top_level.txt
+[1.115s] reading manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[1.121s] writing manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[1.214s] [100%] Built target ament_cmake_python_build_laser_geometry_egg
+[1.249s] Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+[1.256s] Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/laser_geometry
+[1.299s] -- Install configuration: ""
+[1.304s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/pythonpath.sh
+[1.304s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/pythonpath.dsv
+[1.305s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry-2.11.2-py3.12.egg-info
+[1.305s] -- Installing: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry-2.11.2-py3.12.egg-info/SOURCES.txt
+[1.305s] -- Installing: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry-2.11.2-py3.12.egg-info/PKG-INFO
+[1.305s] -- Installing: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry-2.11.2-py3.12.egg-info/dependency_links.txt
+[1.305s] -- Installing: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry-2.11.2-py3.12.egg-info/top_level.txt
+[1.305s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry
+[1.306s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry/laser_geometry.py
+[1.306s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry/__init__.py
+[1.414s] Listing '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages/laser_geometry'...
+[1.444s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/library_path.sh
+[1.445s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/library_path.dsv
+[1.445s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/lib/liblaser_geometry.so
+[1.445s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/include/laser_geometry
+[1.445s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/include/laser_geometry/laser_geometry
+[1.446s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/include/laser_geometry/laser_geometry/laser_geometry.hpp
+[1.447s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/include/laser_geometry/laser_geometry/visibility_control.hpp
+[1.447s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/ament_index/resource_index/package_run_dependencies/laser_geometry
+[1.447s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/ament_index/resource_index/parent_prefix_path/laser_geometry
+[1.447s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/ament_prefix_path.sh
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/ament_prefix_path.dsv
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/path.sh
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/environment/path.dsv
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/local_setup.bash
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/local_setup.sh
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/local_setup.zsh
+[1.448s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/local_setup.dsv
+[1.448s] -- Installing: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.dsv
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/ament_index/resource_index/packages/laser_geometry
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/laser_geometryExport.cmake
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/laser_geometryExport-noconfig.cmake
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/ament_cmake_export_libraries-extras.cmake
+[1.449s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/ament_cmake_export_targets-extras.cmake
+[1.450s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.450s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/laser_geometryConfig.cmake
+[1.453s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/cmake/laser_geometryConfig-version.cmake
+[1.454s] -- Up-to-date: /home/neorobot/ros2_ws/install/laser_geometry/share/laser_geometry/package.xml
+[1.454s] Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/laser_geometry

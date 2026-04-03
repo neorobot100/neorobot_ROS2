@@ -1,0 +1,49 @@
+[ 33%] Built target motion_arbiter
+[ 66%] Built target lidar_human_detect
+[ 83%] [32mBuilding CXX object CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvirtual void human_n_obstacle_layer::HumanLayer::[01;32m[KonInitialize[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:68:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kcreate_subscription[m[K’ was not declared in this scope
+   68 |       psd_left_sub_ = [01;31m[Kcreate_subscription[m[K<sensor_msgs::msg::Range>(
+      |                       [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:68:23:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:43[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer_interface.hpp:50[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.hpp:45[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:35[m[K,
+                 from [01m[K/opt/ros/jazzy/include/nav2_costmap_2d/nav2_costmap_2d/layer.hpp:44[m[K,
+                 from [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:205:1:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::create_subscription[m[K’
+  205 | [01;36m[Kcreate_subscription[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:56:1:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::detail::create_subscription[m[K’
+   56 | [01;36m[Kcreate_subscription[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:68:66:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   68 |       psd_left_sub_ = create_subscription<sensor_msgs::msg::Range[01;31m[K>[m[K(
+      |                                                                  [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:69:7:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   69 |       [01;35m[K"/psd_left"[m[K,10,
+      |       [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:70:72:[m[K [01;35m[Kwarning: [m[Kright operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   70 |       std::bind(&HumanLayer::psdLeftCallback,this,std::placeholders::_1[01;35m[K)[m[K);
+      |                                                                        [01;35m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:72:67:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   72 |       psd_right_sub_ = create_subscription<sensor_msgs::msg::Range[01;31m[K>[m[K(
+      |                                                                   [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:73:7:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   73 |       [01;35m[K"/psd_right"[m[K,10,
+      |       [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:74:73:[m[K [01;35m[Kwarning: [m[Kright operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   74 |       std::bind(&HumanLayer::psdRightCallback,this,std::placeholders::_1[01;35m[K)[m[K);
+      |                                                                         [01;35m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvirtual void human_n_obstacle_layer::HumanLayer::[01;32m[KupdateBounds[m[K(double, double, double, double*, double*, double*, double*)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:262:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  262 |     void updateBounds(double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K,
+      |                                                       [01;35m[K~~~~~~~^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/human_n_obstacle_layer.dir/build.make:76: CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/human_n_obstacle_layer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,22 @@
+[0.041s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_controller -- -j4 -l4
+[0.457s] [100%] Built target lookahead_controller
+[0.576s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_controller -- -j4 -l4
+[0.585s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_controller
+[0.652s] -- Install configuration: ""
+[0.654s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/lib/neo_robot_controller/lookahead_controller
+[0.654s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/ament_index/resource_index/package_run_dependencies/neo_robot_controller
+[0.655s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/ament_index/resource_index/parent_prefix_path/neo_robot_controller
+[0.656s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/environment/ament_prefix_path.sh
+[0.656s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/environment/ament_prefix_path.dsv
+[0.656s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/environment/path.sh
+[0.656s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/environment/path.dsv
+[0.656s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/local_setup.bash
+[0.660s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/local_setup.sh
+[0.660s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/local_setup.zsh
+[0.660s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/local_setup.dsv
+[0.660s] -- Installing: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.dsv
+[0.661s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/ament_index/resource_index/packages/neo_robot_controller
+[0.661s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/cmake/neo_robot_controllerConfig.cmake
+[0.665s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/cmake/neo_robot_controllerConfig-version.cmake
+[0.665s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_controller/share/neo_robot_controller/package.xml
+[0.742s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_controller

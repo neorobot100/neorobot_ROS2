@@ -1,0 +1,50 @@
+[0.086s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[0.356s] [ 16%] [32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o[0m
+[0.387s] [ 50%] Built target human_n_obstacle_layer
+[0.456s] [ 83%] Built target lidar_human_detect
+[7.910s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:321:43:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs::msg[m[K’ does not name a type
+[7.910s]   321 | void scanCallback(const sensor_msgs::msg::[01;31m[KLaserScan[m[K::SharedPtr msg)
+[7.910s]       |                                           [01;31m[K^~~~~~~~~[m[K
+[7.910s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:321:64:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[7.910s]   321 | void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kmsg[m[K)
+[7.910s]       |                                                                [01;31m[K^~~[m[K
+[7.910s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:321:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[7.911s]   321 | void scanCallback[34m[K([m[Kconst sensor_msgs::msg::LaserScan::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)
+[7.911s]       |                  [34m[K~[m[K                                            [01;31m[K^[m[K[32m[K~~~[m[K
+[7.911s]       |                                                               [32m[K)[m[K
+[7.911s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:321:54:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[7.911s]   321 | void scanCallback(const sensor_msgs::msg::LaserScan::[01;31m[KSharedPtr[m[K msg)
+[7.911s]       |                                                      [01;31m[K^~~~~~~~~[m[K
+[7.911s]       |                                                               [32m[K;[m[K
+[7.926s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:321:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ does not name a type
+[7.927s]   321 | void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kmsg[m[K)
+[7.927s]       |                                                                [01;31m[K^~~[m[K
+[7.927s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:357:38:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs::msg[m[K’ does not name a type
+[7.927s]   357 | float getAvg(const sensor_msgs::msg::[01;31m[KLaserScan[m[K::SharedPtr scan,
+[7.927s]       |                                      [01;31m[K^~~~~~~~~[m[K
+[7.927s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:357:59:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kscan[m[K’
+[7.927s]   357 | float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kscan[m[K,
+[7.927s]       |                                                           [01;31m[K^~~~[m[K
+[7.930s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:357:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kscan[m[K’
+[7.930s]   357 | float getAvg[34m[K([m[Kconst sensor_msgs::msg::LaserScan::SharedPtr[01;31m[K [m[K[32m[Kscan[m[K,
+[7.930s]       |             [34m[K~[m[K                                            [01;31m[K^[m[K[32m[K~~~~[m[K
+[7.935s]       |                                                          [32m[K)[m[K
+[7.936s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:357:49:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[7.936s]   357 | float getAvg(const sensor_msgs::msg::LaserScan::[01;31m[KSharedPtr[m[K scan,
+[7.936s]       |                                                 [01;31m[K^~~~~~~~~[m[K
+[7.936s]       |                                                          [32m[K;[m[K
+[7.951s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:357:59:[m[K [01;31m[Kerror: [m[K‘[01m[Kscan[m[K’ does not name a type
+[7.951s]   357 | float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr [01;31m[Kscan[m[K,
+[7.952s]       |                                                           [01;31m[K^~~~[m[K
+[8.149s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[8.150s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:396:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.150s]   396 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+[8.150s]       |              [01;35m[K^~~~~~~~~~~~[m[K
+[8.160s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[8.161s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:545:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.161s]   545 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+[8.161s]       |              [01;35m[K^~~~~~~~~~~[m[K
+[15.466s] gmake[2]: *** [CMakeFiles/motion_arbiter.dir/build.make:76: CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o] Error 1
+[15.466s] gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/motion_arbiter.dir/all] Error 2
+[15.466s] gmake: *** [Makefile:146: all] Error 2
+[15.470s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4

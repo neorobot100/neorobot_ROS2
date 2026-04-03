@@ -1,0 +1,46 @@
+[0.111s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[0.475s] [ 33%] Built target lidar_human_detect
+[0.508s] [ 66%] Built target human_n_obstacle_layer
+[0.564s] [ 83%] [32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o[0m
+[8.821s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KscanCallback[m[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[8.821s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:337:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kthreshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.821s]   337 |     float [01;35m[Kthreshold[m[K = 0.8;        // 개입 거리 (m)
+[8.821s]       |           [01;35m[K^~~~~~~~~[m[K
+[8.821s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:338:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.821s]   338 |     float [01;35m[Kk[m[K = 1.2;                // gain
+[8.821s]       |           [01;35m[K^[m[K
+[8.822s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[8.823s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:399:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.823s]   399 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+[8.823s]       |              [01;35m[K^~~~~~~~~~~~[m[K
+[8.826s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[8.826s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:548:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.826s]   548 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+[8.826s]       |              [01;35m[K^~~~~~~~~~~[m[K
+[32.721s] [100%] [32m[1mLinking CXX executable motion_arbiter[0m
+[35.333s] [100%] Built target motion_arbiter
+[35.372s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_safety -- -j4 -l4
+[35.376s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety
+[35.399s] -- Install configuration: ""
+[35.401s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/plugin.xml
+[35.402s] -- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter
+[35.436s] -- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter" to ""
+[35.437s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/lidar_human_detect
+[35.437s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/libhuman_n_obstacle_layer.so
+[35.437s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/package_run_dependencies/neo_robot_safety
+[35.438s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/parent_prefix_path/neo_robot_safety
+[35.438s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.sh
+[35.440s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.dsv
+[35.440s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.sh
+[35.441s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.dsv
+[35.441s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.bash
+[35.441s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.sh
+[35.441s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.zsh
+[35.442s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.dsv
+[35.442s] -- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.dsv
+[35.442s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/packages/neo_robot_safety
+[35.442s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/neo_robot_safety
+[35.442s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig.cmake
+[35.443s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig-version.cmake
+[35.443s] -- Up-to-date: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.xml
+[35.445s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neo_robot_safety

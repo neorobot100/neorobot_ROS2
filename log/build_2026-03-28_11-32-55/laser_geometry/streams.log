@@ -1,0 +1,74 @@
+[0.029s] Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/laser_geometry -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/laser_geometry
+[0.326s] -- The C compiler identification is GNU 13.3.0
+[0.541s] -- The CXX compiler identification is GNU 13.3.0
+[0.578s] -- Detecting C compiler ABI info
+[0.885s] -- Detecting C compiler ABI info - done
+[0.912s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.913s] -- Detecting C compile features
+[0.915s] -- Detecting C compile features - done
+[0.939s] -- Detecting CXX compiler ABI info
+[1.285s] -- Detecting CXX compiler ABI info - done
+[1.314s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.314s] -- Detecting CXX compile features
+[1.319s] -- Detecting CXX compile features - done
+[1.336s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.812s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.222s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[2.323s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[2.371s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[2.450s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.517s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.675s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.680s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[2.748s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[2.891s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[3.000s] -- Found tf2: 0.36.19 (/opt/ros/jazzy/share/tf2/cmake)
+[3.011s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[3.026s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.323s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.642s] -- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[3.649s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.947s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.957s] -- Found Threads: TRUE  
+[6.284s] -- Added test 'copyright' to check source files copyright and LICENSE
+[6.308s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[6.309s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/neorobot/ros2_ws/src/laser_geometry/include>
+[6.309s] -- Configured cppcheck exclude dirs and/or files: 
+[6.321s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[6.322s] -- Configured cpplint exclude dirs and/or files: 
+[6.329s] -- Added test 'flake8' to check Python code syntax and style conventions
+[6.330s] -- Configured 'flake8' exclude dirs and/or files: 
+[6.343s] -- Added test 'lint_cmake' to check CMake code style
+[6.343s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[6.357s] -- Added test 'uncrustify' to check C / C++ code style
+[6.360s] -- Configured uncrustify additional arguments: 
+[6.363s] -- Added test 'xmllint' to check XML markup files
+[6.386s] -- Configuring done (6.3s)
+[6.522s] -- Generating done (0.1s)
+[6.586s] -- Build files have been written to: /home/neorobot/ros2_ws/build/laser_geometry
+[6.648s] Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/laser_geometry -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/laser_geometry
+[6.649s] Invoking command in '/home/neorobot/ros2_ws/build/laser_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4
+[7.031s] [ 12%] [32mBuilding CXX object CMakeFiles/laser_geometry.dir/src/laser_geometry.cpp.o[0m
+[7.067s] [ 25%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[7.130s] [ 37%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[7.139s] [ 37%] Built target ament_cmake_python_copy_laser_geometry
+[9.020s] running egg_info
+[9.022s] creating laser_geometry.egg-info
+[9.168s] writing laser_geometry.egg-info/PKG-INFO
+[9.172s] writing dependency_links to laser_geometry.egg-info/dependency_links.txt
+[9.173s] writing top-level names to laser_geometry.egg-info/top_level.txt
+[9.181s] writing manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[9.794s] reading manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[9.798s] writing manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[10.147s] [ 37%] Built target ament_cmake_python_build_laser_geometry_egg
+[12.256s] [ 50%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[12.456s] [ 50%] Built target gtest_main
+[15.858s] [ 62%] [32m[1mLinking CXX shared library liblaser_geometry.so[0m
+[16.672s] [ 62%] Built target laser_geometry
+[22.893s] [ 75%] [32m[1mLinking CXX static library libgtest.a[0m
+[23.297s] [ 75%] Built target gtest
+[23.416s] [ 87%] [32mBuilding CXX object CMakeFiles/projection_test.dir/test/projection_test.cpp.o[0m
+[391.450s] gmake[2]: *** [CMakeFiles/projection_test.dir/build.make:76: CMakeFiles/projection_test.dir/test/projection_test.cpp.o] Interrupt
+[391.452s] gmake[1]: *** [CMakeFiles/Makefile2:240: CMakeFiles/projection_test.dir/all] Interrupt
+[391.452s] gmake: *** [Makefile:146: all] Interrupt
+[391.509s] Invoked command in '/home/neorobot/ros2_ws/build/laser_geometry' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/laser_geometry -- -j4 -l4

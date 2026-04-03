@@ -1,0 +1,12 @@
+[ 25%] Built target gtest_main
+[ 50%] Built target laser_geometry
+[ 75%] Built target gtest
+[ 75%] Built target ament_cmake_python_copy_laser_geometry
+[100%] Built target projection_test
+running egg_info
+writing laser_geometry.egg-info/PKG-INFO
+writing dependency_links to laser_geometry.egg-info/dependency_links.txt
+writing top-level names to laser_geometry.egg-info/top_level.txt
+reading manifest file 'laser_geometry.egg-info/SOURCES.txt'
+writing manifest file 'laser_geometry.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_laser_geometry_egg

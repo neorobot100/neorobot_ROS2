@@ -1,0 +1,27 @@
+[0.103s] Invoking command in '/home/neorobot/ros2_ws/build/neorobot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neorobot_bringup -- -j4 -l4
+[0.242s] Invoked command in '/home/neorobot/ros2_ws/build/neorobot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neorobot_bringup -- -j4 -l4
+[0.243s] Invoking command in '/home/neorobot/ros2_ws/build/neorobot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neorobot_bringup
+[0.288s] -- Install configuration: ""
+[0.288s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/ament_index/resource_index/package_run_dependencies/neorobot_bringup
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/ament_index/resource_index/parent_prefix_path/neorobot_bringup
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/environment/ament_prefix_path.sh
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/environment/ament_prefix_path.dsv
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/environment/path.sh
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/environment/path.dsv
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/local_setup.bash
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/local_setup.sh
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/local_setup.zsh
+[0.289s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/local_setup.dsv
+[0.289s] -- Installing: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.dsv
+[0.290s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/ament_index/resource_index/packages/neorobot_bringup
+[0.293s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/cmake/neorobot_bringupConfig.cmake
+[0.293s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/cmake/neorobot_bringupConfig-version.cmake
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/package.xml
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup//launch
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup//launch/old_lookahead_nav2.launch.py
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup//launch/lookahead_nav2.launch.py
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup//launch/nav2_neo_launch.py
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup//launch/bringup.launch.py
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/config
+[0.294s] -- Up-to-date: /home/neorobot/ros2_ws/install/neorobot_bringup/share/neorobot_bringup/config/nav2.yaml
+[0.313s] Invoked command in '/home/neorobot/ros2_ws/build/neorobot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/neorobot_bringup

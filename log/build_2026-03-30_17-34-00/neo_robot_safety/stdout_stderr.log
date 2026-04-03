@@ -1,0 +1,295 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o[0m
+[ 50%] Built target motion_arbiter
+[ 83%] Built target lidar_human_detect
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:112:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_prev_left_flg[m[K’ does not name a type
+  112 |       [01;31m[Kultra_prev_left_flg[m[K = ultra_left_flg;
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:113:6:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+  113 |     }
+      |      [01;31m[K^[m[K
+      |      [32m[K;[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvirtual void human_n_obstacle_layer::HumanLayer::[01;32m[KonInitialize[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:39:7:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+   39 |       [01;31m[Ktf_buffer_[m[K = std::make_shared<tf2_ros::Buffer>(node->get_clock());
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:40:7:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_listener_[m[K’ was not declared in this scope
+   40 |       [01;31m[Ktf_listener_[m[K = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+      |       [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:42:7:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_sub_[m[K’ was not declared in this scope
+   42 |       [01;31m[Khuman_sub_[m[K = node->create_subscription<geometry_msgs::msg::Point>(
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:48:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_left_sub_[m[K’ was not declared in this scope
+   48 |       [01;31m[Kultra_left_sub_[m[K = node->create_subscription<sensor_msgs::msg::Range>(
+      |       [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:52:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_right_sub_[m[K’ was not declared in this scope
+   52 |       [01;31m[Kultra_right_sub_[m[K = node->create_subscription<sensor_msgs::msg::Range>(
+      |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:54:30:[m[K [01;31m[Kerror: [m[K‘[01m[KultraRightCallback[m[K’ is not a member of ‘[01m[Khuman_n_obstacle_layer::HumanLayer[m[K’
+   54 |       std::bind(&HumanLayer::[01;31m[KultraRightCallback[m[K,this,std::placeholders::_1));
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:58:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_left_sub_[m[K’ was not declared in this scope
+   58 |       [01;31m[Kbumper_left_sub_[m[K = node->create_subscription<std_msgs::msg::Bool>(
+      |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:60:30:[m[K [01;31m[Kerror: [m[K‘[01m[KbumperLeftCallback[m[K’ is not a member of ‘[01m[Khuman_n_obstacle_layer::HumanLayer[m[K’
+   60 |       std::bind(&HumanLayer::[01;31m[KbumperLeftCallback[m[K,this,std::placeholders::_1));
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:62:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_right_sub_[m[K’ was not declared in this scope
+   62 |       [01;31m[Kbumper_right_sub_[m[K = node->create_subscription<std_msgs::msg::Bool>(
+      |       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:64:30:[m[K [01;31m[Kerror: [m[K‘[01m[KbumperRightCallback[m[K’ is not a member of ‘[01m[Khuman_n_obstacle_layer::HumanLayer[m[K’
+   64 |       std::bind(&HumanLayer::[01;31m[KbumperRightCallback[m[K,this,std::placeholders::_1));
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KhumanCallback[m[K(geometry_msgs::msg::Point_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:93:7:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_x_[m[K’ was not declared in this scope
+   93 |       [01;31m[Khuman_x_[m[K = msg->x;
+      |       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:94:7:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_y_[m[K’ was not declared in this scope
+   94 |       [01;31m[Khuman_y_[m[K = msg->y;
+      |       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:95:7:[m[K [01;31m[Kerror: [m[K‘[01m[Khas_human_[m[K’ was not declared in this scope
+   95 |       [01;31m[Khas_human_[m[K = true;
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KultraLeftCallback[m[K(sensor_msgs::msg::Range_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:100:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_left_[m[K’ was not declared in this scope
+  100 |       [01;31m[Kultra_left_[m[K= msg->range;
+      |       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:104:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_left_flg[m[K’ was not declared in this scope
+  104 |         [01;31m[Kultra_left_flg[m[K = true;
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:106:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_left_flg[m[K’ was not declared in this scope
+  106 |       else if (ultra_left_ > 0.05)[01;31m[Kultra_left_flg[m[K = false;
+      |                                   [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:108:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_left_flg[m[K’ was not declared in this scope
+  108 |       if([01;31m[Kultra_left_flg[m[K && !ultra_prev_left_flg)
+      |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:108:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_prev_left_flg[m[K’ was not declared in this scope
+  108 |       if(ultra_left_flg && ![01;31m[Kultra_prev_left_flg[m[K)
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:109:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  109 |         [01;31m[Ksnesor_kind_[m[K = Sensor_Kind::ULTRA_LEFT;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:109:24:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  109 |         snesor_kind_ = [01;31m[KSensor_Kind[m[K::ULTRA_LEFT;
+      |                        [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:108:7:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+  108 |       [01;35m[Kif[m[K(ultra_left_flg && !ultra_prev_left_flg)
+      |       [01;35m[K^~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:110:9:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+  110 |         [01;36m[KcreateBlockedZone[m[K();
+      |         [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:110:9:[m[K [01;31m[Kerror: [m[K‘[01m[KcreateBlockedZone[m[K’ was not declared in this scope
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KultraRightCallback[m[K(sensor_msgs::msg::Range_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:116:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kultra_right_[m[K’ was not declared in this scope
+  116 |       [01;31m[Kultra_right_[m[K= msg->range;
+      |       [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:120:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  120 |         [01;31m[Ksnesor_kind_[m[K = Sensor_Kind::ULTRA_RIGHT;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:120:24:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  120 |         snesor_kind_ = [01;31m[KSensor_Kind[m[K::ULTRA_RIGHT;
+      |                        [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:121:9:[m[K [01;31m[Kerror: [m[K‘[01m[KcreateBlockedZone[m[K’ was not declared in this scope
+  121 |         [01;31m[KcreateBlockedZone[m[K();
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KbumperLeftCallback[m[K(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:127:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_left_[m[K’ was not declared in this scope
+  127 |       [01;31m[Kbumper_left_[m[K= msg->data;
+      |       [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:128:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_prev_left_[m[K’ was not declared in this scope
+  128 |       if (bumper_left_ && ![01;31m[Kbumper_prev_left_[m[K) {
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:129:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  129 |         [01;31m[Ksnesor_kind_[m[K = Sensor_Kind::BUMPER_LEFT;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:129:24:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  129 |         snesor_kind_ = [01;31m[KSensor_Kind[m[K::BUMPER_LEFT;
+      |                        [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:130:9:[m[K [01;31m[Kerror: [m[K‘[01m[KcreateBlockedZone[m[K’ was not declared in this scope
+  130 |         [01;31m[KcreateBlockedZone[m[K();
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:132:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_prev_left_[m[K’ was not declared in this scope
+  132 |       [01;31m[Kbumper_prev_left_[m[K = bumper_left_;
+      |       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KbumperRightCallback[m[K(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:136:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_right_[m[K’ was not declared in this scope
+  136 |       [01;31m[Kbumper_right_[m[K= msg->data;
+      |       [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:137:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_prev_right_[m[K’ was not declared in this scope
+  137 |       if (bumper_right_ && ![01;31m[Kbumper_prev_right_[m[K) {
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:138:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  138 |         [01;31m[Ksnesor_kind_[m[K = Sensor_Kind::BUMPER_RIGHT;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:138:24:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  138 |         snesor_kind_ = [01;31m[KSensor_Kind[m[K::BUMPER_RIGHT;
+      |                        [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:139:9:[m[K [01;31m[Kerror: [m[K‘[01m[KcreateBlockedZone[m[K’ was not declared in this scope
+  139 |         [01;31m[KcreateBlockedZone[m[K();
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:141:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kbumper_prev_right_[m[K’ was not declared in this scope
+  141 |       [01;31m[Kbumper_prev_right_[m[K = bumper_right_;
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KcreateBlockedZone[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:151:19:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Knode[m[K’?
+  151 |       auto node = [01;31m[Knode_[m[K.lock();
+      |                   [01;31m[K^~~~~[m[K
+      |                   [32m[Knode[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:157:19:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_buffer_[m[K’ was not declared in this scope
+  157 |         auto tf = [01;31m[Ktf_buffer_[m[K->lookupTransform("map", "base_link", tf2::TimePointZero);
+      |                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:182:12:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  182 |         if([01;31m[Ksnesor_kind_[m[K == Sensor_Kind::BUMPER_LEFT) side = 0.07;
+      |            [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:182:28:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  182 |         if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::BUMPER_LEFT) side = 0.07;
+      |                            [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:183:33:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  183 |         else if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::BUMPER_RIGHT) side = -0.07;
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:184:33:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  184 |         else if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::ULTRA_LEFT) side = 0.07;
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:185:33:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  185 |         else if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::ULTRA_RIGHT) side = -0.07;
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:186:33:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  186 |         else if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::PSD_LEFT) side = 0.15;
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:187:33:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  187 |         else if(snesor_kind_ == [01;31m[KSensor_Kind[m[K::PSD_RIGHT) side = -0.15;
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:190:9:[m[K [01;31m[Kerror: [m[K‘[01m[KBlockedPoint[m[K’ was not declared in this scope
+  190 |         [01;31m[KBlockedPoint[m[K p;
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:192:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kp[m[K’ was not declared in this scope
+  192 |         [01;31m[Kp[m[K.x = robot_x + cos(yaw) * forward - sin(yaw) * side;
+      |         [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:196:26:[m[K [01;31m[Kerror: [m[K‘[01m[Ksnesor_kind_[m[K’ was not declared in this scope
+  196 |         p.sensor_kind  = [01;31m[Ksnesor_kind_[m[K;
+      |                          [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer_interface.hpp:50[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.hpp:45[m[K,
+                 from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:35[m[K,
+                 from [01m[K/opt/ros/jazzy/include/nav2_costmap_2d/nav2_costmap_2d/layer.hpp:44[m[K,
+                 from [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:1[m[K:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:199:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  199 |         [01;31m[KRCLCPP_WARN[m[K(node->get_logger(),
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:206:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kblocked_points_[m[K’ was not declared in this scope
+  206 |         [01;31m[Kblocked_points_[m[K.push_back(p);
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:213:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  213 |         [01;31m[KRCLCPP_ERROR[m[K(node->get_logger(), "TF ERROR: %s", ex.what());
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K At global scope:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:244:49:[m[K [01;31m[Kerror: [m[Kvirt-specifiers in ‘[01m[KupdateBounds[m[K’ not allowed outside a class definition
+  244 |                   double* max_x, double* max_y) [01;31m[Koverride[m[K
+      |                                                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KupdateBounds[m[K(double, double, double, double*, double*, double*, double*)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:246:19:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Knode[m[K’?
+  246 |       auto node = [01;31m[Knode_[m[K.lock();
+      |                   [01;31m[K^~~~~[m[K
+      |                   [32m[Knode[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:262:11:[m[K [01;31m[Kerror: [m[K‘[01m[Khas_human_[m[K’ was not declared in this scope
+  262 |       if ([01;31m[Khas_human_[m[K)
+      |           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:264:35:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_x_[m[K’ was not declared in this scope
+  264 |         *min_x = std::min(*min_x, [01;31m[Khuman_x_[m[K);
+      |                                   [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:265:35:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_y_[m[K’ was not declared in this scope
+  265 |         *min_y = std::min(*min_y, [01;31m[Khuman_y_[m[K);
+      |                                   [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:271:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kblocked_points_[m[K’ was not declared in this scope
+  271 |       for (auto &p : [01;31m[Kblocked_points_[m[K)
+      |                      [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:242:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  242 |     void updateBounds(double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K,
+      |                                                       [01;35m[K~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K At global scope:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:284:41:[m[K [01;31m[Kerror: [m[Kvirt-specifiers in ‘[01m[KupdateCosts[m[K’ not allowed outside a class definition
+  284 |                     int, int, int, int) [01;31m[Koverride[m[K
+      |                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In function ‘[01m[Kvoid human_n_obstacle_layer::[01;32m[KupdateCosts[m[K(nav2_costmap_2d::Costmap2D&, int, int, int, int)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:288:19:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Knode[m[K’?
+  288 |       auto node = [01;31m[Knode_[m[K.lock();
+      |                   [01;31m[K^~~~~[m[K
+      |                   [32m[Knode[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:291:11:[m[K [01;31m[Kerror: [m[K‘[01m[Klayered_costmap_[m[K’ was not declared in this scope
+  291 |       if ([01;31m[Klayered_costmap_[m[K->getGlobalFrameID() != "map")
+      |           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:301:7:[m[K [01;31m[Kerror: [m[K‘[01m[Khas_human_[m[K’ was not declared in this scope
+  301 |       [01;31m[Khas_human_[m[K = 0;
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:304:34:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_x_[m[K’ was not declared in this scope
+  304 |           if (costmap.worldToMap([01;31m[Khuman_x_[m[K, human_y_, mx, my))
+      |                                  [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:304:44:[m[K [01;31m[Kerror: [m[K‘[01m[Khuman_y_[m[K’ was not declared in this scope
+  304 |           if (costmap.worldToMap(human_x_, [01;31m[Khuman_y_[m[K, mx, my))
+      |                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:358:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kblocked_points_[m[K’ was not declared in this scope
+  358 |       for (auto &p : [01;31m[Kblocked_points_[m[K)
+      |                      [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:364:30:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  364 |         if((p.sensor_kind == [01;31m[KSensor_Kind[m[K::BUMPER_LEFT) || (p.sensor_kind == Sensor_Kind::BUMPER_RIGHT))  size = 0.1;
+      |                              [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:364:77:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  364 |         if((p.sensor_kind == Sensor_Kind::BUMPER_LEFT) || (p.sensor_kind == [01;31m[KSensor_Kind[m[K::BUMPER_RIGHT))  size = 0.1;
+      |                                                                             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:365:35:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  365 |         else if((p.sensor_kind == [01;31m[KSensor_Kind[m[K::ULTRA_LEFT) || (p.sensor_kind == Sensor_Kind::ULTRA_RIGHT))  size = 0.05;
+      |                                   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:365:81:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  365 |         else if((p.sensor_kind == Sensor_Kind::ULTRA_LEFT) || (p.sensor_kind == [01;31m[KSensor_Kind[m[K::ULTRA_RIGHT))  size = 0.05;
+      |                                                                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:366:35:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  366 |         else if((p.sensor_kind == [01;31m[KSensor_Kind[m[K::PSD_LEFT) || (p.sensor_kind == Sensor_Kind::PSD_RIGHT))  size = 0.01;
+      |                                   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:366:79:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ has not been declared
+  366 |         else if((p.sensor_kind == Sensor_Kind::PSD_LEFT) || (p.sensor_kind == [01;31m[KSensor_Kind[m[K::PSD_RIGHT))  size = 0.01;
+      |                                                                               [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:445:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kblocked_points_[m[K’ was not declared in this scope
+  445 |       [01;31m[Kblocked_points_[m[K.erase(
+      |       [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:447:21:[m[K [01;31m[Kerror: [m[K‘[01m[KBlockedPoint[m[K’ does not name a type
+  447 |           [&](const [01;31m[KBlockedPoint[m[K &p)
+      |                     [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In lambda function:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:450:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K,[m[K’ token
+  450 |           })[01;31m[K,[m[K
+      |             [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K At global scope:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:455:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kprivate[m[K’
+  455 |   [01;31m[Kprivate[m[K:
+      |   [01;31m[K^~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:471:5:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ does not name a type
+  471 |     [01;31m[KSensor_Kind[m[K snesor_kind_;
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:481:7:[m[K [01;31m[Kerror: [m[K‘[01m[KSensor_Kind[m[K’ does not name a type
+  481 |       [01;31m[KSensor_Kind[m[K sensor_kind;   // 센서 종류 2026,03,30
+      |       [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:547:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+  547 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/jazzy/include/class_loader/class_loader/class_loader_core.hpp:58[m[K,
+                 from [01m[K/opt/ros/jazzy/include/class_loader/class_loader/class_loader.hpp:55[m[K,
+                 from [01m[K/opt/ros/jazzy/include/pluginlib/pluginlib/class_list_macros.hpp:40[m[K,
+                 from [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:3[m[K:
+/opt/ros/jazzy/include/class_loader/class_loader/meta_object.hpp: In instantiation of ‘[01m[KB* class_loader::impl::MetaObject<C, B>::[01;32m[Kcreate[m[K() const [35m[K[with C = human_n_obstacle_layer::HumanLayer; B = nav2_costmap_2d::Layer][m[K[m[K’:
+[01m[K/opt/ros/jazzy/include/class_loader/class_loader/meta_object.hpp:216:7:[m[K   required from here
+[01m[K/opt/ros/jazzy/include/class_loader/class_loader/meta_object.hpp:218:12:[m[K [01;31m[Kerror: [m[Kinvalid new-expression of abstract class type ‘[01m[Khuman_n_obstacle_layer::HumanLayer[m[K’
+  218 |     return [01;31m[Knew C[m[K;
+      |            [01;31m[K^~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:23:9:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[Khuman_n_obstacle_layer::HumanLayer[m[K’:
+   23 |   class [01;36m[KHumanLayer[m[K  : public nav2_costmap_2d::Layer
+      |         [01;36m[K^~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/nav2_costmap_2d/nav2_costmap_2d/layer.hpp:100:16:[m[K [01;36m[Knote: [m[K    ‘[01m[Kvirtual void nav2_costmap_2d::Layer::[01;32m[KupdateBounds[m[K(double, double, double, double*, double*, double*, double*)[m[K’
+  100 |   virtual void [01;36m[KupdateBounds[m[K(
+      |                [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/nav2_costmap_2d/nav2_costmap_2d/layer.hpp:110:16:[m[K [01;36m[Knote: [m[K    ‘[01m[Kvirtual void nav2_costmap_2d::Layer::[01;32m[KupdateCosts[m[K(nav2_costmap_2d::Costmap2D&, int, int, int, int)[m[K’
+  110 |   virtual void [01;36m[KupdateCosts[m[K(
+      |                [01;36m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/human_n_obstacle_layer.dir/build.make:76: CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/human_n_obstacle_layer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,53 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:363:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  363 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+      |              [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:512:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  512 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+      |              [01;35m[K^~~~~~~~~~~[m[K
+[ 33%] [32m[1mLinking CXX executable motion_arbiter[0m
+[ 33%] Built target motion_arbiter
+[ 50%] [32mBuilding CXX object CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvirtual void human_n_obstacle_layer::HumanLayer::[01;32m[KupdateBounds[m[K(double, double, double, double*, double*, double*, double*)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:212:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  212 |     void updateBounds(double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K,
+      |                                                       [01;35m[K~~~~~~~^~~~~~~~~[m[K
+[ 66%] [32m[1mLinking CXX shared library libhuman_n_obstacle_layer.so[0m
+[ 66%] Built target human_n_obstacle_layer
+[ 83%] [32mBuilding CXX object CMakeFiles/lidar_human_detect.dir/src/lidar_human_detect.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:[m[K In member function ‘[01m[Kint HumanDetector::[01;32m[KfindTrack[m[K(float, float)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:152:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Track>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  152 |         for(int i = 0; [01;35m[Ki < tracks_.size()[m[K; i++)
+      |                        [01;35m[K~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:[m[K In member function ‘[01m[Kvoid HumanDetector::[01;32m[KscanCallback[m[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:262:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Khuman_detected[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  262 |         bool [01;35m[Khuman_detected[m[K = false;
+      |              [01;35m[K^~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable lidar_human_detect[0m
+[100%] Built target lidar_human_detect
+-- Install configuration: ""
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/plugin.xml
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter
+-- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/motion_arbiter" to ""
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/lidar_human_detect
+-- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/neo_robot_safety/lib/neo_robot_safety/lidar_human_detect" to ""
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/lib/libhuman_n_obstacle_layer.so
+-- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/neo_robot_safety/lib/libhuman_n_obstacle_layer.so" to ""
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/package_run_dependencies/neo_robot_safety
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/parent_prefix_path/neo_robot_safety
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.sh
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/ament_prefix_path.dsv
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.sh
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/environment/path.dsv
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.bash
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.sh
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.zsh
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/local_setup.dsv
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.dsv
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/packages/neo_robot_safety
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/neo_robot_safety
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig.cmake
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/cmake/neo_robot_safetyConfig-version.cmake
+-- Installing: /home/neorobot/ros2_ws/install/neo_robot_safety/share/neo_robot_safety/package.xml

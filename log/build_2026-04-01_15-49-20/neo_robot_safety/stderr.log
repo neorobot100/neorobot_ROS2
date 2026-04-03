@@ -1,0 +1,11 @@
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:[m[K In member function ‘[01m[Kstd::pair<float, float> LidarHumanDetect::[01;32m[KgetCenter[m[K(const Cluster&)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:38:5:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<float, float>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+   38 |     [01;36m[K{[m[K
+      |     [01;36m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:[m[K In member function ‘[01m[Kvoid LidarHumanDetect::[01;32m[KpublishMarker[m[K(float, float, float)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:207:10:[m[K [01;35m[Kwarning: [m[Kinfinite recursion detected [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Winfinite-recursion-Winfinite-recursion]8;;[m[K]
+  207 |     void [01;35m[KpublishMarker[m[K(float x, float y, float confidence)
+      |          [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:243:22:[m[K [01;36m[Knote: [m[Krecursive call
+  243 |         [01;36m[KpublishMarker(0.5, 0.0, 1.0)[m[K;
+      |         [01;36m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K

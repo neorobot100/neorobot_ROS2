@@ -1,0 +1,33 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:23[m[K:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KscanCallback[m[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:331:37:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 5 has type ‘[01m[Kdouble[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  331 |      RCLCPP_INFO(this->get_logger(),[01;35m[K"Front Min Distance = %d "[m[K,[32m[Kmin_front_[m[K);
+      |                                     [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K [32m[K~~~~~~~~~~[m[K
+      |                                                                [32m[K|[m[K
+      |                                                                [32m[Kdouble[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:331:60:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  331 |      RCLCPP_INFO(this->get_logger(),"Front Min Distance = [01;36m[K%d[m[K ",min_front_);
+      |                                                           [01;36m[K~^[m[K
+      |                                                            [01;36m[K|[m[K
+      |                                                            [01;36m[Kint[m[K
+      |                                                           [32m[K%f[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:325:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  325 |     float [01;35m[Kangle[m[K = M_PI / 4.0;     // 45도
+      |           [01;35m[K^~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:327:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kthreshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  327 |     float [01;35m[Kthreshold[m[K = 0.8;        // 개입 거리 (m)
+      |           [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:328:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  328 |     float [01;35m[Kk[m[K = 1.2;                // gain
+      |           [01;35m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:397:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  397 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+      |              [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:546:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  546 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+      |              [01;35m[K^~~~~~~~~~~[m[K

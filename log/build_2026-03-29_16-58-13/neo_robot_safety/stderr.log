@@ -1,0 +1,76 @@
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:756:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  756 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:60:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   60 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KscanCallback[m[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:337:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kthreshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  337 |     float [01;35m[Kthreshold[m[K = 0.8;        // 개입 거리 (m)
+      |           [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:338:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kk[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  338 |     float [01;35m[Kk[m[K = 1.2;                // gain
+      |           [01;35m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KupdateState[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:418:14:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  418 |              [01;31m[KsetState[m[K(SafetyState::E_STOP,"Wheel lift","Emergency Stop");
+      |              [01;31m[K^~~~~~~~[m[K
+      |              [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:430:17:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  430 |                 [01;31m[KsetState[m[K(SafetyState::RECOVERY_BACK,"CLIFF_F","RECOVERY_BACK");
+      |                 [01;31m[K^~~~~~~~[m[K
+      |                 [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:450:17:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  450 |                 [01;31m[KsetState[m[K(SafetyState::HARD_STOP,"BUMPER !!","RECOVERY_BACK");
+      |                 [01;31m[K^~~~~~~~[m[K
+      |                 [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:457:21:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  457 |                     [01;31m[KsetState[m[K(SafetyState::HARD_STOP,"BUMPER LEFT","RECOVERY_BACK");
+      |                     [01;31m[K^~~~~~~~[m[K
+      |                     [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:463:21:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  463 |                     [01;31m[KsetState[m[K(SafetyState::HARD_STOP,"BUMPER RIGHT","RECOVERY_BACK");
+      |                     [01;31m[K^~~~~~~~[m[K
+      |                     [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:473:13:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  473 |             [01;31m[KsetState[m[K(SafetyState::HARD_STOP,"PSD","HARD_STOP");
+      |             [01;31m[K^~~~~~~~[m[K
+      |             [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:486:21:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  486 |                     [01;31m[KsetState[m[K(SafetyState::SOFT_STOP,"ULTRA ","SOFT_STOP");
+      |                     [01;31m[K^~~~~~~~[m[K
+      |                     [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:488:21:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  488 |                     [01;31m[KsetState[m[K(SafetyState::SOFT_STOP,"ULTRA LEFT","SOFT_STOP");
+      |                     [01;31m[K^~~~~~~~[m[K
+      |                     [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:489:21:[m[K [01;31m[Kerror: [m[K‘[01m[KsetState[m[K’ was not declared in this scope; did you mean ‘[01m[Ksetstate[m[K’?
+  489 |             else    [01;31m[KsetState[m[K(SafetyState::SOFT_STOP,"ULTRA RIGHT","SOFT_STOP");
+      |                     [01;31m[K^~~~~~~~[m[K
+      |                     [32m[Ksetstate[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:399:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbumper_event[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  399 |         bool [01;35m[Kbumper_event[m[K = bumper_now && !bumper_prev_;
+      |              [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K In member function ‘[01m[Kvoid MotionArbiter::[01;32m[KcontrolLoop[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:556:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstate_machine[m[K’ was not declared in this scope
+  556 |               [01;31m[Kstate_machine[m[K();
+      |               [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:580:37:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kout[m[K’
+  580 |            if( out.linear.x > 0.05  [01;31m[Kout[m[K.linear.x = 0.05
+      |                                     [01;31m[K^~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:580:14:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  580 |            if[01;36m[K([m[K out.linear.x > 0.05  out.linear.x = 0.05
+      |              [01;36m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:581:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K}[m[K’ token
+  581 |         [01;31m[K}[m[K
+      |         [01;31m[K^[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:548:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kis_recovery[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  548 |         bool [01;35m[Kis_recovery[m[K = is_rotate || is_backup;
+      |              [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:[m[K At global scope:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:756:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  756 | }
+      |  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/motion_arbiter.dir/build.make:76: CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/motion_arbiter.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

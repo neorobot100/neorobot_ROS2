@@ -1,0 +1,21 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/uart_node.dir/src/uart_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable uart_node[0m
+[100%] Built target uart_node
+-- Install configuration: ""
+-- Installing: /home/neorobot/ros2_ws/install/uart_driver/lib/uart_driver/uart_node
+-- Set non-toolchain portion of runtime path of "/home/neorobot/ros2_ws/install/uart_driver/lib/uart_driver/uart_node" to ""
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/package_run_dependencies/uart_driver
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/parent_prefix_path/uart_driver
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.sh
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.sh
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.dsv
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.bash
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.sh
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.zsh
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.dsv
+-- Installing: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.dsv
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/packages/uart_driver
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig.cmake
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig-version.cmake
+-- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.xml

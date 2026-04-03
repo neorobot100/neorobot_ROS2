@@ -1,0 +1,22 @@
+[0.080s] Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/cam_vision_control -- -j4 -l4
+[0.893s] [100%] Built target wall_follow
+[0.987s] Invoked command in '/home/neorobot/ros2_ws/build/cam_vision_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/cam_vision_control -- -j4 -l4
+[1.032s] Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/cam_vision_control
+[1.088s] -- Install configuration: ""
+[1.096s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/lib/cam_vision_control/wall_follow
+[1.096s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/ament_index/resource_index/package_run_dependencies/cam_vision_control
+[1.096s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/ament_index/resource_index/parent_prefix_path/cam_vision_control
+[1.096s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/environment/ament_prefix_path.sh
+[1.096s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/environment/ament_prefix_path.dsv
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/environment/path.sh
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/environment/path.dsv
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/local_setup.bash
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/local_setup.sh
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/local_setup.zsh
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/local_setup.dsv
+[1.097s] -- Installing: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.dsv
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/ament_index/resource_index/packages/cam_vision_control
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/cmake/cam_vision_controlConfig.cmake
+[1.097s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/cmake/cam_vision_controlConfig-version.cmake
+[1.098s] -- Up-to-date: /home/neorobot/ros2_ws/install/cam_vision_control/share/cam_vision_control/package.xml
+[1.109s] Invoked command in '/home/neorobot/ros2_ws/build/cam_vision_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/cam_vision_control

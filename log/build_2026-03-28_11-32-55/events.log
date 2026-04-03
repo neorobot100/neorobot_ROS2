@@ -1,0 +1,757 @@
+[0.000000] (-) TimerEvent: {}
+[0.000639] (cam_vision_control) JobQueued: {'identifier': 'cam_vision_control', 'dependencies': OrderedDict()}
+[0.000985] (laser_geometry) JobQueued: {'identifier': 'laser_geometry', 'dependencies': OrderedDict()}
+[0.001011] (neo_robot_controller) JobQueued: {'identifier': 'neo_robot_controller', 'dependencies': OrderedDict()}
+[0.001030] (neo_robot_safety) JobQueued: {'identifier': 'neo_robot_safety', 'dependencies': OrderedDict()}
+[0.001048] (neorobot_bringup) JobQueued: {'identifier': 'neorobot_bringup', 'dependencies': OrderedDict()}
+[0.001065] (uart_driver) JobQueued: {'identifier': 'uart_driver', 'dependencies': OrderedDict()}
+[0.001082] (ydlidar_ros2_driver) JobQueued: {'identifier': 'ydlidar_ros2_driver', 'dependencies': OrderedDict()}
+[0.001099] (cam_vision_control) JobStarted: {'identifier': 'cam_vision_control'}
+[0.009333] (laser_geometry) JobStarted: {'identifier': 'laser_geometry'}
+[0.015626] (neo_robot_controller) JobStarted: {'identifier': 'neo_robot_controller'}
+[0.021618] (neo_robot_safety) JobStarted: {'identifier': 'neo_robot_safety'}
+[0.033200] (cam_vision_control) JobProgress: {'identifier': 'cam_vision_control', 'progress': 'cmake'}
+[0.033467] (cam_vision_control) Command: {'cmd': ['/usr/bin/cmake', '/home/neorobot/ros2_ws/src/cam_vision_control', '-DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/cam_vision_control'], 'cwd': '/home/neorobot/ros2_ws/build/cam_vision_control', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/cam_vision_control', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.035727] (laser_geometry) JobProgress: {'identifier': 'laser_geometry', 'progress': 'cmake'}
+[0.037305] (laser_geometry) Command: {'cmd': ['/usr/bin/cmake', '/home/neorobot/ros2_ws/src/laser_geometry', '-DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/laser_geometry'], 'cwd': '/home/neorobot/ros2_ws/build/laser_geometry', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/laser_geometry', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.041489] (neo_robot_controller) JobProgress: {'identifier': 'neo_robot_controller', 'progress': 'cmake'}
+[0.044325] (neo_robot_controller) Command: {'cmd': ['/usr/bin/cmake', '/home/neorobot/ros2_ws/src/neo_robot_controller', '-DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/neo_robot_controller'], 'cwd': '/home/neorobot/ros2_ws/build/neo_robot_controller', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/neo_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.115046] (-) TimerEvent: {}
+[0.127781] (neo_robot_safety) JobProgress: {'identifier': 'neo_robot_safety', 'progress': 'cmake'}
+[0.128161] (neo_robot_safety) Command: {'cmd': ['/usr/bin/cmake', '/home/neorobot/ros2_ws/src/neo_robot_safety', '-DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/neo_robot_safety'], 'cwd': '/home/neorobot/ros2_ws/build/neo_robot_safety', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/neo_robot_safety', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.219701] (-) TimerEvent: {}
+[0.243625] (cam_vision_control) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.273723] (neo_robot_controller) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.320819] (-) TimerEvent: {}
+[0.335387] (laser_geometry) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.347443] (neo_robot_safety) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.422087] (-) TimerEvent: {}
+[0.428711] (cam_vision_control) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.474658] (neo_robot_controller) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.480926] (cam_vision_control) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.522226] (-) TimerEvent: {}
+[0.540409] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.550350] (laser_geometry) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.558781] (neo_robot_safety) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.587526] (laser_geometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.597739] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.623604] (-) TimerEvent: {}
+[0.724643] (-) TimerEvent: {}
+[0.783617] (cam_vision_control) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.792430] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.814268] (cam_vision_control) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.815664] (cam_vision_control) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.817677] (cam_vision_control) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.824681] (-) TimerEvent: {}
+[0.867963] (neo_robot_controller) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.870953] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.872526] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.885127] (cam_vision_control) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.894535] (laser_geometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.902509] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.913233] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.919316] (neo_robot_safety) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.919718] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.920200] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.921680] (laser_geometry) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.922195] (laser_geometry) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.924274] (laser_geometry) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.924666] (-) TimerEvent: {}
+[0.943374] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.948638] (laser_geometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.025082] (-) TimerEvent: {}
+[1.125912] (-) TimerEvent: {}
+[1.227667] (-) TimerEvent: {}
+[1.253655] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.289235] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.292989] (neo_robot_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.293148] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.293341] (neo_robot_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.294439] (laser_geometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.303559] (neo_robot_controller) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.313716] (neo_robot_safety) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.314070] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.315132] (neo_robot_safety) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.320530] (cam_vision_control) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.323630] (laser_geometry) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.323911] (laser_geometry) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.326572] (neo_robot_safety) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.327717] (-) TimerEvent: {}
+[1.328226] (laser_geometry) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.345010] (laser_geometry) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.358624] (cam_vision_control) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.359391] (cam_vision_control) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.364648] (cam_vision_control) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.375208] (cam_vision_control) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.427873] (-) TimerEvent: {}
+[1.529767] (-) TimerEvent: {}
+[1.632532] (-) TimerEvent: {}
+[1.725553] (neo_robot_safety) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.732656] (-) TimerEvent: {}
+[1.779863] (neo_robot_controller) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.821640] (laser_geometry) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.832774] (-) TimerEvent: {}
+[1.860610] (cam_vision_control) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.935560] (-) TimerEvent: {}
+[2.036029] (-) TimerEvent: {}
+[2.089312] (neo_robot_safety) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.113007] (neo_robot_controller) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.136227] (-) TimerEvent: {}
+[2.193933] (neo_robot_safety) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.200529] (cam_vision_control) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.206978] (neo_robot_controller) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.227564] (neo_robot_safety) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.231759] (laser_geometry) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[2.236354] (-) TimerEvent: {}
+[2.240532] (neo_robot_controller) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.258850] (neo_robot_safety) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.272787] (neo_robot_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.294808] (cam_vision_control) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.298214] (neo_robot_safety) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.321994] (neo_robot_controller) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.331883] (laser_geometry) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.336510] (-) TimerEvent: {}
+[2.380533] (laser_geometry) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.401664] (cam_vision_control) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.436631] (-) TimerEvent: {}
+[2.456643] (cam_vision_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.459600] (laser_geometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.492698] (neo_robot_controller) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.494001] (cam_vision_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.498279] (neo_robot_controller) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.522196] (neo_robot_safety) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.526194] (laser_geometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.532558] (neo_robot_safety) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.536773] (-) TimerEvent: {}
+[2.582551] (neo_robot_controller) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.595705] (neo_robot_safety) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.638582] (-) TimerEvent: {}
+[2.658571] (cam_vision_control) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.667198] (cam_vision_control) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.681272] (laser_geometry) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.689496] (laser_geometry) StdoutLine: {'line': b'-- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)\n'}
+[2.714167] (neo_robot_controller) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[2.738715] (-) TimerEvent: {}
+[2.740398] (neo_robot_safety) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[2.746866] (cam_vision_control) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.757692] (laser_geometry) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[2.798536] (neo_robot_safety) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.841549] (-) TimerEvent: {}
+[2.842095] (neo_robot_safety) StdoutLine: {'line': b'-- Found rclcpp_action: 28.1.16 (/opt/ros/jazzy/share/rclcpp_action/cmake)\n'}
+[2.877631] (cam_vision_control) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.899491] (laser_geometry) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.941823] (-) TimerEvent: {}
+[2.951806] (neo_robot_controller) StdoutLine: {'line': b'-- Found tf2: 0.36.19 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[2.983528] (neo_robot_controller) StdoutLine: {'line': b'-- Found tf2_ros: 0.36.19 (/opt/ros/jazzy/share/tf2_ros/cmake)\n'}
+[2.987728] (cam_vision_control) StdoutLine: {'line': b'-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)\n'}
+[3.009045] (laser_geometry) StdoutLine: {'line': b'-- Found tf2: 0.36.19 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[3.017275] (neo_robot_safety) StdoutLine: {'line': b'-- Found nav2_msgs: 1.3.10 (/opt/ros/jazzy/share/nav2_msgs/cmake)\n'}
+[3.017673] (cam_vision_control) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.6.0") \n'}
+[3.020196] (laser_geometry) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[3.023617] (cam_vision_control) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.035199] (laser_geometry) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.041958] (-) TimerEvent: {}
+[3.143547] (-) TimerEvent: {}
+[3.243988] (-) TimerEvent: {}
+[3.256039] (neo_robot_safety) StdoutLine: {'line': b'-- Found pluginlib: 5.4.4 (/opt/ros/jazzy/share/pluginlib/cmake)\n'}
+[3.298554] (neo_robot_controller) StdoutLine: {'line': b'-- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)\n'}
+[3.301569] (neo_robot_safety) StdoutLine: {'line': b'-- Found TinyXML2 via Config file: /usr/lib/aarch64-linux-gnu/cmake/tinyxml2\n'}
+[3.309531] (neo_robot_safety) StdoutLine: {'line': b'-- Found nav2_costmap_2d: 1.3.10 (/opt/ros/jazzy/share/nav2_costmap_2d/cmake)\n'}
+[3.328255] (cam_vision_control) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.328618] (cam_vision_control) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[3.328737] (cam_vision_control) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.332429] (cam_vision_control) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.332795] (laser_geometry) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.332974] (cam_vision_control) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.333075] (cam_vision_control) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.334032] (cam_vision_control) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.342677] (cam_vision_control) StdoutLine: {'line': b'-- Configuring done (3.3s)\n'}
+[3.344077] (-) TimerEvent: {}
+[3.392644] (cam_vision_control) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.401938] (neo_robot_controller) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[3.408722] (cam_vision_control) StdoutLine: {'line': b'-- Build files have been written to: /home/neorobot/ros2_ws/build/cam_vision_control\n'}
+[3.434874] (cam_vision_control) CommandEnded: {'returncode': 0}
+[3.437736] (cam_vision_control) JobProgress: {'identifier': 'cam_vision_control', 'progress': 'build'}
+[3.437949] (cam_vision_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neorobot/ros2_ws/build/cam_vision_control', '--', '-j4', '-l4'], 'cwd': '/home/neorobot/ros2_ws/build/cam_vision_control', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/cam_vision_control', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[3.444212] (-) TimerEvent: {}
+[3.446203] (neo_robot_controller) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[3.449207] (neo_robot_controller) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.449863] (neo_robot_controller) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[3.459597] (neo_robot_controller) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[3.546470] (-) TimerEvent: {}
+[3.599063] (cam_vision_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/wall_follow.dir/src/wall_follow.cpp.o\x1b[0m\n'}
+[3.646547] (-) TimerEvent: {}
+[3.651577] (laser_geometry) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[3.658116] (laser_geometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[3.671783] (neo_robot_safety) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[3.672162] (neo_robot_safety) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.672742] (neo_robot_safety) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[3.746688] (-) TimerEvent: {}
+[3.773565] (neo_robot_controller) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.773916] (neo_robot_controller) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[3.774044] (neo_robot_controller) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.776047] (neo_robot_controller) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.778407] (neo_robot_controller) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.779468] (neo_robot_controller) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.780088] (neo_robot_controller) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.788272] (neo_robot_controller) StdoutLine: {'line': b'-- Configuring done (3.7s)\n'}
+[3.846274] (neo_robot_controller) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[3.846675] (-) TimerEvent: {}
+[3.866702] (neo_robot_controller) StdoutLine: {'line': b'-- Build files have been written to: /home/neorobot/ros2_ws/build/neo_robot_controller\n'}
+[3.935097] (neo_robot_controller) CommandEnded: {'returncode': 0}
+[3.935686] (neo_robot_controller) JobProgress: {'identifier': 'neo_robot_controller', 'progress': 'build'}
+[3.935728] (neo_robot_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neorobot/ros2_ws/build/neo_robot_controller', '--', '-j4', '-l4'], 'cwd': '/home/neorobot/ros2_ws/build/neo_robot_controller', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/neo_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[3.946836] (-) TimerEvent: {}
+[3.956491] (laser_geometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[3.966567] (laser_geometry) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.048582] (-) TimerEvent: {}
+[4.149060] (-) TimerEvent: {}
+[4.179134] (neo_robot_controller) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/lookahead_controller.dir/src/lookahead_controller.cpp.o\x1b[0m\n'}
+[4.249782] (-) TimerEvent: {}
+[4.350199] (-) TimerEvent: {}
+[4.451954] (-) TimerEvent: {}
+[4.524705] (neo_robot_safety) StdoutLine: {'line': b'-- Configuring done (4.4s)\n'}
+[4.552074] (-) TimerEvent: {}
+[4.655539] (-) TimerEvent: {}
+[4.712574] (neo_robot_safety) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[4.752594] (neo_robot_safety) StdoutLine: {'line': b'-- Build files have been written to: /home/neorobot/ros2_ws/build/neo_robot_safety\n'}
+[4.755658] (-) TimerEvent: {}
+[4.797045] (neo_robot_safety) CommandEnded: {'returncode': 0}
+[4.797687] (neo_robot_safety) JobProgress: {'identifier': 'neo_robot_safety', 'progress': 'build'}
+[4.797747] (neo_robot_safety) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neorobot/ros2_ws/build/neo_robot_safety', '--', '-j4', '-l4'], 'cwd': '/home/neorobot/ros2_ws/build/neo_robot_safety', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/neo_robot_safety', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[4.857591] (-) TimerEvent: {}
+[4.961605] (-) TimerEvent: {}
+[5.062272] (-) TimerEvent: {}
+[5.123100] (neo_robot_safety) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o\x1b[0m\n'}
+[5.125419] (neo_robot_safety) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/lidar_human_detect.dir/src/lidar_human_detect.cpp.o\x1b[0m\n'}
+[5.146765] (neo_robot_safety) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o\x1b[0m\n'}
+[5.162837] (-) TimerEvent: {}
+[5.264563] (-) TimerEvent: {}
+[5.371547] (-) TimerEvent: {}
+[5.471949] (-) TimerEvent: {}
+[5.572358] (-) TimerEvent: {}
+[5.675561] (-) TimerEvent: {}
+[5.782534] (-) TimerEvent: {}
+[5.884537] (-) TimerEvent: {}
+[5.984971] (-) TimerEvent: {}
+[6.088569] (-) TimerEvent: {}
+[6.189056] (-) TimerEvent: {}
+[6.289546] (-) TimerEvent: {}
+[6.292779] (laser_geometry) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[6.317574] (laser_geometry) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[6.318078] (laser_geometry) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/neorobot/ros2_ws/src/laser_geometry/include>\n'}
+[6.318361] (laser_geometry) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[6.330553] (laser_geometry) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[6.330925] (laser_geometry) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[6.337871] (laser_geometry) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[6.339010] (laser_geometry) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[6.352523] (laser_geometry) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[6.352821] (laser_geometry) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[6.365877] (laser_geometry) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[6.369621] (laser_geometry) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[6.371871] (laser_geometry) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[6.389672] (-) TimerEvent: {}
+[6.394974] (laser_geometry) StdoutLine: {'line': b'-- Configuring done (6.3s)\n'}
+[6.491545] (-) TimerEvent: {}
+[6.530381] (laser_geometry) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[6.593863] (-) TimerEvent: {}
+[6.595581] (laser_geometry) StdoutLine: {'line': b'-- Build files have been written to: /home/neorobot/ros2_ws/build/laser_geometry\n'}
+[6.657566] (laser_geometry) CommandEnded: {'returncode': 0}
+[6.658245] (laser_geometry) JobProgress: {'identifier': 'laser_geometry', 'progress': 'build'}
+[6.658300] (laser_geometry) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neorobot/ros2_ws/build/laser_geometry', '--', '-j4', '-l4'], 'cwd': '/home/neorobot/ros2_ws/build/laser_geometry', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neorobot', 'SSH_CLIENT': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 22', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neorobot/ros2_ws/install/neo_robot_safety/lib:/home/neorobot/ros2_ws/install/laser_geometry/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neorobot', 'OLDPWD': '/home/neorobot/ros2_ws', 'SSH_TTY': '/dev/pts/2', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/neorobot/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neorobot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '7', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/neorobot/ros2_ws/build/laser_geometry', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': 'fe80::95b4:f8c0:6159:9b54%wlan1 57463 fe80::6f6e:c9f1:2ff7:7072%wlan1 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neorobot/ros2_ws/install/laser_geometry/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/neorobot/ros2_ws/install/vision_control:/home/neorobot/ros2_ws/install/ydlidar_ros2_driver:/home/neorobot/ros2_ws/install/vision_control_cpp:/home/neorobot/ros2_ws/install/uart_driver:/home/neorobot/ros2_ws/install/neorobot_bringup:/home/neorobot/ros2_ws/install/neo_robot_safety:/home/neorobot/ros2_ws/install/neo_robot_controller:/home/neorobot/ros2_ws/install/laser_geometry:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[6.697563] (-) TimerEvent: {}
+[6.798066] (-) TimerEvent: {}
+[6.901558] (-) TimerEvent: {}
+[7.002231] (-) TimerEvent: {}
+[7.040706] (laser_geometry) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/laser_geometry.dir/src/laser_geometry.cpp.o\x1b[0m\n'}
+[7.073848] (laser_geometry) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[7.106562] (-) TimerEvent: {}
+[7.139655] (laser_geometry) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[7.148554] (laser_geometry) StdoutLine: {'line': b'[ 37%] Built target ament_cmake_python_copy_laser_geometry\n'}
+[7.208803] (-) TimerEvent: {}
+[7.309246] (-) TimerEvent: {}
+[7.412562] (-) TimerEvent: {}
+[7.515800] (-) TimerEvent: {}
+[7.618573] (-) TimerEvent: {}
+[7.721539] (-) TimerEvent: {}
+[7.822155] (-) TimerEvent: {}
+[7.928599] (-) TimerEvent: {}
+[8.029057] (-) TimerEvent: {}
+[8.136526] (-) TimerEvent: {}
+[8.236930] (-) TimerEvent: {}
+[8.337357] (-) TimerEvent: {}
+[8.438004] (-) TimerEvent: {}
+[8.539543] (-) TimerEvent: {}
+[8.644552] (-) TimerEvent: {}
+[8.744985] (-) TimerEvent: {}
+[8.846528] (-) TimerEvent: {}
+[8.947243] (-) TimerEvent: {}
+[9.029236] (laser_geometry) StdoutLine: {'line': b'running egg_info\n'}
+[9.031149] (laser_geometry) StdoutLine: {'line': b'creating laser_geometry.egg-info\n'}
+[9.047370] (-) TimerEvent: {}
+[9.150544] (-) TimerEvent: {}
+[9.177204] (laser_geometry) StdoutLine: {'line': b'writing laser_geometry.egg-info/PKG-INFO\n'}
+[9.181444] (laser_geometry) StdoutLine: {'line': b'writing dependency_links to laser_geometry.egg-info/dependency_links.txt\n'}
+[9.182315] (laser_geometry) StdoutLine: {'line': b'writing top-level names to laser_geometry.egg-info/top_level.txt\n'}
+[9.189910] (laser_geometry) StdoutLine: {'line': b"writing manifest file 'laser_geometry.egg-info/SOURCES.txt'\n"}
+[9.250666] (-) TimerEvent: {}
+[9.358542] (-) TimerEvent: {}
+[9.459026] (-) TimerEvent: {}
+[9.561579] (-) TimerEvent: {}
+[9.662104] (-) TimerEvent: {}
+[9.767545] (-) TimerEvent: {}
+[9.803614] (laser_geometry) StdoutLine: {'line': b"reading manifest file 'laser_geometry.egg-info/SOURCES.txt'\n"}
+[9.807241] (laser_geometry) StdoutLine: {'line': b"writing manifest file 'laser_geometry.egg-info/SOURCES.txt'\n"}
+[9.870556] (-) TimerEvent: {}
+[9.971026] (-) TimerEvent: {}
+[10.074569] (-) TimerEvent: {}
+[10.155960] (laser_geometry) StdoutLine: {'line': b'[ 37%] Built target ament_cmake_python_build_laser_geometry_egg\n'}
+[10.174696] (-) TimerEvent: {}
+[10.278559] (-) TimerEvent: {}
+[10.379063] (-) TimerEvent: {}
+[10.482557] (-) TimerEvent: {}
+[10.582991] (-) TimerEvent: {}
+[10.683707] (-) TimerEvent: {}
+[10.788549] (-) TimerEvent: {}
+[10.889007] (-) TimerEvent: {}
+[10.990569] (-) TimerEvent: {}
+[11.091230] (-) TimerEvent: {}
+[11.194549] (-) TimerEvent: {}
+[11.295045] (-) TimerEvent: {}
+[11.398561] (-) TimerEvent: {}
+[11.498999] (-) TimerEvent: {}
+[11.601874] (-) TimerEvent: {}
+[11.704552] (-) TimerEvent: {}
+[11.805027] (-) TimerEvent: {}
+[11.908554] (-) TimerEvent: {}
+[12.009034] (-) TimerEvent: {}
+[12.109522] (-) TimerEvent: {}
+[12.210741] (-) TimerEvent: {}
+[12.265441] (laser_geometry) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[12.310880] (-) TimerEvent: {}
+[12.415554] (-) TimerEvent: {}
+[12.465387] (laser_geometry) StdoutLine: {'line': b'[ 50%] Built target gtest_main\n'}
+[12.517551] (-) TimerEvent: {}
+[12.619559] (-) TimerEvent: {}
+[12.720038] (-) TimerEvent: {}
+[12.820530] (-) TimerEvent: {}
+[12.921328] (-) TimerEvent: {}
+[13.026564] (-) TimerEvent: {}
+[13.127025] (-) TimerEvent: {}
+[13.230551] (-) TimerEvent: {}
+[13.331008] (-) TimerEvent: {}
+[13.434557] (-) TimerEvent: {}
+[13.535013] (-) TimerEvent: {}
+[13.638557] (-) TimerEvent: {}
+[13.739043] (-) TimerEvent: {}
+[13.839825] (-) TimerEvent: {}
+[13.943551] (-) TimerEvent: {}
+[14.044032] (-) TimerEvent: {}
+[14.147546] (-) TimerEvent: {}
+[14.248023] (-) TimerEvent: {}
+[14.350555] (-) TimerEvent: {}
+[14.451017] (-) TimerEvent: {}
+[14.553551] (-) TimerEvent: {}
+[14.656550] (-) TimerEvent: {}
+[14.757022] (-) TimerEvent: {}
+[14.857700] (-) TimerEvent: {}
+[14.959756] (-) TimerEvent: {}
+[15.062672] (-) TimerEvent: {}
+[15.163579] (-) TimerEvent: {}
+[15.266561] (-) TimerEvent: {}
+[15.367056] (-) TimerEvent: {}
+[15.469564] (-) TimerEvent: {}
+[15.570013] (-) TimerEvent: {}
+[15.670768] (-) TimerEvent: {}
+[15.773550] (-) TimerEvent: {}
+[15.867269] (laser_geometry) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking CXX shared library liblaser_geometry.so\x1b[0m\n'}
+[15.873672] (-) TimerEvent: {}
+[15.976562] (-) TimerEvent: {}
+[16.077034] (-) TimerEvent: {}
+[16.180545] (-) TimerEvent: {}
+[16.280984] (-) TimerEvent: {}
+[16.384586] (-) TimerEvent: {}
+[16.487558] (-) TimerEvent: {}
+[16.588038] (-) TimerEvent: {}
+[16.680765] (laser_geometry) StdoutLine: {'line': b'[ 62%] Built target laser_geometry\n'}
+[16.689561] (-) TimerEvent: {}
+[16.793617] (-) TimerEvent: {}
+[16.894263] (-) TimerEvent: {}
+[16.994731] (-) TimerEvent: {}
+[17.014625] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LookaheadController::\x1b[01;32m\x1b[Kloop\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.015182] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:262:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kcurvature_scale\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.015554] (neo_robot_controller) StderrLine: {'line': b'  262 |         double \x1b[01;35m\x1b[Kcurvature_scale\x1b[m\x1b[K = 1.0 / (1.0 + fabs(curvature) * 2.0);\n'}
+[17.015946] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.017625] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:264:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kangle_scale\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.017950] (neo_robot_controller) StderrLine: {'line': b'  264 |         double \x1b[01;35m\x1b[Kangle_scale\x1b[m\x1b[K = exp(-angle_abs * 2.0);\n'}
+[17.018104] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.023698] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LookaheadController::\x1b[01;32m\x1b[KimuCallback\x1b[m\x1b[K(sensor_msgs::msg::Imu_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.024143] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:391:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kwx\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.024520] (neo_robot_controller) StderrLine: {'line': b'  391 |         double \x1b[01;35m\x1b[Kwx\x1b[m\x1b[K = msg->angular_velocity.x;\n'}
+[17.024825] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.025399] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:392:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kwy\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.025667] (neo_robot_controller) StderrLine: {'line': b'  392 |         double \x1b[01;35m\x1b[Kwy\x1b[m\x1b[K = msg->angular_velocity.y;\n'}
+[17.025796] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.025909] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:393:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kwz\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.028712] (neo_robot_controller) StderrLine: {'line': b'  393 |         double \x1b[01;35m\x1b[Kwz\x1b[m\x1b[K = msg->angular_velocity.z;\n'}
+[17.029024] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.029170] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:396:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kax\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.029313] (neo_robot_controller) StderrLine: {'line': b'  396 |         double \x1b[01;35m\x1b[Kax\x1b[m\x1b[K = msg->linear_acceleration.x;\n'}
+[17.029465] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.029631] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:397:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kay\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.029766] (neo_robot_controller) StderrLine: {'line': b'  397 |         double \x1b[01;35m\x1b[Kay\x1b[m\x1b[K = msg->linear_acceleration.y;\n'}
+[17.029888] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.030013] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:398:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kaz\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.030139] (neo_robot_controller) StderrLine: {'line': b'  398 |         double \x1b[01;35m\x1b[Kaz\x1b[m\x1b[K = msg->linear_acceleration.z;\n'}
+[17.030258] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.030361] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:401:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kqx\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.030583] (neo_robot_controller) StderrLine: {'line': b'  401 |         double \x1b[01;35m\x1b[Kqx\x1b[m\x1b[K = msg->orientation.x;\n'}
+[17.030742] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.030861] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:402:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kqy\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.031001] (neo_robot_controller) StderrLine: {'line': b'  402 |         double \x1b[01;35m\x1b[Kqy\x1b[m\x1b[K = msg->orientation.y;\n'}
+[17.031134] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.031256] (neo_robot_controller) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:404:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kqw\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.031385] (neo_robot_controller) StderrLine: {'line': b'  404 |         double \x1b[01;35m\x1b[Kqw\x1b[m\x1b[K = msg->orientation.w;\n'}
+[17.034795] (neo_robot_controller) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[17.094866] (-) TimerEvent: {}
+[17.195372] (-) TimerEvent: {}
+[17.295877] (-) TimerEvent: {}
+[17.384120] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotionArbiter::\x1b[01;32m\x1b[KupdateState\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.384537] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:363:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kbumper_event\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.384731] (neo_robot_safety) StderrLine: {'line': b'  363 |         bool \x1b[01;35m\x1b[Kbumper_event\x1b[m\x1b[K = bumper_now && !bumper_prev_;\n'}
+[17.384897] (neo_robot_safety) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.389576] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotionArbiter::\x1b[01;32m\x1b[KcontrolLoop\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.389915] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/motion_arbiter.cpp:512:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kis_recovery\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.390081] (neo_robot_safety) StderrLine: {'line': b'  512 |         bool \x1b[01;35m\x1b[Kis_recovery\x1b[m\x1b[K = is_rotate || is_backup;\n'}
+[17.390214] (neo_robot_safety) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.396014] (-) TimerEvent: {}
+[17.500556] (-) TimerEvent: {}
+[17.601237] (-) TimerEvent: {}
+[17.673970] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kint HumanDetector::\x1b[01;32m\x1b[KfindTrack\x1b[m\x1b[K(float, float)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.674459] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:152:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<Track>::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.674776] (neo_robot_safety) StderrLine: {'line': b'  152 |         for(int i = 0; \x1b[01;35m\x1b[Ki < tracks_.size()\x1b[m\x1b[K; i++)\n'}
+[17.675022] (neo_robot_safety) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.683663] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid HumanDetector::\x1b[01;32m\x1b[KscanCallback\x1b[m\x1b[K(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[17.683989] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_detect.cpp:262:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Khuman_detected\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[17.684140] (neo_robot_safety) StderrLine: {'line': b'  262 |         bool \x1b[01;35m\x1b[Khuman_detected\x1b[m\x1b[K = false;\n'}
+[17.684255] (neo_robot_safety) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[17.701386] (-) TimerEvent: {}
+[17.804536] (-) TimerEvent: {}
+[17.905026] (-) TimerEvent: {}
+[18.008562] (-) TimerEvent: {}
+[18.109076] (-) TimerEvent: {}
+[18.212566] (-) TimerEvent: {}
+[18.313002] (-) TimerEvent: {}
+[18.413478] (-) TimerEvent: {}
+[18.513921] (-) TimerEvent: {}
+[18.616570] (-) TimerEvent: {}
+[18.717064] (-) TimerEvent: {}
+[18.761314] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void human_n_obstacle_layer::HumanLayer::\x1b[01;32m\x1b[KupdateBounds\x1b[m\x1b[K(double, double, double, double*, double*, double*, double*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[18.764654] (neo_robot_safety) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:212:62:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Krobot_yaw\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[18.764966] (neo_robot_safety) StderrLine: {'line': b'  212 |     void updateBounds(double robot_x, double robot_y, \x1b[01;35m\x1b[Kdouble robot_yaw\x1b[m\x1b[K,\n'}
+[18.765111] (neo_robot_safety) StderrLine: {'line': b'      |                                                       \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[18.817205] (-) TimerEvent: {}
+[18.917697] (-) TimerEvent: {}
+[19.018469] (-) TimerEvent: {}
+[19.119871] (-) TimerEvent: {}
+[19.221770] (-) TimerEvent: {}
+[19.325544] (-) TimerEvent: {}
+[19.426003] (-) TimerEvent: {}
+[19.526492] (-) TimerEvent: {}
+[19.627249] (-) TimerEvent: {}
+[19.730780] (-) TimerEvent: {}
+[19.831240] (-) TimerEvent: {}
+[19.932915] (-) TimerEvent: {}
+[20.033740] (-) TimerEvent: {}
+[20.135562] (-) TimerEvent: {}
+[20.237553] (-) TimerEvent: {}
+[20.337989] (-) TimerEvent: {}
+[20.438515] (-) TimerEvent: {}
+[20.541547] (-) TimerEvent: {}
+[20.642009] (-) TimerEvent: {}
+[20.742494] (-) TimerEvent: {}
+[20.843283] (-) TimerEvent: {}
+[20.946777] (-) TimerEvent: {}
+[21.047558] (-) TimerEvent: {}
+[21.150556] (-) TimerEvent: {}
+[21.250996] (-) TimerEvent: {}
+[21.351787] (-) TimerEvent: {}
+[21.452550] (-) TimerEvent: {}
+[21.555766] (-) TimerEvent: {}
+[21.656559] (-) TimerEvent: {}
+[21.757308] (-) TimerEvent: {}
+[21.860545] (-) TimerEvent: {}
+[21.960999] (-) TimerEvent: {}
+[22.061764] (-) TimerEvent: {}
+[22.167562] (-) TimerEvent: {}
+[22.268016] (-) TimerEvent: {}
+[22.368517] (-) TimerEvent: {}
+[22.469294] (-) TimerEvent: {}
+[22.570111] (-) TimerEvent: {}
+[22.671928] (-) TimerEvent: {}
+[22.773758] (-) TimerEvent: {}
+[22.874532] (-) TimerEvent: {}
+[22.902096] (laser_geometry) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[22.974668] (-) TimerEvent: {}
+[23.075382] (-) TimerEvent: {}
+[23.181578] (-) TimerEvent: {}
+[23.290556] (-) TimerEvent: {}
+[23.306482] (laser_geometry) StdoutLine: {'line': b'[ 75%] Built target gtest\n'}
+[23.392598] (-) TimerEvent: {}
+[23.424768] (laser_geometry) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding CXX object CMakeFiles/projection_test.dir/test/projection_test.cpp.o\x1b[0m\n'}
+[23.492722] (-) TimerEvent: {}
+[23.593177] (-) TimerEvent: {}
+[23.696557] (-) TimerEvent: {}
+[23.799571] (-) TimerEvent: {}
+[23.900473] (-) TimerEvent: {}
+[24.001235] (-) TimerEvent: {}
+[24.104550] (-) TimerEvent: {}
+[24.205073] (-) TimerEvent: {}
+[24.310548] (-) TimerEvent: {}
+[24.413547] (-) TimerEvent: {}
+[24.514034] (-) TimerEvent: {}
+[24.616561] (-) TimerEvent: {}
+[24.717066] (-) TimerEvent: {}
+[24.820557] (-) TimerEvent: {}
+[24.921028] (-) TimerEvent: {}
+[25.021864] (-) TimerEvent: {}
+[25.123957] (-) TimerEvent: {}
+[25.224721] (-) TimerEvent: {}
+[25.327768] (-) TimerEvent: {}
+[25.428251] (-) TimerEvent: {}
+[25.531549] (-) TimerEvent: {}
+[25.631979] (-) TimerEvent: {}
+[25.732736] (-) TimerEvent: {}
+[25.836546] (-) TimerEvent: {}
+[25.936982] (-) TimerEvent: {}
+[26.037743] (-) TimerEvent: {}
+[26.141565] (-) TimerEvent: {}
+[26.242098] (-) TimerEvent: {}
+[26.345554] (-) TimerEvent: {}
+[26.446019] (-) TimerEvent: {}
+[26.546815] (-) TimerEvent: {}
+[26.648571] (-) TimerEvent: {}
+[26.750573] (-) TimerEvent: {}
+[26.851055] (-) TimerEvent: {}
+[26.951821] (-) TimerEvent: {}
+[27.054771] (-) TimerEvent: {}
+[27.155255] (-) TimerEvent: {}
+[27.259550] (-) TimerEvent: {}
+[27.361569] (-) TimerEvent: {}
+[27.462286] (-) TimerEvent: {}
+[27.563060] (-) TimerEvent: {}
+[27.663856] (-) TimerEvent: {}
+[27.766574] (-) TimerEvent: {}
+[27.867278] (-) TimerEvent: {}
+[27.970557] (-) TimerEvent: {}
+[28.071234] (-) TimerEvent: {}
+[28.172017] (-) TimerEvent: {}
+[28.276731] (-) TimerEvent: {}
+[28.377266] (-) TimerEvent: {}
+[28.478045] (-) TimerEvent: {}
+[28.578835] (-) TimerEvent: {}
+[28.681769] (-) TimerEvent: {}
+[28.782564] (-) TimerEvent: {}
+[28.885969] (-) TimerEvent: {}
+[28.986773] (-) TimerEvent: {}
+[29.087483] (-) TimerEvent: {}
+[29.188884] (-) TimerEvent: {}
+[29.290573] (-) TimerEvent: {}
+[29.393552] (-) TimerEvent: {}
+[29.493983] (-) TimerEvent: {}
+[29.594391] (-) TimerEvent: {}
+[29.697540] (-) TimerEvent: {}
+[29.798018] (-) TimerEvent: {}
+[29.898802] (-) TimerEvent: {}
+[29.999552] (-) TimerEvent: {}
+[30.106550] (-) TimerEvent: {}
+[30.207016] (-) TimerEvent: {}
+[30.307887] (-) TimerEvent: {}
+[30.408704] (-) TimerEvent: {}
+[30.509522] (-) TimerEvent: {}
+[30.612549] (-) TimerEvent: {}
+[30.713024] (-) TimerEvent: {}
+[30.813802] (-) TimerEvent: {}
+[30.916755] (-) TimerEvent: {}
+[31.017240] (-) TimerEvent: {}
+[31.118032] (-) TimerEvent: {}
+[31.219751] (-) TimerEvent: {}
+[31.321769] (-) TimerEvent: {}
+[31.422615] (-) TimerEvent: {}
+[31.525802] (-) TimerEvent: {}
+[31.626569] (-) TimerEvent: {}
+[31.729465] (-) TimerEvent: {}
+[31.830261] (-) TimerEvent: {}
+[31.931575] (-) TimerEvent: {}
+[32.036548] (-) TimerEvent: {}
+[32.138546] (-) TimerEvent: {}
+[32.239292] (-) TimerEvent: {}
+[32.340133] (-) TimerEvent: {}
+[32.440964] (-) TimerEvent: {}
+[32.541688] (-) TimerEvent: {}
+[32.646551] (-) TimerEvent: {}
+[32.747032] (-) TimerEvent: {}
+[32.847758] (-) TimerEvent: {}
+[32.948608] (-) TimerEvent: {}
+[33.051781] (-) TimerEvent: {}
+[33.152547] (-) TimerEvent: {}
+[33.255007] (-) TimerEvent: {}
+[33.356612] (-) TimerEvent: {}
+[33.457574] (-) TimerEvent: {}
+[33.558398] (-) TimerEvent: {}
+[33.661839] (-) TimerEvent: {}
+[33.762397] (-) TimerEvent: {}
+[33.863180] (-) TimerEvent: {}
+[33.966577] (-) TimerEvent: {}
+[34.067120] (-) TimerEvent: {}
+[34.167742] (-) TimerEvent: {}
+[34.271271] (-) TimerEvent: {}
+[34.371774] (-) TimerEvent: {}
+[34.474795] (-) TimerEvent: {}
+[34.575239] (-) TimerEvent: {}
+[34.677713] (-) TimerEvent: {}
+[34.780549] (-) TimerEvent: {}
+[34.881025] (-) TimerEvent: {}
+[34.994835] (-) TimerEvent: {}
+[35.102334] (-) TimerEvent: {}
+[35.221487] (-) TimerEvent: {}
+[35.410805] (-) TimerEvent: {}
+[35.747642] (-) TimerEvent: {}
+[36.131627] (-) TimerEvent: {}
+[37.063095] (-) TimerEvent: {}
+[37.327825] (-) TimerEvent: {}
+[37.572585] (-) TimerEvent: {}
+[37.804926] (-) TimerEvent: {}
+[37.983023] (-) TimerEvent: {}
+[38.185325] (-) TimerEvent: {}
+[38.363247] (-) TimerEvent: {}
+[38.642052] (-) TimerEvent: {}
+[38.820053] (-) TimerEvent: {}
+[39.006873] (-) TimerEvent: {}
+[43.844621] (-) TimerEvent: {}
+[44.061196] (-) TimerEvent: {}
+[44.426033] (-) TimerEvent: {}
+[62.373897] (-) TimerEvent: {}
+[71.968262] (-) TimerEvent: {}
+[76.737272] (-) TimerEvent: {}
+[80.658078] (-) TimerEvent: {}
+[81.050768] (-) TimerEvent: {}
+[82.995737] (-) TimerEvent: {}
+[83.511185] (-) TimerEvent: {}
+[85.295951] (-) TimerEvent: {}
+[85.518665] (-) TimerEvent: {}
+[85.911784] (-) TimerEvent: {}
+[86.551854] (-) TimerEvent: {}
+[86.830031] (-) TimerEvent: {}
+[87.038925] (-) TimerEvent: {}
+[87.277722] (-) TimerEvent: {}
+[87.983777] (-) TimerEvent: {}
+[88.379925] (-) TimerEvent: {}
+[89.370260] (-) TimerEvent: {}
+[89.755767] (-) TimerEvent: {}
+[89.982101] (-) TimerEvent: {}
+[90.207879] (-) TimerEvent: {}
+[90.477487] (-) TimerEvent: {}
+[90.683638] (-) TimerEvent: {}
+[90.999857] (-) TimerEvent: {}
+[91.851072] (-) TimerEvent: {}
+[92.303228] (-) TimerEvent: {}
+[92.825621] (-) TimerEvent: {}
+[93.208810] (-) TimerEvent: {}
+[93.472240] (-) TimerEvent: {}
+[93.969717] (-) TimerEvent: {}
+[94.520887] (-) TimerEvent: {}
+[96.096346] (-) TimerEvent: {}
+[108.843897] (-) TimerEvent: {}
+[109.723463] (-) TimerEvent: {}
+[110.194530] (-) TimerEvent: {}
+[110.548046] (-) TimerEvent: {}
+[110.912076] (-) TimerEvent: {}
+[111.765641] (-) TimerEvent: {}
+[112.060128] (-) TimerEvent: {}
+[113.118675] (-) TimerEvent: {}
+[113.656613] (-) TimerEvent: {}
+[114.233978] (-) TimerEvent: {}
+[120.762470] (-) TimerEvent: {}
+[163.114111] (-) TimerEvent: {}
+[293.048921] (-) TimerEvent: {}
+[293.305281] (-) TimerEvent: {}
+[293.552590] (-) TimerEvent: {}
+[293.816328] (-) TimerEvent: {}
+[294.047681] (-) TimerEvent: {}
+[294.279845] (-) TimerEvent: {}
+[294.492995] (-) TimerEvent: {}
+[294.772501] (-) TimerEvent: {}
+[295.149940] (-) TimerEvent: {}
+[295.353207] (-) TimerEvent: {}
+[295.622849] (-) TimerEvent: {}
+[295.974118] (-) TimerEvent: {}
+[296.708999] (-) TimerEvent: {}
+[298.055459] (-) TimerEvent: {}
+[310.661478] (-) TimerEvent: {}
+[311.090850] (-) TimerEvent: {}
+[311.558187] (-) TimerEvent: {}
+[311.902375] (-) TimerEvent: {}
+[312.228859] (-) TimerEvent: {}
+[312.582090] (-) TimerEvent: {}
+[313.017938] (-) TimerEvent: {}
+[313.272403] (-) TimerEvent: {}
+[313.688430] (-) TimerEvent: {}
+[313.883941] (-) TimerEvent: {}
+[314.047661] (-) TimerEvent: {}
+[315.370597] (-) TimerEvent: {}
+[315.686117] (-) TimerEvent: {}
+[315.896276] (-) TimerEvent: {}
+[316.113199] (-) TimerEvent: {}
+[316.358378] (-) TimerEvent: {}
+[316.718711] (-) TimerEvent: {}
+[316.926312] (-) TimerEvent: {}
+[317.094146] (-) TimerEvent: {}
+[317.261601] (-) TimerEvent: {}
+[317.579981] (-) TimerEvent: {}
+[317.869497] (-) TimerEvent: {}
+[318.141226] (-) TimerEvent: {}
+[318.350555] (-) TimerEvent: {}
+[318.586762] (-) TimerEvent: {}
+[318.795313] (-) TimerEvent: {}
+[319.194024] (-) TimerEvent: {}
+[319.601648] (-) TimerEvent: {}
+[319.843306] (-) TimerEvent: {}
+[320.133846] (-) TimerEvent: {}
+[320.430775] (-) TimerEvent: {}
+[320.724122] (-) TimerEvent: {}
+[321.651482] (-) TimerEvent: {}
+[322.092070] (-) TimerEvent: {}
+[333.926746] (-) TimerEvent: {}
+[352.385309] (-) TimerEvent: {}
+[360.199652] (-) TimerEvent: {}
+[371.625881] (-) TimerEvent: {}
+[381.804505] (-) TimerEvent: {}
+[391.442313] (neo_robot_safety) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motion_arbiter.dir/build.make:76: CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o] Interrupt\n'}
+[391.455250] (-) TimerEvent: {}
+[391.455929] (neo_robot_safety) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/human_n_obstacle_layer.dir/build.make:76: CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o] Interrupt\n'}
+[391.456203] (laser_geometry) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/projection_test.dir/build.make:76: CMakeFiles/projection_test.dir/test/projection_test.cpp.o] Interrupt\n'}
+[391.460890] (laser_geometry) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:240: CMakeFiles/projection_test.dir/all] Interrupt\n'}
+[391.461251] (laser_geometry) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[391.461437] (neo_robot_controller) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/lookahead_controller.dir/build.make:76: CMakeFiles/lookahead_controller.dir/src/lookahead_controller.cpp.o] Interrupt\n'}
+[391.466657] (neo_robot_controller) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lookahead_controller.dir/all] Interrupt\n'}
+[391.467004] (neo_robot_controller) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[391.467174] (neo_robot_safety) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/human_n_obstacle_layer.dir/all] Interrupt\n'}
+[391.467340] (neo_robot_safety) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/lidar_human_detect.dir/build.make:76: CMakeFiles/lidar_human_detect.dir/src/lidar_human_detect.cpp.o] Interrupt\n'}
+[391.467436] (neo_robot_safety) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/lidar_human_detect.dir/all] Interrupt\n'}
+[391.467619] (neo_robot_safety) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:141: CMakeFiles/motion_arbiter.dir/all] Interrupt\n'}
+[391.467784] (neo_robot_safety) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[391.467908] (cam_vision_control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/wall_follow.dir/build.make:76: CMakeFiles/wall_follow.dir/src/wall_follow.cpp.o] Interrupt\n'}
+[391.468435] (cam_vision_control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/wall_follow.dir/all] Interrupt\n'}
+[391.468915] (cam_vision_control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[391.516664] (laser_geometry) CommandEnded: {'returncode': -2}
+[391.555631] (-) TimerEvent: {}
+[391.657164] (-) TimerEvent: {}
+[391.677864] (laser_geometry) JobEnded: {'identifier': 'laser_geometry', 'rc': 'SIGINT'}
+[391.678582] (cam_vision_control) JobEnded: {'identifier': 'cam_vision_control', 'rc': 'SIGINT'}
+[391.679048] (neo_robot_controller) JobEnded: {'identifier': 'neo_robot_controller', 'rc': 'SIGINT'}
+[391.679541] (neo_robot_safety) JobEnded: {'identifier': 'neo_robot_safety', 'rc': 'SIGINT'}
+[391.714903] (neorobot_bringup) JobSkipped: {'identifier': 'neorobot_bringup'}
+[391.715037] (uart_driver) JobSkipped: {'identifier': 'uart_driver'}
+[391.715131] (ydlidar_ros2_driver) JobSkipped: {'identifier': 'ydlidar_ros2_driver'}
+[391.715209] (-) EventReactorShutdown: {}

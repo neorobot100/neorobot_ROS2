@@ -1,0 +1,83 @@
+[0.030s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/neo_robot_controller -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/neo_robot_controller
+[0.258s] -- The C compiler identification is GNU 13.3.0
+[0.459s] -- The CXX compiler identification is GNU 13.3.0
+[0.525s] -- Detecting C compiler ABI info
+[0.777s] -- Detecting C compiler ABI info - done
+[0.853s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.857s] -- Detecting C compile features
+[0.857s] -- Detecting C compile features - done
+[0.898s] -- Detecting CXX compiler ABI info
+[1.238s] -- Detecting CXX compiler ABI info - done
+[1.277s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.277s] -- Detecting CXX compile features
+[1.278s] -- Detecting CXX compile features - done
+[1.288s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.764s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.098s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[2.191s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[2.225s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[2.257s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.306s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.477s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.483s] -- Found rmw_cyclonedds_cpp: 2.2.3 (/opt/ros/jazzy/share/rmw_cyclonedds_cpp/cmake)
+[2.567s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[2.699s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[2.936s] -- Found tf2: 0.36.19 (/opt/ros/jazzy/share/tf2/cmake)
+[2.968s] -- Found tf2_ros: 0.36.19 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[3.283s] -- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)
+[3.386s] -- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[3.431s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[3.434s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.434s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.444s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.758s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.758s] -- Configured cppcheck include dirs: 
+[3.758s] -- Configured cppcheck exclude dirs and/or files: 
+[3.760s] -- Added test 'lint_cmake' to check CMake code style
+[3.763s] -- Added test 'uncrustify' to check C / C++ code style
+[3.764s] -- Configured uncrustify additional arguments: 
+[3.764s] -- Added test 'xmllint' to check XML markup files
+[3.773s] -- Configuring done (3.7s)
+[3.831s] -- Generating done (0.0s)
+[3.851s] -- Build files have been written to: /home/neorobot/ros2_ws/build/neo_robot_controller
+[3.920s] Invoked command in '/home/neorobot/ros2_ws/build/neo_robot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/neo_robot_controller -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/neo_robot_controller
+[3.920s] Invoking command in '/home/neorobot/ros2_ws/build/neo_robot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/neo_robot_controller -- -j4 -l4
+[4.164s] [ 50%] [32mBuilding CXX object CMakeFiles/lookahead_controller.dir/src/lookahead_controller.cpp.o[0m
+[16.999s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:[m[K In member function ‘[01m[Kvoid LookaheadController::[01;32m[Kloop[m[K()[m[K’:
+[17.000s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:262:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcurvature_scale[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.000s]   262 |         double [01;35m[Kcurvature_scale[m[K = 1.0 / (1.0 + fabs(curvature) * 2.0);
+[17.000s]       |                [01;35m[K^~~~~~~~~~~~~~~[m[K
+[17.002s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:264:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle_scale[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.002s]   264 |         double [01;35m[Kangle_scale[m[K = exp(-angle_abs * 2.0);
+[17.002s]       |                [01;35m[K^~~~~~~~~~~[m[K
+[17.008s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:[m[K In member function ‘[01m[Kvoid LookaheadController::[01;32m[KimuCallback[m[K(sensor_msgs::msg::Imu_<std::allocator<void> >::SharedPtr)[m[K’:
+[17.009s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:391:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kwx[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.009s]   391 |         double [01;35m[Kwx[m[K = msg->angular_velocity.x;
+[17.009s]       |                [01;35m[K^~[m[K
+[17.010s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:392:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kwy[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.010s]   392 |         double [01;35m[Kwy[m[K = msg->angular_velocity.y;
+[17.010s]       |                [01;35m[K^~[m[K
+[17.010s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:393:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kwz[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.013s]   393 |         double [01;35m[Kwz[m[K = msg->angular_velocity.z;
+[17.013s]       |                [01;35m[K^~[m[K
+[17.013s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:396:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kax[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.014s]   396 |         double [01;35m[Kax[m[K = msg->linear_acceleration.x;
+[17.014s]       |                [01;35m[K^~[m[K
+[17.014s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:397:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kay[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.014s]   397 |         double [01;35m[Kay[m[K = msg->linear_acceleration.y;
+[17.014s]       |                [01;35m[K^~[m[K
+[17.014s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:398:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kaz[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.014s]   398 |         double [01;35m[Kaz[m[K = msg->linear_acceleration.z;
+[17.015s]       |                [01;35m[K^~[m[K
+[17.015s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:401:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kqx[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.015s]   401 |         double [01;35m[Kqx[m[K = msg->orientation.x;
+[17.015s]       |                [01;35m[K^~[m[K
+[17.015s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:402:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kqy[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.015s]   402 |         double [01;35m[Kqy[m[K = msg->orientation.y;
+[17.015s]       |                [01;35m[K^~[m[K
+[17.016s] [01m[K/home/neorobot/ros2_ws/src/neo_robot_controller/src/lookahead_controller.cpp:404:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kqw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[17.019s]   404 |         double [01;35m[Kqw[m[K = msg->orientation.w;
+[17.019s]       |                [01;35m[K^~[m[K
+[391.448s] gmake[2]: *** [CMakeFiles/lookahead_controller.dir/build.make:76: CMakeFiles/lookahead_controller.dir/src/lookahead_controller.cpp.o] Interrupt
+[391.451s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/lookahead_controller.dir/all] Interrupt
+[391.451s] gmake: *** [Makefile:146: all] Interrupt

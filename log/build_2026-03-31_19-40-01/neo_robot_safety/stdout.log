@@ -1,0 +1,4 @@
+[ 12%] [32mBuilding CXX object CMakeFiles/motion_arbiter.dir/src/motion_arbiter.cpp.o[0m
+[ 37%] Built target lidar_human_detect
+[ 62%] Built target human_n_obstacle_layer
+[ 87%] Built target lidar_human_leg_detect

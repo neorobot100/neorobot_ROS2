@@ -1,0 +1,11 @@
+[ 50%] Built target human_n_obstacle_layer
+[ 50%] Built target motion_arbiter
+[ 75%] Built target lidar_human_detect
+[ 87%] [32mBuilding CXX object CMakeFiles/lidar_human_leg_detect.dir/src/lidar_human_leg_detect.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/lidar_human_leg_detect.cpp:6:10:[m[K [01;31m[Kfatal error: [m[Kvisualization_msgs/msg/marker.hpp: No such file or directory
+    6 | #include [01;31m[K<visualization_msgs/msg/marker.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/lidar_human_leg_detect.dir/build.make:76: CMakeFiles/lidar_human_leg_detect.dir/src/lidar_human_leg_detect.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/lidar_human_leg_detect.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

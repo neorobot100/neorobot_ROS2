@@ -1,0 +1,16 @@
+/home/neorobot/ros2_ws/install/uart_driver/lib/uart_driver/uart_node
+/home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/package_run_dependencies/uart_driver
+/home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/parent_prefix_path/uart_driver
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.sh
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.dsv
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.sh
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.dsv
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.bash
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.sh
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.zsh
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.dsv
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.dsv
+/home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/packages/uart_driver
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig.cmake
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig-version.cmake
+/home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.xml

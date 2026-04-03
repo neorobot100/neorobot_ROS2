@@ -1,0 +1,34 @@
+[ 33%] Built target lidar_human_detect
+[ 66%] Built target motion_arbiter
+[ 83%] [32mBuilding CXX object CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o[0m
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KbumperLeftCallback[m[K(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:110:64:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Khuman_n_obstacle_layer::HumanLayer::createBlockedZone(human_n_obstacle_layer::HumanLayer::Sensor_Kind)[m[K’
+  110 |       if (bumper_left_ && !bumper_prev_left_) [01;31m[KcreateBlockedZone(Sensor_Kind::BUMPER_LEFT)[m[K;
+      |                                               [01;31m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:125:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KcreateBlockedZone[m[K()[m[K’
+  125 |     void [01;36m[KcreateBlockedZone[m[K( )
+      |          [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:125:10:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KbumperRightCallback[m[K(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:116:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Khuman_n_obstacle_layer::HumanLayer::createBlockedZone(human_n_obstacle_layer::HumanLayer::Sensor_Kind)[m[K’
+  116 |       if (bumper_right_ && !bumper_prev_right_) [01;31m[KcreateBlockedZone(Sensor_Kind::BUMPER_RIGHT)[m[K;
+      |                                                 [01;31m[K~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:125:10:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KcreateBlockedZone[m[K()[m[K’
+  125 |     void [01;36m[KcreateBlockedZone[m[K( )
+      |          [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:125:10:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvoid human_n_obstacle_layer::HumanLayer::[01;32m[KcreateBlockedZone[m[K()[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:159:12:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor[m[K’ was not declared in this scope; did you mean ‘[01m[Ksnesor[m[K’?
+  159 |         if([01;31m[Ksensor[m[K == Sensor_Kind::BUMPER_RIGHT) side *= -1.;
+      |            [01;31m[K^~~~~~[m[K
+      |            [32m[Ksnesor[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:128:19:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksnesor[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  128 |       Sensor_Kind [01;35m[Ksnesor[m[K;
+      |                   [01;35m[K^~~~~~[m[K
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:[m[K In member function ‘[01m[Kvirtual void human_n_obstacle_layer::HumanLayer::[01;32m[KupdateBounds[m[K(double, double, double, double*, double*, double*, double*)[m[K’:
+[01m[K/home/neorobot/ros2_ws/src/neo_robot_safety/src/human_n_obstacle_layer.cpp:213:62:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Krobot_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  213 |     void updateBounds(double robot_x, double robot_y, [01;35m[Kdouble robot_yaw[m[K,
+      |                                                       [01;35m[K~~~~~~~^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/human_n_obstacle_layer.dir/build.make:76: CMakeFiles/human_n_obstacle_layer.dir/src/human_n_obstacle_layer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/human_n_obstacle_layer.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

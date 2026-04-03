@@ -1,0 +1,22 @@
+[0.036s] Invoking command in '/home/neorobot/ros2_ws/build/uart_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/uart_driver -- -j4 -l4
+[0.175s] [100%] Built target uart_node
+[0.239s] Invoked command in '/home/neorobot/ros2_ws/build/uart_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/uart_driver -- -j4 -l4
+[0.239s] Invoking command in '/home/neorobot/ros2_ws/build/uart_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/uart_driver
+[0.258s] -- Install configuration: ""
+[0.259s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/lib/uart_driver/uart_node
+[0.261s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/package_run_dependencies/uart_driver
+[0.261s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/parent_prefix_path/uart_driver
+[0.261s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.sh
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/ament_prefix_path.dsv
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.sh
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/environment/path.dsv
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.bash
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.sh
+[0.264s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.zsh
+[0.265s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/local_setup.dsv
+[0.265s] -- Installing: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.dsv
+[0.265s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/ament_index/resource_index/packages/uart_driver
+[0.265s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig.cmake
+[0.268s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/cmake/uart_driverConfig-version.cmake
+[0.268s] -- Up-to-date: /home/neorobot/ros2_ws/install/uart_driver/share/uart_driver/package.xml
+[0.270s] Invoked command in '/home/neorobot/ros2_ws/build/uart_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/neorobot/ros2_ws/build/uart_driver

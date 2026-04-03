@@ -1,0 +1,5 @@
+<library path="human_n_obstacle_layer">
+  <class name="human_n_obstacle_layer::HumanLayer"
+         type="human_n_obstacle_layer::HumanLayer"
+         base_class_type="nav2_costmap_2d::Layer"/>
+</library>

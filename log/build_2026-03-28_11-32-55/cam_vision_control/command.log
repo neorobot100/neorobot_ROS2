@@ -1,0 +1,3 @@
+Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/cam_vision_control -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/cam_vision_control
+Invoked command in '/home/neorobot/ros2_ws/build/cam_vision_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/neorobot/ros2_ws/src/cam_vision_control -DCMAKE_INSTALL_PREFIX=/home/neorobot/ros2_ws/install/cam_vision_control
+Invoking command in '/home/neorobot/ros2_ws/build/cam_vision_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/neorobot/ros2_ws/build/cam_vision_control -- -j4 -l4
