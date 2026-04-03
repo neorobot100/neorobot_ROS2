@@ -1,4 +1,0 @@
-source;share/uart_driver/local_setup.bash
-source;share/uart_driver/local_setup.dsv
-source;share/uart_driver/local_setup.sh
-source;share/uart_driver/local_setup.zsh

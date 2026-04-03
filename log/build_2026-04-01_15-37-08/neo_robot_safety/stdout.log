@@ -1,4 +1,0 @@
-[ 50%] Built target human_n_obstacle_layer
-[ 50%] Built target motion_arbiter
-[ 75%] Built target lidar_human_detect
-[ 87%] [32mBuilding CXX object CMakeFiles/lidar_human_leg_detect.dir/src/lidar_human_leg_detect.cpp.o[0m
