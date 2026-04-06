@@ -31,6 +31,7 @@
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "sensor_msgs/msg/range.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include <nav_msgs/msg/odometry.hpp>
 
 using namespace std::chrono_literals;
 using NavigateToPose = nav2_msgs::action::NavigateToPose;
@@ -172,223 +173,254 @@ public:
 
     nav_client_ =
     rclcpp_action::create_client<NavigateToPose>(this,"navigate_to_pose");
+
+
+    odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
+    "/odom", 10,
+    std::bind(&MotionArbiter::odomCallback, this, std::placeholders::_1));
 }
 
 private:
 
-/* ---------- state ---------- */
+    /* ---------- state ---------- */
 
-SafetyState state_ = SafetyState::NORMAL;
+    SafetyState state_ = SafetyState::NORMAL;
 
-geometry_msgs::msg::Point lidar_human_leg_;
+    geometry_msgs::msg::Point lidar_human_leg_;
 
-/* ---------- cmd sources ---------- */
-geometry_msgs::msg::Twist lookahead_cmd_;
-geometry_msgs::msg::Twist nav_cmd_;
-geometry_msgs::msg::Twist joy_cmd_;
-/* ---------- cmd_vle publish ---------- */
-geometry_msgs::msg::Twist out;
-/* ---------- sensor values ---------- */
+    /* ---------- cmd sources ---------- */
+    geometry_msgs::msg::Twist lookahead_cmd_;
+    geometry_msgs::msg::Twist nav_cmd_;
+    geometry_msgs::msg::Twist joy_cmd_;
+    /* ---------- cmd_vle publish ---------- */
+    geometry_msgs::msg::Twist out;
+    /* ---------- sensor values ---------- */
 
-float scan_min_front_ = 10.0;
-float scan_min_left45_ = 100.;
-float scan_min_right45_ = 100.;
+    float scan_min_front_ = 10.0;
+    float scan_min_left45_ = 100.;
+    float scan_min_right45_ = 100.;
 
-float psd_left_ = 1.0;
-float psd_right_ = 1.0;
+    float psd_left_ = 1.0;
+    float psd_right_ = 1.0;
 
-bool psd_event_left_flg = false;
-bool psd_event_right_flg = false;
+    bool psd_event_left_flg = false;
+    bool psd_event_right_flg = false;
 
-float ultra_left_ = 1.0;
-float ultra_right_ = 1.0;
+    float ultra_left_ = 1.0;
+    float ultra_right_ = 1.0;
 
-bool bumper_left_ = false;
-bool bumper_right_ = false;
+    bool ultra_event_left_flg = false;
+    bool ultra_event_right_flg = false;
 
-bool bumper_prev_left_ = false;
-bool bumper_prev_right_ = false;
-bool bumper_prev_ = false;
+    bool bumper_left_ = false;
+    bool bumper_right_ = false;
 
-bool bumper_event_left_flg = false;
-bool bumper_event_right_flg = false;
+    bool bumper_prev_left_ = false;
+    bool bumper_prev_right_ = false;
+    bool bumper_prev_ = false;
 
-bool cliff_fl_ = false;
-bool cliff_fc_ = false;
-bool cliff_fr_ = false;
-bool cliff_rl_ = false;
-bool cliff_rr_ = false;
+    bool bumper_event_left_flg = false;
+    bool bumper_event_right_flg = false;
 
-int cliff_count_ = 0;
+    bool cliff_fl_ = false;
+    bool cliff_fc_ = false;
+    bool cliff_fr_ = false;
+    bool cliff_rl_ = false;
+    bool cliff_rr_ = false;
 
-
-bool wheel_lift_l_ = false;
-bool wheel_lift_r_ = false;
-
+    int cliff_count_ = 0;
 
 
+    bool wheel_lift_l_ = false;
+    bool wheel_lift_r_ = false;
 
-rclcpp::Time recovery_start_;
-rclcpp::Time soft_stop_start_;
-/* ---------- ROS ---------- */
 
-rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr nav_sub_;
-rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joy_sub_;
-rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr sub_lookahead_;
 
-rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
 
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bumper_left_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bumper_right_sub_;
+    rclcpp::Time recovery_start_;
+    rclcpp::Time soft_stop_start_;
+    /* ---------- ROS ---------- */
 
-rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr ultra_left_sub_;
-rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr ultra_right_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr nav_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joy_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr sub_lookahead_;
 
-rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr psd_left_sub_;
-rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr psd_right_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
 
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fl_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fc_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fr_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_rl_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_rr_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bumper_left_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr bumper_right_sub_;
 
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr wheel_lift_l_sub_;
-rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr wheel_lift_r_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr ultra_left_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr ultra_right_sub_;
 
-rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_pub_;
-rclcpp::TimerBase::SharedPtr timer_;
+    rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr psd_left_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::Range>::SharedPtr psd_right_sub_;
 
-rclcpp::Publisher<std_msgs::msg::String>::SharedPtr event_pub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fl_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fc_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_fr_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_rl_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr cliff_rr_sub_;
 
-rclcpp_action::Client<NavigateToPose>::SharedPtr nav_client_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr wheel_lift_l_sub_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr wheel_lift_r_sub_;
 
-rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr human_sub_;
-bool human_leg_detected_ = false;
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_pub_;
+    rclcpp::TimerBase::SharedPtr timer_;
 
-rclcpp::Time last_nav_time_;
-rclcpp::Time last_joy_time_;
-rclcpp::Time last_lookahead_time_;
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr event_pub_;
 
-double cmd_timeout_ = 0.5;
+    rclcpp_action::Client<NavigateToPose>::SharedPtr nav_client_;
 
-/* ---------- callbacks ---------- */
+    rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr human_sub_;
 
-// void navCallback(const geometry_msgs::msg::Twist::SharedPtr msg){nav_cmd_=*msg;}
-// void joyCallback(const geometry_msgs::msg::Twist::SharedPtr msg){joy_cmd_=*msg;}
+    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;
+    bool human_leg_detected_ = false;
 
-void bumperLeftCallback(const std_msgs::msg::Bool::SharedPtr msg){bumper_left_=msg->data;}
-void bumperRightCallback(const std_msgs::msg::Bool::SharedPtr msg){bumper_right_=msg->data;}
+    rclcpp::Time last_nav_time_;
+    rclcpp::Time last_joy_time_;
+    rclcpp::Time last_lookahead_time_;
 
-void ultraLeftCallback(const sensor_msgs::msg::Range::SharedPtr msg){ultra_left_=msg->range;}
-void ultraRightCallback(const sensor_msgs::msg::Range::SharedPtr msg){ultra_right_=msg->range;}
+    double cmd_timeout_ = 0.5;
 
-void psdLeftCallback(const sensor_msgs::msg::Range::SharedPtr msg){psd_left_=msg->range;}
-void psdRightCallback(const sensor_msgs::msg::Range::SharedPtr msg){psd_right_=msg->range;}
+    /* ---------- callbacks ---------- */
 
-void cliffFLCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fl_=msg->data;}
-void cliffFCCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fc_=msg->data;}
-void cliffFRCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fr_=msg->data;}
-void cliffRLCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_rl_=msg->data;}
-void cliffRRCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_rr_=msg->data;}
+    // void navCallback(const geometry_msgs::msg::Twist::SharedPtr msg){nav_cmd_=*msg;}
+    // void joyCallback(const geometry_msgs::msg::Twist::SharedPtr msg){joy_cmd_=*msg;}
 
-void wheelLiftLCallback(const std_msgs::msg::Bool::SharedPtr msg)
-{
-    wheel_lift_l_ = msg->data;
-}
+    void bumperLeftCallback(const std_msgs::msg::Bool::SharedPtr msg){bumper_left_=msg->data;}
+    void bumperRightCallback(const std_msgs::msg::Bool::SharedPtr msg){bumper_right_=msg->data;}
 
-void wheelLiftRCallback(const std_msgs::msg::Bool::SharedPtr msg)
-{
-    wheel_lift_r_ = msg->data;
-}
+    void ultraLeftCallback(const sensor_msgs::msg::Range::SharedPtr msg){ultra_left_=msg->range;}
+    void ultraRightCallback(const sensor_msgs::msg::Range::SharedPtr msg){ultra_right_=msg->range;}
 
-void navCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
-{
-    nav_cmd_ = *msg;
-    last_nav_time_ = now();
-}
+    void psdLeftCallback(const sensor_msgs::msg::Range::SharedPtr msg){psd_left_=msg->range;}
+    void psdRightCallback(const sensor_msgs::msg::Range::SharedPtr msg){psd_right_=msg->range;}
 
-void joyCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
-{
-    joy_cmd_ = *msg;
-    last_joy_time_ = now();
-}
+    void cliffFLCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fl_=msg->data;}
+    void cliffFCCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fc_=msg->data;}
+    void cliffFRCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_fr_=msg->data;}
+    void cliffRLCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_rl_=msg->data;}
+    void cliffRRCallback(const std_msgs::msg::Bool::SharedPtr msg){cliff_rr_=msg->data;}
 
-void lookaheadCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
-{
-    lookahead_cmd_ = *msg;
-    last_lookahead_time_ = now();
-}
-
-void humanCallback(const geometry_msgs::msg::Point::SharedPtr msg)
-{
-    lidar_human_leg_ = *msg;
-}
-/* ---------- lidar front distance ---------- */
-#define yaw_offset  0.27
-#define min_distance 0.26 //26cm 이하는 inf
-
-void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
-{
-    // 🔧 파라미터 (튜닝 필수)
-    float angle45 = M_PI / 4.0;     // 45도
-    float width = 0.15;           // ±범위
-    float threshold = 0.8;        // 개입 거리 (m)
-    float k = 1.2;                // gain
-
-    float Front_Angle = 0. + yaw_offset; // 0.32-0.04995 = 0.27 , 18도 - 2.86도 = 15.14도
-    scan_min_front_  = getAvg(msg,  Front_Angle , width);
-    if(scan_min_front_ < min_distance) scan_min_front_ = min_distance;
-
-    float Left_Angle =  Front_Angle - angle45;
-    scan_min_left45_  = getAvg(msg,  Left_Angle , width);
-    if(scan_min_left45_ < min_distance) scan_min_left45_ = min_distance;
-
-    float Right_Angle =  Front_Angle + angle45;
-    scan_min_right45_  = getAvg(msg,  Right_Angle , width);
-    if(scan_min_right45_ < min_distance) scan_min_right45_ = min_distance;
-
-    //RCLCPP_INFO(this->get_logger(),"Left Min = %f, center = %f,Right_Angle = %f ",scan_min_left45_,scan_min_front_,scan_min_right45_);
-    
-
-}
-
-float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr scan,
-             float angle_center, float angle_width)
-{
-    int start = (angle_center - angle_width - scan->angle_min) / scan->angle_increment;
-    int end   = (angle_center + angle_width - scan->angle_min) / scan->angle_increment;
-
-    float sum = 0.0;
-    int count = 0;
-    float min_val = 999.0;
-
-    for (int i = start; i <= end; i++)
+    void wheelLiftLCallback(const std_msgs::msg::Bool::SharedPtr msg)
     {
-        if (i < 0 || i >= (int)scan->ranges.size()) continue;
-
-        float v = scan->ranges[i];
-        if (std::isfinite(v))
-        {
-            sum += v;
-            count++;
-            if (v < min_val) min_val = v;
-        }
+        wheel_lift_l_ = msg->data;
     }
 
-    // return count > 0 ? sum / count : std::numeric_limits<float>::infinity();
-    return count > 0 ? std::min(sum / count, min_val + 0.1f) : scan->range_max;
-}
+    void wheelLiftRCallback(const std_msgs::msg::Bool::SharedPtr msg)
+    {
+        wheel_lift_r_ = msg->data;
+    }
 
+    void navCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
+    {
+        nav_cmd_ = *msg;
+        last_nav_time_ = now();
+    }
 
-// 센서 우선순위
+    void joyCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
+    {
+        joy_cmd_ = *msg;
+        last_joy_time_ = now();
+    }
 
-// Wheel lift → 로봇 들림
-// Cliff → 낙하
-// Bumper → 충돌
-// PSD → 초근접
-// Ultrasonic → 근접
-// LiDAR → 일반 장애물
+    void lookaheadCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
+    {
+        lookahead_cmd_ = *msg;
+        last_lookahead_time_ = now();
+    }
+
+    void humanCallback(const geometry_msgs::msg::Point::SharedPtr msg)
+    {
+        lidar_human_leg_ = *msg;
+    }
+    /* ---------- lidar front distance ---------- */
+    #define yaw_offset  0.27
+    #define min_distance 0.26 //26cm 이하는 inf
+
+    void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
+    {
+        // 🔧 파라미터 (튜닝 필수)
+        float angle45 = M_PI / 4.0;     // 45도
+        float width = 0.15;           // ±범위
+        float threshold = 0.8;        // 개입 거리 (m)
+        float k = 1.2;                // gain
+
+        float Front_Angle = 0. + yaw_offset; // 0.32-0.04995 = 0.27 , 18도 - 2.86도 = 15.14도
+        scan_min_front_  = getAvg(msg,  Front_Angle , width);
+        if(scan_min_front_ < min_distance) scan_min_front_ = min_distance;
+
+        float Left_Angle =  Front_Angle - angle45;
+        scan_min_left45_  = getAvg(msg,  Left_Angle , width);
+        if(scan_min_left45_ < min_distance) scan_min_left45_ = min_distance;
+
+        float Right_Angle =  Front_Angle + angle45;
+        scan_min_right45_  = getAvg(msg,  Right_Angle , width);
+        if(scan_min_right45_ < min_distance) scan_min_right45_ = min_distance;
+
+        //RCLCPP_INFO(this->get_logger(),"Left Min = %f, center = %f,Right_Angle = %f ",scan_min_left45_,scan_min_front_,scan_min_right45_);
+        
+
+    }
+
+    float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr scan,
+                float angle_center, float angle_width)
+    {
+        int start = (angle_center - angle_width - scan->angle_min) / scan->angle_increment;
+        int end   = (angle_center + angle_width - scan->angle_min) / scan->angle_increment;
+
+        float sum = 0.0;
+        int count = 0;
+        float min_val = 999.0;
+
+        for (int i = start; i <= end; i++)
+        {
+            if (i < 0 || i >= (int)scan->ranges.size()) continue;
+
+            float v = scan->ranges[i];
+            if (std::isfinite(v))
+            {
+                sum += v;
+                count++;
+                if (v < min_val) min_val = v;
+            }
+        }
+
+        // return count > 0 ? sum / count : std::numeric_limits<float>::infinity();
+        return count > 0 ? std::min(sum / count, min_val + 0.1f) : scan->range_max;
+    }
+
+    double current_x_, current_y_, current_yaw_;
+    bool active = false;
+    double start_x = 0.0;
+    double start_y = 0.0;
+    double start_yaw = 0.0;
+       
+    double wanted_angle = 0;
+    void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
+    {
+        current_x_ = msg->pose.pose.position.x;
+        current_y_ = msg->pose.pose.position.y;
+
+        // quaternion → yaw 변환
+        auto &q = msg->pose.pose.orientation;
+
+        double siny = 2.0 * (q.w * q.z + q.x * q.y);
+        double cosy = 1.0 - 2.0 * (q.y * q.y + q.z * q.z);
+
+        current_yaw_ = atan2(siny, cosy);
+        //RCLCPP_INFO(this->get_logger()," current_x_ =%f current_y_ = %f current_yaw_ = %f angular = %f",current_x_,current_y_ ,current_yaw_);
+    }
+
+    // 센서 우선순위
+
+    // Wheel lift → 로봇 들림
+    // Cliff → 낙하
+    // Bumper → 충돌
+    // PSD → 초근접
+    // Ultrasonic → 근접
+    // LiDAR → 일반 장애물
     /* ---------- safety logic ---------- */
 
     void updateState()
@@ -449,18 +481,21 @@ float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr scan,
                 setState(SafetyState::HARD_STOP,"BUMPER !!","RECOVERY_BACK");
                     bumper_event_left_flg = true;
                     bumper_event_right_flg = true;
+                    // active = false;
                     return; 
             }
             else if(bumper_event_left_) 
             { 
                     setState(SafetyState::HARD_STOP,"BUMPER LEFT","RECOVERY_BACK");
                     bumper_event_left_flg = true;
+                    // active = false;
                     return; 
             }
             else 
             { 
                     setState(SafetyState::HARD_STOP,"BUMPER RIGHT","RECOVERY_BACK");
                     bumper_event_right_flg = true;
+                    // active = false;
                     return; 
             }
         }
@@ -484,10 +519,20 @@ float getAvg(const sensor_msgs::msg::LaserScan::SharedPtr scan,
         {
             if(state_ != SafetyState::SOFT_STOP) soft_stop_start_ = now();
             if((ultra_left_< Ultra_Detact_Range) && (ultra_right_< Ultra_Detact_Range))
-                    setState(SafetyState::SOFT_STOP,"ULTRA ","SOFT_STOP");
+            {
+                    setState(SafetyState::HARD_STOP,"ULTRA ","HARD_STOP");
+                    ultra_event_left_flg = true;
+                    ultra_event_right_flg = true;
+            }
             else if(ultra_left_< Ultra_Detact_Range) 
-                    setState(SafetyState::SOFT_STOP,"ULTRA LEFT","SOFT_STOP");
-            else    setState(SafetyState::SOFT_STOP,"ULTRA RIGHT","SOFT_STOP");        
+            {
+                    setState(SafetyState::HARD_STOP,"ULTRA LEFT","HARD_STOP");
+                    ultra_event_left_flg = true;
+            }
+            else
+            {    setState(SafetyState::HARD_STOP,"ULTRA RIGHT","HARD_STOP");        
+                    ultra_event_right_flg = true;
+            }
             return;
         }
 
@@ -574,7 +619,7 @@ nav_active = false;
             out.angular.z = 0.0;
         }
         
-        if(( out.linear.x != 0.0) || (out.angular.z != 0.0))
+        if(( out.linear.x > 0.0) || (out.angular.z != 0.0))
         {
             float threshold = 0.30;  // 30cm 이하일 때만
             float threshold_Linear = 0.50; 
@@ -675,6 +720,7 @@ nav_active = false;
                 { 
                     state_ = SafetyState::RECOVERY_TURN; 
                     recovery_start_ = now(); 
+                    active = false;
                 }
 
             break;
@@ -689,15 +735,21 @@ nav_active = false;
                 recovery_start_ = now();
 
                 state_ = SafetyState::RECOVERY_BACK;
+                active = false;
 
 
             break;
 
             case SafetyState::RECOVERY_BACK:
 
-                if((now()-recovery_start_).seconds()<1.0)
+                if((now()-recovery_start_).seconds()<10.0)
                 {
-                    out.linear.x=-0.1;
+                    //out.linear.x=-0.1;
+                    if (doBackward(0.10))  // 10cm 후진
+                    {
+                        state_=SafetyState::RECOVERY_TURN;
+                        recovery_start_=now();
+                    }
                 }
                 else
                 {
@@ -712,31 +764,56 @@ nav_active = false;
                 if((now()-recovery_start_).seconds()<1.0)
                 {
 
-                
-                if(cliff_fl_)
-                    out.angular.z = -0.6;
+                    wanted_angle = 0;
+                    if(cliff_fl_)
+                        wanted_angle = 0;
 
-                else if(cliff_fr_)
-                    out.angular.z = 0.6;
+                    else if(cliff_fr_)
+                        wanted_angle = 0;   
+                    else if(bumper_event_left_flg)
+                        // out.angular.z = -0.6;
+                        wanted_angle = -40;
+                    else if(bumper_event_right_flg)
+                        // out.angular.z = 0.6;
+                        wanted_angle = 40;
+                    else if(psd_event_left_flg)
+                        wanted_angle = -20;
+                    else if(psd_event_right_flg)
+                        wanted_angle = 20;
+                    else if(ultra_event_left_flg)             
+                        wanted_angle = -20;           
+                    else if(ultra_event_right_flg)             
+                        wanted_angle = 20;           
+                    else
+                        wanted_angle = 0;
 
-                else if(bumper_event_left_flg)
-                    out.angular.z = -0.6;
-                else if(bumper_event_right_flg)
-                    out.angular.z = 0.6;
-                else if(psd_event_left_flg)
-                    out.angular.z = -0.6;
-                else if(psd_event_right_flg)
-                    out.angular.z = 0.6;
-                else
-                    out.angular.z = 0.6;
-
+                    active = false;
+                    
+                }
+                else if((now()-recovery_start_).seconds()<10.0)
+                {
+                    if(doRotate(wanted_angle * (M_PI/180.)))
+                    {
+                        state_=SafetyState::NORMAL;
+                        bumper_event_left_flg = false;
+                        bumper_event_right_flg = false;
+                        psd_event_left_flg = false;
+                        psd_event_right_flg = false;
+                        ultra_event_left_flg = false;
+                        ultra_event_right_flg = false;
+                        publish_event("RECOVERY","TURN");
+                    }
 
                 }
                 else
                 {
                     state_=SafetyState::NORMAL;
-                    bumper_event_left_flg = false;
-                    bumper_event_right_flg = false;
+                        bumper_event_left_flg = false;
+                        bumper_event_right_flg = false;
+                        psd_event_left_flg = false;
+                        psd_event_right_flg = false;
+                        ultra_event_left_flg = false;
+                        ultra_event_right_flg = false;
                     publish_event("RECOVERY","TURN");
 
                 }
@@ -746,6 +823,103 @@ nav_active = false;
         }
     }
 
+
+
+
+
+    bool doBackward(double target_dist)
+    {
+        
+
+
+        // 🔥 시작 시 위치 저장
+        if (!active)
+        {
+            start_x = current_x_;
+            start_y = current_y_;
+            active = true;
+        }
+
+        // 🔥 이동 거리 계산 (로봇 기준 후진 거리)
+        double dx = current_x_ - start_x;
+        double dy = current_y_ - start_y;
+
+        double back_dist =
+            cos(current_yaw_) * (start_x - current_x_) +
+            sin(current_yaw_) * (start_y - current_y_);
+
+        // 🔥 목표 거리 도달 체크
+        if (back_dist < target_dist)
+        {
+            double remain = target_dist - back_dist;
+
+            // 속도 점점 줄이기
+            double speed = -std::min(0.12, remain * 2.5);
+
+            if(speed > -0.05) speed = -0.05;
+            out.linear.x = speed;
+            out.angular.z = 0.0;
+            // RCLCPP_INFO(this->get_logger(),"back_dist = %f target_dist = %f ",back_dist,target_dist);
+            return false; // 아직 진행중
+        }
+        else
+        {
+            // 종료
+            out.linear.x = 0.0;
+            out.angular.z = 0.0;
+
+            //active = false;
+            return true; // 완료
+        }
+
+        
+    }
+double target_yaw = 0.0;
+double kp_ang = 1.5;
+double ki_ang = 1.;
+double max_angular = 1.2;
+double yaw_error_I = 0.;
+    bool doRotate(double target_angle)
+    {
+
+        
+        // 🔥 시작 시 목표 yaw 설정
+        if (!active)
+        {
+            start_yaw = current_yaw_;
+            target_yaw = start_yaw + target_angle;
+
+            active = true;
+        }
+
+        // 🔥 yaw error 계산 (wrap 처리 필수)
+        double yaw_error = target_yaw - current_yaw_;
+        yaw_error = atan2(sin(yaw_error), cos(yaw_error));  //-π ~ π
+        yaw_error_I += yaw_error;
+        yaw_error_I  = std::clamp(yaw_error_I, -0.1, 0.1); //0.05 2배
+        // 🔥 아직 회전 중
+        if (fabs(yaw_error) > 0.05)
+        {
+             double angular = std::clamp(yaw_error * kp_ang + yaw_error_I * ki_ang,
+                                        -max_angular, max_angular);
+
+            
+            //CLCPP_INFO(this->get_logger(),"target_yaw = %f current_yaw_ = %f start_yaw = %f target_angle =%f ",target_yaw,current_yaw_ ,start_yaw,target_angle);
+            out.linear.x = 0.0;
+            out.angular.z = angular;
+
+            return false;
+        }
+        else
+        {
+            // 종료
+            out.linear.x = 0.0;
+            out.angular.z = 0.0;
+
+            //active = false;
+            return true;
+        }
+    }
 };
 
 /* ---------- main ---------- */
