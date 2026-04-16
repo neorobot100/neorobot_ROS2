@@ -1,0 +1,30 @@
+teleop_twist_joy_node:
+  ros__parameters:
+    cmd_vel_topic: /cmd_vel_joy
+
+    axis_linear:
+      x: 1
+    axis_angular:
+      yaw: 0
+
+    # 저속 모드 (기본)
+    scale_linear:
+    #  x: 0.2
+      x: 0.1
+    scale_angular:
+      #yaw: 0.6
+      yaw: 0.3
+
+    # 고속 모드 (버튼 누르면)
+    scale_linear_turbo:
+      x: 0.5
+    scale_angular_turbo:
+      yaw: 1.2
+
+    # 움직임 허용 버튼 (LT)
+    enable_button: 4
+
+    # 고속 버튼 (RB)
+    enable_turbo_button: 5
+
+    

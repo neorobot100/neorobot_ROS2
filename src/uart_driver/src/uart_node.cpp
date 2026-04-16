@@ -15,6 +15,7 @@
 #include <cstring>
 
 #include <std_msgs/msg/bool.hpp>
+#include <std_msgs/msg/int8.hpp>
 #include <sensor_msgs/msg/range.hpp>
 
 #define USE_IMU     0  // 0: Wheel yaw  1: IMU yaw
@@ -66,6 +67,10 @@ public:
             "/joy", 10,
             std::bind(&UARTNode::joy_cb, this, std::placeholders::_1));
 
+        dock_cmd_sub_ = create_subscription<std_msgs::msg::Int8>(
+            "/dock_cmd", 10,
+            std::bind(&UARTNode::dock_cmd_callback, this, std::placeholders::_1));
+
         open_serial("/dev/ttyAMA0", 115200);
 
         read_timer_ = create_wall_timer(
@@ -97,6 +102,7 @@ public:
         bottom_front_right_pub_  = create_publisher<std_msgs::msg::Bool>("/cliff_fr", 10);
         bottom_rear_left_pub_    = create_publisher<std_msgs::msg::Bool>("/cliff_rl", 10);
         bottom_rearight_pub_     = create_publisher<std_msgs::msg::Bool>("/cliff_rr", 10);
+        charge_onoff_pub_        = create_publisher<std_msgs::msg::Bool>("/charge_onoff", 10);
         
         wheel_lift_left_pub_    = create_publisher<std_msgs::msg::Bool>("/wheel_lift_l", 10);
         wheel_lift_right_pub_     = create_publisher<std_msgs::msg::Bool>("/wheel_lift_r", 10);
@@ -105,8 +111,11 @@ public:
         ultra_left_pub_  = create_publisher<sensor_msgs::msg::Range>("/ultra_left", 10);
         ultra_right_pub_ = create_publisher<sensor_msgs::msg::Range>("/ultra_right", 10);    
 
-        psd_left_pub_  = create_publisher<sensor_msgs::msg::Range>("psd_left", 10);
-        psd_right_pub_ = create_publisher<sensor_msgs::msg::Range>("psd_right", 10);
+        psd_left_pub_  = create_publisher<sensor_msgs::msg::Range>("/psd_left", 10);
+        psd_right_pub_ = create_publisher<sensor_msgs::msg::Range>("/psd_right", 10);
+
+        dock_stat_pub_  = create_publisher<std_msgs::msg::Int8>("/dock_stat", 10);
+        undock_stat_pub_ = create_publisher<std_msgs::msg::Int8>("/undock_stat", 10);
 
         RCLCPP_INFO(get_logger(), "UART Integrated Node Started");
     }
@@ -115,21 +124,11 @@ private:
     /* ================= Members ================= */
     int fd_{-1};
     std::vector<uint8_t> rx_buf_;
-
+    // Publisher
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
     std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
-
-    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_sub_;
-    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
-
-    rclcpp::TimerBase::SharedPtr read_timer_, odom_timer_;
-    rclcpp::TimerBase::SharedPtr timeout_timer_, imu_reset_timer_;
-
-    rclcpp::TimerBase::SharedPtr temp_timer_; //라즈베리 온도 체크
-    rclcpp::Time last_cmdvel_time_;           //속도 명령 시간 체크 
-
-
+   
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bumper_left_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bumper_right_pub_;
 
@@ -138,6 +137,7 @@ private:
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bottom_front_right_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bottom_rear_left_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr bottom_rearight_pub_;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr charge_onoff_pub_;
 
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wheel_lift_left_pub_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr wheel_lift_right_pub_;
@@ -147,6 +147,23 @@ private:
 
     rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr psd_left_pub_;
     rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr psd_right_pub_;
+    
+    rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr dock_stat_pub_;
+    rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr undock_stat_pub_;
+
+    // Subscriber
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub_;
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr dock_cmd_sub_;
+
+
+
+    rclcpp::TimerBase::SharedPtr read_timer_, odom_timer_;
+    rclcpp::TimerBase::SharedPtr timeout_timer_, imu_reset_timer_;
+
+    rclcpp::TimerBase::SharedPtr temp_timer_; //라즈베리 온도 체크
+    rclcpp::Time last_cmdvel_time_;           //속도 명령 시간 체크 
+
 
     bool imu_ack_{false};
     int imu_retry_{0};
@@ -173,9 +190,10 @@ private:
      void update_odom(int16_t left, int16_t right);
      void publish_odom();
      void publish_sensors(bool bl, bool br,
-                     bool fc, bool fl, bool fr, bool rl, bool rr, bool w_lift_l, bool w_lift_r,
+                     bool fc, bool fl, bool fr, bool rl, bool rr, bool w_lift_l, bool w_lift_r,bool charge_stat,
                      double ul, double ur,
-                     double psdl, double psfr);
+                     double psdl, double psdr, uint8_t docking_status, uint8_t undocking_status);
+
     rclcpp::Time last_scan_time_;
 
     rclcpp::Time last_time_;
@@ -247,7 +265,7 @@ private:
         tx[idx++] = 0x55;
         tx[idx++] = 2;
         tx[idx++] = 0x30;  // IMU RESET CMD
-        tx[idx++] = 0x01;
+        //tx[idx++] = 0x01;
 
         tx[idx] = crc8(tx, idx);
         idx++;
@@ -327,14 +345,15 @@ private:
                 crc_ok_flag_ = true;
                 uint8_t cmd = rx_buf_[3];
 
-                if (cmd == 0x31) {  // IMU RESET ACK
-                    imu_ack_ = true;
-                }
-
+               
                 if (cmd == 0x11) {  // Odom PACKET
                    
                     handle_Odom(&rx_buf_[0]);
                 }
+                else if (cmd == 0x31) {  // IMU RESET ACK
+                    imu_ack_ = true;
+                }
+
             }
             else {
                 crc_err_count_++;
@@ -351,8 +370,11 @@ private:
     {
         int idx = 4;
         uint8_t FW_index = pkt[idx++];
-        int16_t left  = (pkt[idx++] << 8) | pkt[idx++];
-        int16_t right = (pkt[idx++] << 8) | pkt[idx++];
+        int16_t left  = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
+
+        int16_t right = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
 
         update_odom(left, right);   // ★ 추가
 
@@ -372,32 +394,43 @@ private:
         bool floor_fr = sensor_bits & (1 << 4);
         bool floor_rl = sensor_bits & (1 << 5);
         bool floor_rr = sensor_bits & (1 << 6);
+        bool charge_onoff = sensor_bits & (1 << 7);
 
         bool wheel_lift_l  = sensor_bits2 & (1 << 0);
         bool wheel_lift_r  = sensor_bits2 & (1 << 1);
         /* ---------- 배터리 ---------- */
         Battery_Percent = pkt[idx++];
-        uint16_t Battery_Volt_raw  = (pkt[idx++] << 8) | pkt[idx++];
+        uint16_t Battery_Volt_raw  = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
         /* ---------- 초음파 ---------- */
-        uint16_t ultra_left_raw  = (pkt[idx++] << 8) | pkt[idx++];
-        uint16_t ultra_right_raw = (pkt[idx++] << 8) | pkt[idx++];
+        uint16_t ultra_left_raw  = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
+        uint16_t ultra_right_raw = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
 
         double ultra_left_m  = ultra_left_raw  * 0.001;
         double ultra_right_m = ultra_right_raw * 0.001;
 //Debug_temp_Double = ultra_left_m;
          /* ---------- PSD ---------- */
-        uint16_t PSD_left_raw  = (pkt[idx++] << 8) | pkt[idx++];
-        uint16_t PSD_right_raw = (pkt[idx++] << 8) | pkt[idx++];
+        uint16_t PSD_left_raw  = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
+        uint16_t PSD_right_raw = (pkt[idx] << 8) | pkt[idx + 1];
+        idx += 2;
 
         double PSD_left_m  = PSD_left_raw    * 0.00001;
         double PSD_right_m = PSD_right_raw   * 0.00001;
 
         floor_fc = floor_fl = floor_fr  = floor_rl = floor_rr = wheel_lift_l = wheel_lift_r = 0; //바닥은 나중에 처리
 
+        uint8_t Docking_Status  = pkt[idx++];
+  
+        uint8_t Undocking_Status = pkt[idx++];
+
+
         publish_sensors(bumper_left, bumper_right,
-                        floor_fc, floor_fl, floor_fr, floor_rl, floor_rr, wheel_lift_l, wheel_lift_r,
+                        floor_fc, floor_fl, floor_fr, floor_rl, floor_rr, wheel_lift_l, wheel_lift_r,charge_onoff,
                         ultra_left_m, ultra_right_m,
-                        PSD_left_m,PSD_right_m);
+                        PSD_left_m,PSD_right_m,Docking_Status,Undocking_Status);
 
         publish_imu(pkt);
 
@@ -473,7 +506,7 @@ private:
 
     
 
-    /* ================= TX ================= */
+    /* ================= TX ================= */ // cmd_vel 콜백
     void cmdvel_cb(const geometry_msgs::msg::Twist::SharedPtr msg)
     {
         //if (!imu_ack_) return;
@@ -520,9 +553,9 @@ private:
 
         write(fd_, tx, idx);
 
-        RCLCPP_DEBUG(this->get_logger(),
-        //RCLCPP_INFO(this->get_logger(),
-            "TX cmd_vel v=%d w=%d", v_i, w_i);
+        // RCLCPP_DEBUG(this->get_logger(),
+        // //RCLCPP_INFO(this->get_logger(),
+        //     "TX cmd_vel v=%d w=%d", v_i, w_i);
     }
 
     void temp_timer_cb()
@@ -591,6 +624,21 @@ private:
         }
     }
 
+    // 도킹 명령 콜백
+    void dock_cmd_callback(const std_msgs::msg::Int8::SharedPtr msg)
+    {
+        uint8_t cmd = msg->data;
+
+        if(cmd == 2) // DOCK
+        {
+            send_dock_cmd();
+        }
+        else if(cmd == 3) // UNDOCK
+        {
+           send_undock_cmd();
+        }
+    }
+
     void timeout_check()
     {
         if (fd_ < 0) return;
@@ -633,6 +681,39 @@ private:
         write(fd_, tx, idx);
 
         RCLCPP_WARN(this->get_logger(), "CMD_VEL TIMEOUT → STOP");
+    }
+
+    void send_dock_cmd()
+    {
+        uint8_t tx[6];
+        uint8_t idx = 0;
+
+        tx[idx++] = 0xAA;
+        tx[idx++] = 0x55;
+        tx[idx++] = 2;
+        tx[idx++] = 0x40; // DOCK CMD
+
+        tx[idx] = crc8(tx, idx);
+        idx++;
+
+        write(fd_, tx, idx);
+        RCLCPP_WARN(this->get_logger(), "DOCK CMD sent");
+    }
+    void send_undock_cmd()
+    {
+        uint8_t tx[6];
+        uint8_t idx = 0;
+
+        tx[idx++] = 0xAA;
+        tx[idx++] = 0x55;
+        tx[idx++] = 2;
+        tx[idx++] = 0x50; // unDOCK CMD
+
+        tx[idx] = crc8(tx, idx);
+        idx++;
+
+        write(fd_, tx, idx);
+        RCLCPP_WARN(this->get_logger(), "DOCK CMD sent");
     }
 
 };
@@ -780,9 +861,9 @@ void UARTNode::publish_odom()
 }
 
 void UARTNode::publish_sensors(bool bl, bool br,
-                               bool fc, bool fl, bool fr, bool rl, bool rr, bool w_lift_l, bool w_lift_r,
+                               bool fc, bool fl, bool fr, bool rl, bool rr, bool w_lift_l, bool w_lift_r,bool charge_stat,
                                double ul, double ur,  
-                               double psdl, double psdr)
+                               double psdl, double psdr, uint8_t docking_status, uint8_t undocking_status)
 {
     auto now = this->get_clock()->now();
 
@@ -810,6 +891,10 @@ void UARTNode::publish_sensors(bool bl, bool br,
 
     msg.data = rr;
     bottom_rearight_pub_->publish(msg);
+
+    /* 충전 상태 */
+    msg.data = charge_stat;
+    charge_onoff_pub_->publish(msg);
 
     msg.data = w_lift_l;
     wheel_lift_left_pub_->publish(msg);
@@ -849,6 +934,16 @@ void UARTNode::publish_sensors(bool bl, bool br,
     psdmsg.header.frame_id = "psd_front_right_link";
     psdmsg.range = psdr;
     psd_right_pub_->publish(psdmsg);
+
+    /* 도킹 상태 */
+    std_msgs::msg::Int8 dockmsg;
+    dockmsg.data = docking_status; 
+    dock_stat_pub_->publish(dockmsg);
+
+    std_msgs::msg::Int8 undockmsg;
+    undockmsg.data = undocking_status; 
+    undock_stat_pub_->publish(undockmsg);
+
 }
 
 /* ================= main ================= */

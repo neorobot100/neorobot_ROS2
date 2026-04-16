@@ -32,9 +32,9 @@ def generate_launch_description():
     map_file = os.path.join(
         get_package_share_directory('neorobot_bringup'),
         'maps',
-        'my_map_gimp.yaml'
+        # 'my_map_gimp.yaml'
         # 'my_map_new.yaml'
-        # 'empty_map.yaml'
+        'empty_map.yaml'
     )
     
     return LaunchDescription([
@@ -83,12 +83,26 @@ def generate_launch_description():
         ),
 
        
-
+        # SOUND
+        Node(
+            package='sound_control',
+            executable='sound_play',
+            name='sound_play',
+            output='screen'
+        ),
         # 오도메트리 & 모터 제어
         Node(
             package='uart_driver',
             executable='uart_node',
             name='uart_node',
+            output='screen'
+        ),
+
+        # 도킹 매니저
+        Node(
+            package='robot_docking',
+            executable='dock_manager',
+            name='dock_manager',
             output='screen'
         ),
 
@@ -106,7 +120,7 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop_twist_joy_node',
             output='screen',
-            parameters=['/home/neorobot/teleop_speed.yaml'],
+            parameters=['/home/neorobot/ros2_ws/src/neorobot_bringup/config/teleop_speed.yaml'],
             remappings=[
                 ('cmd_vel', '/cmd_vel_joy')
             ],
