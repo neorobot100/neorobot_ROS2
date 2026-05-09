@@ -158,7 +158,7 @@ private:
         // -----------------------------
         // 2. lookahead target
         // -----------------------------
-        double base_lookahead  = 0.1; //0.5;  //🥕 당근 거리 ,Lookahead target 선택, 로봇 앞 몇 m를 목표로 볼지, 최소 거리 (정지 상태 기준)
+        double base_lookahead  = 0.1; //0.5;  //🥕 당근 거리 ,Lookahead target 선택, 로봇 앞 몇 m를 목표로 볼지, 최소 거리 (정지 상태 기준)  0.1->0.01
         double speed = current_speed_;  // odom에서 받아오기
         double lookahead = base_lookahead + speed * 0.8; //속도 빠르면 더 멀리 봄
 
@@ -283,7 +283,7 @@ private:
 
        
     //    RCLCPP_INFO(this->get_logger(),"goal_state_%d Goal yaw %f R yaw %f IMU %f",goal_state_,goal_yaw,robot_yaw,imu_value);
-RCLCPP_INFO(this->get_logger(),"goal_state_%d Goal yaw %f R yaw %f angle_error %f dx %f dy %f rX %f ry %f ", goal_state_,goal_yaw,robot_yaw,angle_error,dx,dx,robot_x,robot_y);
+//RCLCPP_INFO(this->get_logger(),"goal_state_%d Goal yaw %f R yaw %f angle_error %f dx %f dy %f rX %f ry %f ", goal_state_,goal_yaw,robot_yaw,angle_error,dx,dx,robot_x,robot_y);
         switch (goal_state_)
         {
             case GoalState::DRIVE:
@@ -298,9 +298,16 @@ RCLCPP_INFO(this->get_logger(),"goal_state_%d Goal yaw %f R yaw %f angle_error %
                 angular = std::clamp(angle_error * kp_ang,
                                         -max_angular, max_angular);
                  // 회전 우선 조건
-                if (angle_abs > 0.25 ) // 15도   //0.7 40도
+                // if (angle_abs > 0.25 ) // 15도   //0.7 40도
+                if (angle_abs > M_PI/4 ) // 45도   
                 {
                     linear = 0.0;
+                }
+                else{
+
+                    // 예시: 선속도를 각도 오차에 비례해 감속 (Gaussian 또는 선형 감속)
+                    double linear_scale = std::exp(-2.0 * angle_abs * angle_abs); // 오차가 클수록 급격히 작아짐
+                    linear = linear * linear_scale;
                 }
                 // =================  목표 도착 =================
                 if (goal_dist < 0.15)

@@ -32,6 +32,7 @@
 #include "sensor_msgs/msg/range.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include <nav_msgs/msg/odometry.hpp>
+#include <std_msgs/msg/int8.hpp>
 
 using namespace std::chrono_literals;
 using NavigateToPose = nav2_msgs::action::NavigateToPose;
@@ -64,121 +65,145 @@ public:
     MotionArbiter() : Node("motion_arbiter")
     {
 
-    /* ---------- cmd_vel sources ---------- */
-    sub_lookahead_ = create_subscription<geometry_msgs::msg::Twist>(
-    "/cmd_vel_lookahead", 10,
-    std::bind(&MotionArbiter::lookaheadCallback, this, std::placeholders::_1));
+        clock_ = this->get_clock();
+            
+        /* ---------- cmd_vel sources ---------- */
+        sub_lookahead_ = create_subscription<geometry_msgs::msg::Twist>(
+        "/cmd_vel_lookahead", 10,
+        std::bind(&MotionArbiter::lookaheadCallback, this, std::placeholders::_1));
 
 
-    nav_sub_ = create_subscription<geometry_msgs::msg::Twist>(
-    "/cmd_vel_nav",10,
-    std::bind(&MotionArbiter::navCallback,this,std::placeholders::_1));
+        nav_sub_ = create_subscription<geometry_msgs::msg::Twist>(
+        "/cmd_vel_nav",10,
+        std::bind(&MotionArbiter::navCallback,this,std::placeholders::_1));
 
-    joy_sub_ = create_subscription<geometry_msgs::msg::Twist>(
-    "/cmd_vel_joy",10,
-    std::bind(&MotionArbiter::joyCallback,this,std::placeholders::_1));
+        joy_sub_ = create_subscription<geometry_msgs::msg::Twist>(
+        "/cmd_vel_joy",10,
+        std::bind(&MotionArbiter::joyCallback,this,std::placeholders::_1));
 
-    /* ---------- lidar ---------- */
+        localization_sub_ = create_subscription<geometry_msgs::msg::Twist>(
+        "/cmd_vel_localization",10,
+        std::bind(&MotionArbiter::localizationCallback,this,std::placeholders::_1));
+
+        /* ---------- lidar ---------- */
+        
+        scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
+        "/scan",
+        rclcpp::SensorDataQoS(),
+        std::bind(&MotionArbiter::scanCallback, this, std::placeholders::_1));
+
+        /* ---------- bumper ---------- */
+
+        bumper_left_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/bumper_left",10,
+        std::bind(&MotionArbiter::bumperLeftCallback,this,std::placeholders::_1));
+
+        bumper_right_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/bumper_right",10,
+        std::bind(&MotionArbiter::bumperRightCallback,this,std::placeholders::_1));
+
+        /* ---------- ultrasonic ---------- */
+
+        ultra_left_sub_ = create_subscription<sensor_msgs::msg::Range>(
+        "/ultra_left",10,
+        std::bind(&MotionArbiter::ultraLeftCallback,this,std::placeholders::_1));
+
+        ultra_right_sub_ = create_subscription<sensor_msgs::msg::Range>(
+        "/ultra_right",10,
+        std::bind(&MotionArbiter::ultraRightCallback,this,std::placeholders::_1));
+
+        /* ---------- PSD ---------- */
+
+        psd_left_sub_ = create_subscription<sensor_msgs::msg::Range>(
+        "/psd_left",10,
+        std::bind(&MotionArbiter::psdLeftCallback,this,std::placeholders::_1));
+
+        psd_right_sub_ = create_subscription<sensor_msgs::msg::Range>(
+        "/psd_right",10,
+        std::bind(&MotionArbiter::psdRightCallback,this,std::placeholders::_1));
+
+        /* ---------- cliff sensors ---------- */
+
+        cliff_fl_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/cliff_fl",10,
+        std::bind(&MotionArbiter::cliffFLCallback,this,std::placeholders::_1));
+
+        cliff_fc_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/cliff_fc",10,
+        std::bind(&MotionArbiter::cliffFCCallback,this,std::placeholders::_1));
+
+        cliff_fr_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/cliff_fr",10,
+        std::bind(&MotionArbiter::cliffFRCallback,this,std::placeholders::_1));
+
+        cliff_rl_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/cliff_rl",10,
+        std::bind(&MotionArbiter::cliffRLCallback,this,std::placeholders::_1));
+
+        cliff_rr_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/cliff_rr",10,
+        std::bind(&MotionArbiter::cliffRRCallback,this,std::placeholders::_1));
+
+        /* wheel lift */
+        wheel_lift_l_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/wheel_lift_l",10,
+        std::bind(&MotionArbiter::wheelLiftLCallback,this,std::placeholders::_1));
+
+        wheel_lift_r_sub_ = create_subscription<std_msgs::msg::Bool>(
+        "/wheel_lift_r",10,
+        std::bind(&MotionArbiter::wheelLiftRCallback,this,std::placeholders::_1));
+
     
-    scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
-    "/scan",
-    rclcpp::SensorDataQoS(),
-    std::bind(&MotionArbiter::scanCallback, this, std::placeholders::_1));
+        /* ---------- cmd_vel output ---------- */
 
-    /* ---------- bumper ---------- */
+        cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>(
+        "/cmd_vel",10);
 
-    bumper_left_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/bumper_left",10,
-    std::bind(&MotionArbiter::bumperLeftCallback,this,std::placeholders::_1));
+        /* ---------- 이벤트 메세지 ---------- */
+        event_pub_ = create_publisher<std_msgs::msg::String>(
+        "/safety_manager/event", 10);
 
-    bumper_right_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/bumper_right",10,
-    std::bind(&MotionArbiter::bumperRightCallback,this,std::placeholders::_1));
+        human_sub_ = create_subscription<geometry_msgs::msg::Point>(
+        "/leg_target", 10,
+        std::bind(&MotionArbiter::humanCallback, this, std::placeholders::_1));
 
-    /* ---------- ultrasonic ---------- */
+        /* ---------- control loop ---------- */
 
-    ultra_left_sub_ = create_subscription<sensor_msgs::msg::Range>(
-    "/ultra_left",10,
-    std::bind(&MotionArbiter::ultraLeftCallback,this,std::placeholders::_1));
-
-    ultra_right_sub_ = create_subscription<sensor_msgs::msg::Range>(
-    "/ultra_right",10,
-    std::bind(&MotionArbiter::ultraRightCallback,this,std::placeholders::_1));
-
-    /* ---------- PSD ---------- */
-
-    psd_left_sub_ = create_subscription<sensor_msgs::msg::Range>(
-    "/psd_left",10,
-    std::bind(&MotionArbiter::psdLeftCallback,this,std::placeholders::_1));
-
-    psd_right_sub_ = create_subscription<sensor_msgs::msg::Range>(
-    "/psd_right",10,
-    std::bind(&MotionArbiter::psdRightCallback,this,std::placeholders::_1));
-
-    /* ---------- cliff sensors ---------- */
-
-    cliff_fl_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/cliff_fl",10,
-    std::bind(&MotionArbiter::cliffFLCallback,this,std::placeholders::_1));
-
-    cliff_fc_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/cliff_fc",10,
-    std::bind(&MotionArbiter::cliffFCCallback,this,std::placeholders::_1));
-
-    cliff_fr_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/cliff_fr",10,
-    std::bind(&MotionArbiter::cliffFRCallback,this,std::placeholders::_1));
-
-    cliff_rl_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/cliff_rl",10,
-    std::bind(&MotionArbiter::cliffRLCallback,this,std::placeholders::_1));
-
-    cliff_rr_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/cliff_rr",10,
-    std::bind(&MotionArbiter::cliffRRCallback,this,std::placeholders::_1));
-
-    /* wheel lift */
-    wheel_lift_l_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/wheel_lift_l",10,
-    std::bind(&MotionArbiter::wheelLiftLCallback,this,std::placeholders::_1));
-
-    wheel_lift_r_sub_ = create_subscription<std_msgs::msg::Bool>(
-    "/wheel_lift_r",10,
-    std::bind(&MotionArbiter::wheelLiftRCallback,this,std::placeholders::_1));
-
-   
-    /* ---------- cmd_vel output ---------- */
-
-    cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>(
-    "/cmd_vel",10);
-
-    /* ---------- 이벤트 메세지 ---------- */
-    event_pub_ = create_publisher<std_msgs::msg::String>(
-    "/safety_manager/event", 10);
-
-    human_sub_ = create_subscription<geometry_msgs::msg::Point>(
-    "/leg_target", 10,
-    std::bind(&MotionArbiter::humanCallback, this, std::placeholders::_1));
-
-    /* ---------- control loop ---------- */
-
-    timer_ = create_wall_timer(
-    50ms,
-    std::bind(&MotionArbiter::controlLoop,this));
+        timer_ = create_wall_timer(
+        50ms,
+        std::bind(&MotionArbiter::controlLoop,this));
 
 
-    last_nav_time_ = now();
-    last_joy_time_ = now();
-    last_lookahead_time_ = now();
+        last_nav_time_ = clock_->now();
+        last_joy_time_ = clock_->now();
+        last_lookahead_time_ = clock_->now();
+        last_localization_time_ = clock_->now();
 
-    nav_client_ =
-    rclcpp_action::create_client<NavigateToPose>(this,"navigate_to_pose");
+        nav_client_ =
+        rclcpp_action::create_client<NavigateToPose>(this,"navigate_to_pose");
 
 
-    odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
-    "/odom", 10,
-    std::bind(&MotionArbiter::odomCallback, this, std::placeholders::_1));
-}
+        odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
+        "/odom", 10,
+        std::bind(&MotionArbiter::odomCallback, this, std::placeholders::_1));
+
+        charge_onoff_sub_ = this->create_subscription<std_msgs::msg::Bool>(
+        "/charge_onoff", 10,
+        std::bind(&MotionArbiter::charge_callback, this, std::placeholders::_1));     
+
+
+
+        dock_stat_sub_ = create_subscription<std_msgs::msg::Int8>(
+        "/dock_stat", 10,
+        std::bind(&MotionArbiter::dock_stat_callback, this, std::placeholders::_1));
+
+        undock_stat_sub_ = create_subscription<std_msgs::msg::Int8>(
+        "/undock_stat", 10,
+        std::bind(&MotionArbiter::undock_stat_callback, this, std::placeholders::_1));
+
+    
+
+    }
 
 private:
 
@@ -192,6 +217,7 @@ private:
     geometry_msgs::msg::Twist lookahead_cmd_;
     geometry_msgs::msg::Twist nav_cmd_;
     geometry_msgs::msg::Twist joy_cmd_;
+    geometry_msgs::msg::Twist localization_cmd_;
     /* ---------- cmd_vle publish ---------- */
     geometry_msgs::msg::Twist out;
     /* ---------- sensor values ---------- */
@@ -234,16 +260,19 @@ private:
     bool wheel_lift_l_ = false;
     bool wheel_lift_r_ = false;
 
+    bool charge_onoff = false;
 
 
 
     rclcpp::Time recovery_start_;
     rclcpp::Time soft_stop_start_;
+    rclcpp::Clock::SharedPtr clock_;
     /* ---------- ROS ---------- */
 
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr nav_sub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr joy_sub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr sub_lookahead_;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr localization_sub_;
 
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
 
@@ -275,13 +304,28 @@ private:
     rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr human_sub_;
 
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_sub_;
+
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr charge_onoff_sub_;
+
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr dock_cmd_sub_;
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr dock_stat_sub_;
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr undock_stat_sub_;
+
     bool human_leg_detected_ = false;
 
     rclcpp::Time last_nav_time_;
     rclcpp::Time last_joy_time_;
     rclcpp::Time last_lookahead_time_;
-
+    rclcpp::Time last_localization_time_;
+    
     double cmd_timeout_ = 0.5;
+
+    uint8_t arbiter_docking_status = 0;
+    uint8_t arbiter_undocking_status = 0;
+
+    uint8_t arbiter_docking_status_last_ = 0;
+    uint8_t arbiter_undocking_status_last_ = 0;
+
 
     /* ---------- callbacks ---------- */
 
@@ -316,20 +360,27 @@ private:
     void navCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
     {
         nav_cmd_ = *msg;
-        last_nav_time_ = now();
+        last_nav_time_ = clock_->now();
     }
 
     void joyCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
     {
         joy_cmd_ = *msg;
-        last_joy_time_ = now();
+        last_joy_time_ = clock_->now();
     }
 
     void lookaheadCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
     {
         lookahead_cmd_ = *msg;
-        last_lookahead_time_ = now();
+        last_lookahead_time_ = clock_->now();
     }
+
+    void localizationCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
+    {
+        // Localization에서 오는 cmd_vel은 Nav2보다 우선순위 높게 처리
+        localization_cmd_ = *msg;
+        last_localization_time_ = clock_->now();
+    }   
 
     void humanCallback(const geometry_msgs::msg::Point::SharedPtr msg)
     {
@@ -439,6 +490,13 @@ private:
         //RCLCPP_INFO(this->get_logger(),"psd_L %f psd_R %f Ul %f UR %f",psd_left_,psd_right_,ultra_left_,ultra_right_);
        // RCLCPP_INFO(this->get_logger(),"human_detected = %d ",human_detected_);
 
+        if((charge_onoff == true) || (arbiter_docking_status == 1) || (arbiter_undocking_status == 1))
+        {
+            state_=SafetyState::NORMAL;
+          
+            return; //충전 중에는 모든 센서 무시 (충전 스테이션에서 발생하는 센서 이벤트 방지   )
+        }
+
         if(state_ == SafetyState::RECOVERY_BACK || state_ == SafetyState::RECOVERY_TURN) 
             return;
 
@@ -459,7 +517,7 @@ private:
             if(cliff_count_>2)
             {
                 setState(SafetyState::RECOVERY_BACK,"CLIFF_F","RECOVERY_BACK");
-                recovery_start_ = now();
+                recovery_start_ = clock_->now();
             }
             return;
         }
@@ -504,6 +562,7 @@ private:
 
         if(psd_left_<0.006 || psd_right_<0.006)
         {
+            return; //PSD 잠시 정지 2026,05,09
             setState(SafetyState::HARD_STOP,"PSD","HARD_STOP");
             if(psd_left_<0.006) psd_event_left_flg = true;
             else psd_event_right_flg = true;
@@ -517,7 +576,7 @@ private:
         if(ultra_right_ == 0.0) ultra_right_ = 1.0; //장애물 없을 시 0
         if(ultra_left_< Ultra_Detact_Range || ultra_right_< Ultra_Detact_Range)
         {
-            if(state_ != SafetyState::SOFT_STOP) soft_stop_start_ = now();
+            if(state_ != SafetyState::SOFT_STOP) soft_stop_start_ = clock_->now();
             if((ultra_left_< Ultra_Detact_Range) && (ultra_right_< Ultra_Detact_Range))
             {
                     setState(SafetyState::HARD_STOP,"ULTRA ","HARD_STOP");
@@ -571,15 +630,17 @@ private:
 
        
        
-        bool joy_recent = (now() - last_joy_time_).seconds() < cmd_timeout_;
+        bool joy_recent = (clock_->now() - last_joy_time_).seconds() < cmd_timeout_;
         bool joy_active = joy_recent && !isZero(joy_cmd_);
 
-        bool nav_recent = (now() - last_nav_time_).seconds() < cmd_timeout_;
+        bool nav_recent = (clock_->now() - last_nav_time_).seconds() < cmd_timeout_;
         bool nav_active = nav_recent && !isZero(nav_cmd_);
        
-        bool lookahead_recent = (now() - last_lookahead_time_).seconds() < cmd_timeout_;
+        bool lookahead_recent = (clock_->now() - last_lookahead_time_).seconds() < cmd_timeout_;
         bool lookahead_active = lookahead_recent && !isZero(lookahead_cmd_);
 
+        bool localization_recent = (clock_->now() - last_localization_time_).seconds() < cmd_timeout_;
+        bool localization_active = localization_recent && !isZero(localization_cmd_);
         
         // -----------------------------
         // 🧠 Nav2 Recovery 판단
@@ -595,9 +656,18 @@ private:
 
         //if(is_recovery) lookahead_active = 0;
         
-//lookahead_active = true;
-nav_active = false;
-        if (state_ != SafetyState::NORMAL) //arbiter 상황 우선 수행
+        //lookahead_active = true;
+        nav_active = false;
+// RCLCPP_WARN(get_logger(),
+//     "joy_active=%d loc_active=%d joy_recent=%d loc_recent=%d",
+//     joy_active, localization_active, joy_recent, localization_recent);
+
+        if(joy_active == false && localization_active == false && lookahead_active == false && nav_active == false)
+        {
+            state_ = SafetyState::NORMAL; //보통 정지 상태에서는 Safety 정지 2026-04-24
+        }
+
+        if(state_ != SafetyState::NORMAL) //arbiter 상황 우선 수행
         {
               state_machine();
         }
@@ -605,7 +675,11 @@ nav_active = false;
         {
             out = joy_cmd_;
         }
-         else if (lookahead_active)
+        else if (localization_active)
+        {
+            out = localization_cmd_;
+        }
+        else if (lookahead_active)
         {
             out = lookahead_cmd_;
         }
@@ -716,10 +790,10 @@ nav_active = false;
             case SafetyState::SOFT_STOP:
                 out.linear.x =0;
                 /* 고정 장애물 대응 */ 
-                if((now() - soft_stop_start_).seconds() > 2.0) 
+                if((clock_->now() - soft_stop_start_).seconds() > 2.0) 
                 { 
                     state_ = SafetyState::RECOVERY_TURN; 
-                    recovery_start_ = now(); 
+                    recovery_start_ = clock_->now(); 
                     active = false;
                 }
 
@@ -732,7 +806,7 @@ nav_active = false;
 
                 publish_event("COLLISION","BACK");
 
-                recovery_start_ = now();
+                recovery_start_ = clock_->now();
 
                 state_ = SafetyState::RECOVERY_BACK;
                 active = false;
@@ -742,26 +816,26 @@ nav_active = false;
 
             case SafetyState::RECOVERY_BACK:
 
-                if((now()-recovery_start_).seconds()<10.0)
+                if((clock_->now()-recovery_start_).seconds()<10.0)
                 {
                     //out.linear.x=-0.1;
                     if (doBackward(0.10))  // 10cm 후진
                     {
                         state_=SafetyState::RECOVERY_TURN;
-                        recovery_start_=now();
+                        recovery_start_=clock_->now();
                     }
                 }
                 else
                 {
                     state_=SafetyState::RECOVERY_TURN;
-                    recovery_start_=now();
+                    recovery_start_=clock_->now();
                 }
 
             break;
 
             case SafetyState::RECOVERY_TURN:
 
-                if((now()-recovery_start_).seconds()<1.0)
+                if((clock_->now()-recovery_start_).seconds()<1.0)
                 {
 
                     wanted_angle = 0;
@@ -790,7 +864,7 @@ nav_active = false;
                     active = false;
                     
                 }
-                else if((now()-recovery_start_).seconds()<10.0)
+                else if((clock_->now()-recovery_start_).seconds()<10.0)
                 {
                     if(doRotate(wanted_angle * (M_PI/180.)))
                     {
@@ -920,6 +994,28 @@ double yaw_error_I = 0.;
             return true;
         }
     }
+
+    void charge_callback(const std_msgs::msg::Bool::SharedPtr msg)
+    {
+
+        charge_onoff = msg->data;
+ 
+    }
+
+ 
+    /* ===== 도킹 상태 ===== */
+    void dock_stat_callback(const std_msgs::msg::Int8::SharedPtr msg)    {
+        arbiter_docking_status = msg->data;
+        arbiter_docking_status_last_ = arbiter_docking_status;
+       // RCLCPP_INFO(get_logger(), "Dock Status: %d", docking_status);
+    }
+    
+    void undock_stat_callback(const std_msgs::msg::Int8::SharedPtr msg)    {
+        arbiter_undocking_status = msg->data;
+        
+        arbiter_undocking_status_last_ = arbiter_undocking_status;
+        //RCLCPP_INFO(get_logger(), "Undock Status: %d", undocking_status);
+    }   
 };
 
 /* ---------- main ---------- */

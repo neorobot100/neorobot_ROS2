@@ -14,15 +14,39 @@ amcl:
     scan_topic: scan                 # LiDAR topic scan_fixed -> scan 20260312
     tf_broadcast: True               # AMCL이 map→odom TF 발행
 
-    # 파티클 필터 개수 (정확도 vs CPU)
+    # 파티클 필터 개수 (정확도 vs CPU) ,입자 수 너무 적으면 위치 불안정(점프), 너무 많으면 CPU 부담
     min_particles: 500
     max_particles: 2000
 
     # 위치 업데이트 조건
-    update_min_d: 0.10               # 10cm 이동 시 업데이트
-    update_min_a: 0.10               # 약 10도 회전 시 업데이트
+    # update_min_d: 0.10               # 10cm 이동 시 업데이트
+    # update_min_a: 0.10               # 약 10도 회전 시 업데이트
+    # 🔥 업데이트 민감도 (더 자주 갱신)
+    # update_min_d: 0.1 #05
+    # update_min_a: 0.1 # 05
+    
+    update_min_d: 0.05               # 5cm 이동 시 업데이트
+    update_min_a: 0.05               # 약 5도 회전 시 업데이트
 
     transform_tolerance: 0.5         # TF 지연 허용
+
+    # ⭐⭐⭐ 핵심 AMCL 안정화 매개변수 ⭐⭐⭐
+    laser_z_hit: 0.9        # 레이저가 실제 장애물에 맞을 확률 (0.9로 높여서 센서 신뢰도 증가) 라이다 매칭 신뢰도
+    laser_z_short: 0.1      # 레이저가 예상보다 짧게 측정될 확률 (0.1로 낮춰서 이상치 영향 감소) 라이다 이상치 (예: 투명 유리) 영향 감소
+    laser_z_max: 0.05       # 레이저가 최대 범위를 초과할 확률 (0.05로 낮춰서 센서 노이즈 영향 감소) 라이다 노이즈 영향 감소
+    laser_z_rand: 0.1       # 레이저가 무작위로 측정될 확률 (0.1로 낮춰서 센서 노이즈 영향 감소) 라이다 랜덤 노이즈 영향 감소, 랜덤 노이즈 :너무 크면 수렴 느림
+    laser_sigma_hit: 0.2    # 레이저 측정의 표준 편차 (0.2로 낮춰서 센서 신뢰도 증가) 라이다 측정 신뢰도 증가 , 센서 오차 너무크면 위치 퍼짐?
+
+    resample_interval: 1    # 재샘플링 간격 (1로 줄여서 더 자주 재샘플링) 파티클 필터 안정성 증가
+
+    # 잘못된 위치를 감지하고 파티클을 다시 뿌리는 강도
+    recovery_alpha_slow: 0.001
+    recovery_alpha_fast: 0.1
+    max_beams: 60  # 기본값(30)보다 늘려서 더 촘촘하게 맵을 비교하게 함
+
+    initial_cov_xx: 1.0
+    initial_cov_yy: 1.0
+    initial_cov_aa: 0.5
 
 
 ###############################################
@@ -60,9 +84,12 @@ planner_server:
       plugin: "nav2_smac_planner::SmacPlanner2D"
 
       tolerance: 0.25                # 목표 근처 허용 오차
-      allow_unknown: True            # unknown 영역 통과 허용
+      allow_unknown: false #True            # unknown 영역 통과 허용 ,false: 검은색 영역을 "갈 수 없는 곳"으로 엄격하게 제한
 
       downsample_costmap: false      # Costmap 해상도 그대로 사용
+      use_grid_path: true            # 그리드 기반 경로 생성 (false는 스플라인)
+      cost_travel_multiplier: 10.0      # cost_travel_multiplier: 1.0     # 이동 비용 가중치 (기본값 1.0, 높이면 더 안전한 경로 선호)
+      use_quadratic_cost_penalty: true # 장애물 근처에서 비용이 더 빠르게 증가하도록 설정 (기본값 false)
 
       max_iterations: 100000         # 탐색 최대 반복
       max_on_approach_iterations: 1000
@@ -190,13 +217,18 @@ local_costmap:
     ros__parameters:
       # footprint: "[[0.22,0.18],[0.22,-0.18],[-0.22,-0.18],[-0.22,0.18]]"
       footprint: "[[0.20,0.16],[0.20,-0.16],[-0.20,-0.16],[-0.20,0.16]]"
+      # footprint: "[[0.30,0.30],[0.30,-0.30],[-0.30,-0.30],[-0.30,0.30]]"
+# 앞  +0.20m
+# 뒤  -0.20m
 
+# 좌  +0.16m
+# 우  -0.16m
       use_sim_time: False
 
       update_frequency: 15.0   # 최소 10 이상 추천      
 
       global_frame: odom #odom -> base_link 20260321 -> odom 20260324
-      robot_base_frame: base_link
+      robot_base_frame: base_footprint  #base_link -> base_footprint 20260509 ,base_link는 3D 움직임 일때 사용( 드론)
 
       rolling_window: True           # 로봇 중심 이동 창
 
@@ -209,21 +241,43 @@ local_costmap:
 
       plugins:
         - obstacle_layer
-        - human_layer 
+        # - human_layer 
         - inflation_layer
+        # - voxel_layer
   
+      # voxel_layer:
+      #   plugin: "nav2_costmap_2d::VoxelLayer"
+      #   enabled: true
+      #   publish_voxel_map: true
 
+      #   origin_z: 0.0
+      #   # z_resolution: 0.05
+      #   # z_voxels: 16
+      #   z_resolution: 0.1        # ← 기존 0.05 → 0.1 (성능 + 안정)
+      #   z_voxels: 10             # ← 줄임
+
+      #   max_obstacle_height: 1.5
+      #   # min_obstacle_height: 0.05
+      #   min_obstacle_height: 0.1  # ← 바닥 노이즈 제거 핵심
+
+      #   observation_sources: depth
+
+      #   depth:
+      #     topic: /camera/depth/points
+      #     data_type: "PointCloud2"
+      #     marking: true
+      #     clearing: true
 
       #################################
       # Obstacle Layer
       #################################
 
       obstacle_layer:
-
+        enabled: true
         plugin: "nav2_costmap_2d::ObstacleLayer"
 
         observation_sources: scan
-
+        
         scan:
 
           topic: /scan                #/scan_fixed
@@ -232,16 +286,21 @@ local_costmap:
           clearing: True
           marking: True
 
-          qos_overrides:
-            reliability: best_effort
+          # qos_overrides:
+          #   reliability: best_effort
 
-          obstacle_min_range: 0.20
+          # obstacle_min_range: 0.20
           obstacle_max_range: 2.5     # 2.5m까지 장애물 생성
 
           raytrace_min_range: 0.20
           raytrace_max_range: 3.0
 
+          inf_is_valid: true
 
+          min_obstacle_height: -0.5  # 바닥보다 낮게 잡아 여유를 둠
+          max_obstacle_height: 2.0   # 로봇 키보다 높게 설정
+
+          observation_persistence: 1.0
       #################################
       # Inflation Layer
       #################################
@@ -250,11 +309,11 @@ local_costmap:
 
         plugin: "nav2_costmap_2d::InflationLayer"
 
-        inflation_radius: 0.3        # 장애물 영향 반경 # ← 이거 크면 길 다 막힘
-        cost_scaling_factor: 5.0     # 장애물 주변의 “위험도 증가 속도
+        inflation_radius: 0.5       # 장애물 영향 반경 # ← 이거 크면 길 다 막힘
+        cost_scaling_factor: 10.0     # 장애물 주변의 “위험도 증가 속도
 
         transform_tolerance: 1.0
-      always_send_full_costmap: true   # 🔥 이거 추가
+        always_send_full_costmap: false   # 🔥 이거 추가
 # | inflation_radius | cost_scaling_factor | 결과    |
 # | ---------------- | ------------------- | ----- |
 # | 작음              | 큼                   | 벽 가까이 |
@@ -280,20 +339,21 @@ global_costmap:
       update_frequency: 5.0   # 최소 5 이상 추천
 
       global_frame: map
-      robot_base_frame: base_link
+      robot_base_frame: base_footprint  #base_link
 
       resolution: 0.05
 
       rolling_window: False           # 로봇 중심 이동 창
 
 
-      track_unknown_space: False
+      track_unknown_space: true #False
 
       robot_radius: 0.16
 
       plugins:
         - static_layer
-        - human_layer
+        # - human_layer
+        - obstacle_layer
         - inflation_layer
       #################################
       # Static map layer
@@ -314,15 +374,46 @@ global_costmap:
 
         plugin: "nav2_costmap_2d::InflationLayer"
 
-        inflation_radius: 0.30 # 0.7 -> 0.3 20260330
-        cost_scaling_factor: 5.0
+        inflation_radius: 0.5        # 장애물 영향 반경 # ← 이거 크면 길 다 막힘
+        cost_scaling_factor: 10.0     # 장애물 주변의 “위험도 증가 속도 5->10
 
         transform_tolerance: 1.0
+        always_send_full_costmap: false #<------------true?
+        # False (기본값): 코스트맵에서 변화가 생긴 부분(업데이트된 영역)만 패치 형태로 보냅니다. 네트워크 대역폭을 아낄 수 있어 효율적입니다.True: 변화 여부와 상관없이 전체 지도 데이터를 매번 통째로 보냅니다. 
+        # 네트워크 대역폭이 충분하다면 전체 코스트맵을 보내는 것이 최신 상태를 유지하는 데 도움이 될 수 있습니다. 특히, 코스트맵이 자주 변경되거나 업데이트 영역이 넓은 경우에는 전체 코스트맵을 보내는 것이 안정적인 경로 계획에 유리할 수 있습니다.
 
       human_layer:
         plugin: "human_n_obstacle_layer::HumanLayer"
 
+      obstacle_layer:
+        enabled: true
+        plugin: "nav2_costmap_2d::ObstacleLayer"
 
+        observation_sources: scan
+        
+        scan:
+
+          topic: /scan                #/scan_fixed
+          data_type: "LaserScan"
+
+          clearing: True
+          marking: True
+
+          # qos_overrides:
+          #   reliability: best_effort
+
+          # obstacle_min_range: 0.20
+          obstacle_max_range: 2.5     # 2.5m까지 장애물 생성
+
+          raytrace_min_range: 0.20
+          raytrace_max_range: 3.0
+
+          inf_is_valid: true
+
+          min_obstacle_height: -0.5  # 바닥보다 낮게 잡아 여유를 둠
+          max_obstacle_height: 2.0   # 로봇 키보다 높게 설정
+
+          observation_persistence: 1.0
 # ###############################################
 # # Velocity smoother
 # ###############################################

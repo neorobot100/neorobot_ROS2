@@ -32,9 +32,9 @@ def generate_launch_description():
     map_file = os.path.join(
         get_package_share_directory('neorobot_bringup'),
         'maps',
-        # 'my_map_gimp.yaml'
+        'my_map_gimp.yaml'
         # 'my_map_new.yaml'
-        'empty_map.yaml'
+        # 'empty_map.yaml'
     )
     
     return LaunchDescription([
@@ -62,16 +62,17 @@ def generate_launch_description():
                 'port': '/dev/ydlidar',
                 'baudrate': 230400,
                 'frame_id': 'laser_frame',
-                'scan_frequency': 10.0
+                # 'scan_frequency': 10.0
+                'scan_frequency': 5.0
             }]
         ),
 
-        Node(
-            package='neo_robot_safety',
-            executable='lidar_human_leg_detect',
-            name='lidar_human_leg_detect',
-            output='screen'
-        ),
+        # Node(
+        #     package='neo_robot_safety',
+        #     executable='lidar_human_leg_detect',
+        #     name='lidar_human_leg_detect',
+        #     output='screen'
+        # ),
 
        
         # ===== Motion Arbiter =====
@@ -157,6 +158,22 @@ def generate_launch_description():
             ]
         ),
         
+
+        # Node(
+        #     package='tf2_ros',
+        #     executable='static_transform_publisher',
+        #     name='base_link_to_camera_tf',
+        #     arguments=[
+        #         '0.15', '0', '0.25',   # ← 카메라 위치 (수정 가능)
+        #          '1.57', '1.57', '0',
+        #         'base_link',
+        #         'camera_link'
+        #     ]
+        # ),
+# 값	의미
+# 0.15	로봇 앞쪽 15cm
+# 0	좌우 중앙
+# 0.25	위로 25cm
 
         TimerAction(
             period=3.0,
@@ -275,3 +292,8 @@ def generate_launch_description():
 
 # 노드 하나씩 알아내는 법
 # ros2 param get /amcl use_sim_time
+
+# 실제 적용되는 파라미터 확인 , 런치랑 맞는지
+# ros2 param dump /local_costmap/local_costmap
+
+# ros2 launch nav2_bringup navigation_launch.py
