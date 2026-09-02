@@ -9,6 +9,9 @@
 
 #include <geometry_msgs/msg/twist.hpp>
 #include <std_msgs/msg/bool.hpp>
+#include <std_msgs/msg/string.hpp>
+#include <fstream>
+#include <action_msgs/msg/goal_status_array.hpp>
 
 using namespace std::chrono_literals;
 using NavigateToPose = nav2_msgs::action::NavigateToPose;
@@ -25,7 +28,7 @@ public:
 
         joy_sub_ = create_subscription<sensor_msgs::msg::Joy>(
             "/joy", 10,
-            std::bind(&DockControl::joy_cb, this, std::placeholders::_1));
+            std::bind(&DockControl::joy_callback, this, std::placeholders::_1));
 
         amcl_pose_sub_ = create_subscription<geometry_msgs::msg::PoseWithCovarianceStamped>(
             "/amcl_pose", 10,
@@ -73,6 +76,12 @@ public:
 
         cmd_vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("/cmd_vel_localization", 10);   
 
+        sound_pub_ = create_publisher<std_msgs::msg::String>("/sound", 10);
+            
+        nav_status_sub_ = create_subscription<action_msgs::msg::GoalStatusArray>("/navigate_to_pose/_action/status", 10,
+            std::bind(&DockControl::nav_status_callback,this,std::placeholders::_1));
+        
+
         RCLCPP_INFO(get_logger(), "Dock Control Node Started");
     }
 
@@ -92,6 +101,8 @@ private:
     };
 
     State state_ = IDLE;
+
+    uint8_t state_last_ = 0;
 
     rclcpp::Clock::SharedPtr clock_;
 
@@ -116,12 +127,20 @@ private:
 
     rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr charge_onoff_sub_;
 
+    // ⭐ LOCALIZE용
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
+
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr sound_pub_;
+    
+    rclcpp::Subscription<action_msgs::msg::GoalStatusArray>::SharedPtr nav_status_sub_;
+
     /* ===== 변수 ===== */
     geometry_msgs::msg::Pose current_pose_;
     geometry_msgs::msg::PoseStamped dock_pose_;
 
     bool dock_request_ = false;
     bool undock_request_ = false;
+ 
 
     bool dock_pose_saved_ = false;
     bool need_save_dock_pose_ = false;
@@ -137,20 +156,20 @@ private:
     double cov_y_ = 999.0;
     bool amcl_ready_ = false; // AMCL 동작 시작 확인용
     
-    // ⭐ LOCALIZE용
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
+    
 
-    bool global_loc_called_ = false;
+    bool global_loc_called_ = true; // true: 이미 글로벌 로컬라이제이션 실행한 상태 (키드냅 감지에서는 한 번만 실행하면 됨), false: 아직 실행 안한 상태
     rclcpp::Time localize_start_time_;
 
     /* ===== JOY ===== */
-    void joy_cb(const sensor_msgs::msg::Joy::SharedPtr msg)
+    void joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg)
     {
         // BACK 버튼 → DOCK
         if(msg->buttons[6] == 1)
         {
             RCLCPP_WARN(get_logger(), "JOY DOCK");
             dock_request_ = true;
+            undock_request_ = false;
             state_ = IDLE;
         }
 
@@ -159,13 +178,28 @@ private:
         {
             RCLCPP_WARN(get_logger(), "JOY UNDOCK");
             undock_request_ = true;
+            dock_request_ = false;
             state_ = IDLE;
         }
+
+        if((msg->buttons[10] == 1) && (need_save_dock_pose_ == false))//오른쪽 스틱 누르기
+        {
+            RCLCPP_WARN(get_logger(), "JOY TIRIRING");
+            need_save_dock_pose_ = true;
+
+            if( charge_onoff_state == true )
+            {
+                save_dock_pose(); // 현재 위치를 도킹 위치로 저장 (JOY 명령으로도 저장할 수 있게)
+            }
+            else RCLCPP_WARN(get_logger(), "Cannot save dock pose because not charging");
+        }
+
     }
 
     /* ===== 위치 ===== */
     void amcl_pose_callback(const geometry_msgs::msg::PoseWithCovarianceStamped::SharedPtr msg)
     {
+        init_pose_once(); // AMCL이 준비되면 초기 위치 설정 시도 (한번만 실행)
         // pose.pose : 실제 위치
         current_pose_ = msg->pose.pose;
 
@@ -188,16 +222,17 @@ private:
                     var_x, var_y, var_yaw);
 
         // 키드냅 감지 로직 예시: 오차가 일정 수준(예: 0.2) 이상이면 경고
-        if (var_x > 0.2 || var_y > 0.2) {
-            RCLCPP_WARN(this->get_logger(), "위치 불확실성 높음! 키드냅 의심됨.");
-        }
+        // if (var_x > 0.2 || var_y > 0.2) {
+        //     RCLCPP_WARN(this->get_logger(), "위치 불확실성 높음! 키드냅 의심됨.");
+        // }
 
 
     }
 
     bool is_localized()
     {
-        return (cov_x_ < 0.1 && cov_y_ < 0.1);
+        // return (cov_x_ < 0.1 && cov_y_ < 0.1);
+        return (cov_x_ < 0.25 && cov_y_ < 0.25); // 0.1에서 0.25로 완화 (도킹 직후는 불확실성 높음)
     }
 
     /* ===== 도킹 상태 ===== */
@@ -219,9 +254,9 @@ private:
                 
                 RCLCPP_WARN(get_logger(), "Undocking Completed");
                 state_ = LOCALIZE;
-                need_save_dock_pose_ = true;   // ⭐ 플래그만 설정
+                //need_save_dock_pose_ = true;   // ⭐ 플래그만 설정
             
-                global_loc_called_ = false;
+                // global_loc_called_ = false;
             }
             else if(undocking_status == 3)
                 RCLCPP_WARN(get_logger(), "Undocking Failed");  
@@ -237,9 +272,22 @@ private:
     /* ===== 상태머신 ===== */
     void update()
     {
-        // RCLCPP_INFO(get_logger(), "Dock state_ %d", state_);
+        if(state_ != state_last_)
+        {
+            RCLCPP_INFO(get_logger(), "Dock State changed: %d -> %d", state_last_, state_);
+            
+        }   
+        state_last_ = state_;
+        
+       
 
-        if((state_ != LOCALIZE) && (use_kidnap_detection))
+        if(charge_onoff_state == true)
+        {
+            if(state_ == LOCALIZE) state_ = IDLE;
+            // RCLCPP_INFO(get_logger(), "Charging... ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐👉🔥🔥🔥🔥");
+           
+        }
+        else if((state_ != LOCALIZE) && (use_kidnap_detection) && (undock_request_ == false)) // 언도킹 직후는 키드냅 감지 안함 (도킹 위치 저장이 아직 안됐기 때문)
         {
             // covariance 기반
             //if(cov_x_ > 1.0 || cov_y_ > 1.0)
@@ -253,23 +301,16 @@ private:
             }
         }
 
-        if(charge_onoff_state == true)
-        {
-            if(state_ == LOCALIZE) state_ = IDLE;
-            // RCLCPP_INFO(get_logger(), "Charging... ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐👉🔥🔥🔥🔥");
-           
-        }
-
         switch(state_)
         {
             case IDLE:
-                if(dock_request_)
+                if(dock_request_) // JOY Pad 도킹 명령이 들어오면
                 {
                     state_ = CANCEL_NAV;
                     // 도킹 시작
-                    stop_lidar();
+                    //stop_lidar();
                 }
-                else if(undock_request_)
+                else if(undock_request_)  // JOY Pad 언도킹 명령이 들어오면
                 {
                     state_ = UNDOCKING;
                     start_lidar();
@@ -277,19 +318,27 @@ private:
                 break;
 
             case CANCEL_NAV:
-                cancel_nav();
-                //save_dock_pose(); // ⭐ 현재 위치 저장
+                //cancel_nav(); 우선 주석
+               
                 state_ = GO_HOME;
                 break;
 
             case GO_HOME:
-                send_goal();
-                state_ = WAIT_ARRIVAL;
+                if(dock_pose_saved_ == false)
+                {
+                    state_ = DOCKING;  // 도킹 위치가 저장되어 있지 않으면 바로 도킹 시도 (예: 첫 부팅)
+                }
+                else{ 
+                    send_goal();
+                    state_ = WAIT_ARRIVAL;
+                }
                 break;
 
             case WAIT_ARRIVAL:
                 if(arrived())
                     state_ = DOCKING;
+                    //  MCU 도킹 시작
+                   // stop_lidar();
                 break;
 
             case DOCKING:
@@ -321,8 +370,8 @@ private:
 
                 // 2️⃣ 회전 (중요 ⭐)
                 geometry_msgs::msg::Twist cmd;
-                cmd.linear.x = 0.03;
-                cmd.angular.z = 0.15;
+                cmd.linear.x = 0;//0.03;
+                cmd.angular.z = 0.3;
                 cmd_vel_pub_->publish(cmd);
 
                 // 3️⃣ 성공 조건
@@ -332,12 +381,12 @@ private:
 
                     stop_robot();
 
-                    if(need_save_dock_pose_ && is_pose_valid(current_pose_))
-                    {
-                        dock_pose_saved_ = false;
-                        save_dock_pose();
-                        need_save_dock_pose_ = false;
-                    }
+                    // if(need_save_dock_pose_ && is_pose_valid(current_pose_))
+                    // {
+                    //     dock_pose_saved_ = false;
+                    //     save_dock_pose();
+                    //     need_save_dock_pose_ = false;
+                    // }
 
                     state_ = IDLE;
                 }
@@ -351,6 +400,9 @@ private:
                 // }
 
                 break;
+
+
+
     
         }
             
@@ -359,6 +411,7 @@ private:
     /* ===== Nav2 ===== */
     void send_goal()
     {
+       
 
         if(!is_localized())
         {
@@ -372,12 +425,25 @@ private:
             return;
         }
 
+        load_pose_from_file(); // 파일에서 도킹 위치 불러오기
+        
         NavigateToPose::Goal goal;
         goal.pose = dock_pose_;
 
         nav_client_->async_send_goal(goal);
 
         RCLCPP_INFO(get_logger(), "Going to Dock Pose");
+
+        goal_home_reached_ = false;
+        speak("Going to Dock Pose");
+       
+
+    }
+    void speak(const std::string &text)
+    {
+        std_msgs::msg::String msg;
+        msg.data = text;
+        sound_pub_->publish(msg);
     }
 
     void cancel_nav()
@@ -394,20 +460,29 @@ private:
 
         double dist = sqrt(dx*dx + dy*dy);
 
-        return dist < 0.2; // 20cm
+        RCLCPP_INFO(
+    get_logger(),
+    "Dock dist: %.3f",
+    dist);
+        if(goal_home_reached_) return dist < 0.4; // 40cm
+        else return false;
+
     }
 
     /* ===== 위치 저장 ===== */
     void save_dock_pose()
     {
-        if(!dock_pose_saved_)
-        {
-            dock_pose_.header.frame_id = "map";
-            dock_pose_.pose = current_pose_;
-            dock_pose_saved_ = true;
+        // if(!dock_pose_saved_)
+        // {
+        //     dock_pose_.header.frame_id = "map";
+        //     dock_pose_.pose = current_pose_;
+        //     dock_pose_saved_ = true;
 
-            RCLCPP_INFO(get_logger(), "Dock pose saved");
-        }
+        //     RCLCPP_INFO(get_logger(), "Dock pose saved");
+        // }
+
+        save_pose_to_file(current_pose_);
+     
     }
 
     /* ===== UART 명령 ===== */
@@ -417,6 +492,7 @@ private:
         msg.data = 2; // DOCK
         dock_cmd_pub_->publish(msg);
 
+        speak("Search for Station");
         RCLCPP_WARN(get_logger(), "🏠 DOCK CMD");
     }
 
@@ -453,7 +529,8 @@ private:
 
         //RCLCPP_INFO(get_logger(), "Dock state_ %d", state_);
         if(init_pose_done_) return;
-
+        if(amcl_ready_ == false) return; // AMCL이 아직 준비 안됨
+        
         // ⭐ AMCL이 이 토픽을 들을 준비가 되었는지 확인 ⭐⭐⭐⭐⭐ (구독자가 없으면 계속 기다림) 2026,04,28
         if (init_pose_pub_->get_subscription_count() == 0) {
             RCLCPP_INFO(get_logger(), "Waiting for AMCL to subscribe to /initialpose...");
@@ -481,12 +558,26 @@ private:
         //     RCLCPP_WARN(get_logger(), "Init pose DEFAULT (0,0) ⭐⭐⭐");
         // }
 
+        
         //2D pose
-        msg.pose.pose.position.x = 0.0;
-        msg.pose.pose.position.y = 0.0;
-        msg.pose.pose.orientation.w = 1.0;
+        // msg.pose.pose.position.x = 0.0;
+        // msg.pose.pose.position.y = 0.0;
+        // msg.pose.pose.orientation.w = 1.0;
+        load_pose_from_file(); // 파일에서  위치 불러오기
 
-        RCLCPP_WARN(get_logger(), "Init pose DEFAULT (0,0) ⭐⭐⭐");
+        dock_pose_.pose.position.z = 0.0;
+        dock_pose_.pose.orientation.x = 0.0;
+        dock_pose_.pose.orientation.y = 0.0;
+        msg.pose.pose.position.x = dock_pose_.pose.position.x;
+        msg.pose.pose.position.y = dock_pose_.pose.position.y;
+        msg.pose.pose.orientation.z = dock_pose_.pose.orientation.z;
+        msg.pose.pose.orientation.w = dock_pose_.pose.orientation.w;
+        
+        // msg.pose.pose.position.x = 0.0;
+        // msg.pose.pose.position.y = 0.0;
+        // msg.pose.pose.orientation.w = 1.0;
+
+        RCLCPP_WARN(get_logger(), "Init pose DEFAULT (%.2f, %.2f) ⭐⭐⭐", msg.pose.pose.position.x, msg.pose.pose.position.y);
 // /initialpose 의 “초기 위치를 얼마나 믿을지” 설정
         // msg.pose.covariance[0] = 0.25;  //X 위치 오차
         // msg.pose.covariance[7] = 0.25;  //Y 위치 오차
@@ -495,14 +586,16 @@ private:
         msg.pose.covariance[7] = 5.25;  //Y 위치 오차
         msg.pose.covariance[35] = 0.25;  //Z 회전 오차
 
-       start_global_localization(); //오차 적용 보다는 글로벌 로컬라이제이션을  실행하는 전략으로 변경 2026-05-07
+        init_pose_pub_->publish(msg);
 
-        // ⭐ 핵심: 여러번 보내기
-        for(int i=0; i<5; i++)
-        {
-            init_pose_pub_->publish(msg);
-            rclcpp::sleep_for(200ms);
-        }
+    //    start_global_localization(); //오차 적용 보다는 글로벌 로컬라이제이션을  실행하는 전략으로 변경 2026-05-07
+
+    //     // ⭐ 핵심: 여러번 보내기
+    //     for(int i=0; i<5; i++)
+    //     {
+    //         init_pose_pub_->publish(msg);
+    //         rclcpp::sleep_for(200ms);
+    //     }
 
         init_pose_done_ = true;
         init_timer_->cancel();
@@ -567,6 +660,115 @@ private:
         charge_last = msg->data;
     }
 
+
+    void save_pose_to_file(const geometry_msgs::msg::Pose& pose)
+    {
+        std::ofstream file("/home/neorobot/station_pos.txt");
+
+        if (!file.is_open()) {
+            RCLCPP_ERROR(get_logger(), "Failed to open station_pos.txt");
+            RCLCPP_ERROR(get_logger(), strerror(errno));
+            speak("Tiriring~");
+            return;
+        }
+
+        file << pose.position.x << " "
+            << pose.position.y << " "
+            << pose.orientation.z << " "
+            << pose.orientation.w;
+
+        file.close();
+        RCLCPP_INFO(get_logger(), "Dock pose saved");
+        speak("Setting complete");
+    }
+
+    void load_pose_from_file()
+    {
+        std::ifstream file("/home/neorobot/station_pos.txt");
+
+        if (!file.is_open()) {
+            RCLCPP_WARN(get_logger(), "station_pos.txt not found");
+            speak("Tiriring~");
+            return;
+        }
+
+        if (!(file >> dock_pose_.pose.position.x
+                >> dock_pose_.pose.position.y
+                >> dock_pose_.pose.orientation.z
+                >> dock_pose_.pose.orientation.w))
+        {
+            RCLCPP_ERROR(get_logger(), "Failed to read dock pose");
+            file.close();
+            return;
+        }
+
+        dock_pose_.pose.position.z = 0.0;
+        dock_pose_.pose.orientation.x = 0.0;
+        dock_pose_.pose.orientation.y = 0.0;
+
+        dock_pose_.header.frame_id = "map";
+        dock_pose_.header.stamp = now();
+
+        dock_pose_saved_ = true;
+
+        file.close();
+
+        RCLCPP_INFO(
+            get_logger(),
+            "Dock pose loaded: x=%.2f y=%.2f",
+            dock_pose_.pose.position.x,
+            dock_pose_.pose.position.y);
+    }
+
+    bool goal_home_reached_ = false;
+
+    void nav_status_callback(
+        const action_msgs::msg::GoalStatusArray::SharedPtr msg)
+    {
+        if(msg->status_list.empty())
+            return;
+
+        auto latest_status =
+            msg->status_list.back().status;
+
+        switch(latest_status)
+        {
+            case 1:
+                RCLCPP_INFO(get_logger(),
+                    "Goal accepted");
+                break;
+
+            case 2:
+                RCLCPP_INFO_THROTTLE(
+                    get_logger(),
+                    *get_clock(),
+                    2000,
+                    "Navigating...");
+                break;
+
+            case 4:
+                RCLCPP_INFO(get_logger(),
+                    "Goal reached!");
+
+                stop_robot();
+                goal_home_reached_ = true;
+
+
+                break;
+
+            case 5:
+                RCLCPP_WARN(get_logger(),
+                    "Goal canceled");
+                break;
+
+            case 6:
+                RCLCPP_ERROR(get_logger(),
+                    "Goal aborted");
+                break;
+            default:
+                break;
+        }
+    }
 };
 
 int main(int argc, char **argv)

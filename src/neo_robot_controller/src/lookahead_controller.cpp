@@ -30,8 +30,16 @@ public:
             });
 
         // ✅ lidar
+        // scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
+        //     "/scan", 10,
+        //     [this](const sensor_msgs::msg::LaserScan::SharedPtr msg)
+        //     {
+        //         scan_ = msg;
+        //     });
+
         scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
-            "/scan", 10,
+            "/scan",
+            rclcpp::SensorDataQoS(),
             [this](const sensor_msgs::msg::LaserScan::SharedPtr msg)
             {
                 scan_ = msg;

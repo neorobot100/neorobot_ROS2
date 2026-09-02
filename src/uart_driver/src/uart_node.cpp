@@ -18,7 +18,7 @@
 #include <std_msgs/msg/int8.hpp>
 #include <sensor_msgs/msg/range.hpp>
 
-#define USE_IMU     0  // 0: Wheel yaw  1: IMU yaw
+#define USE_IMU     1  // 0: Wheel yaw  1: IMU yaw
 
 /* ================= CRC8 ================= */
 uint16_t L_ENC = 0,R_ENC=0;

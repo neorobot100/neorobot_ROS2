@@ -159,17 +159,17 @@ def generate_launch_description():
         ),
         
 
-        # Node(
-        #     package='tf2_ros',
-        #     executable='static_transform_publisher',
-        #     name='base_link_to_camera_tf',
-        #     arguments=[
-        #         '0.15', '0', '0.25',   # ← 카메라 위치 (수정 가능)
-        #          '1.57', '1.57', '0',
-        #         'base_link',
-        #         'camera_link'
-        #     ]
-        # ),
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='base_link_to_camera_tf',
+            arguments=[
+                '0.15', '0', '0.25',   # ← 카메라 위치 (수정 가능)
+                 '1.57', '1.57', '0',
+                'base_link',
+                'camera_link'
+            ]
+        ),
 # 값	의미
 # 0.15	로봇 앞쪽 15cm
 # 0	좌우 중앙
@@ -198,6 +198,7 @@ def generate_launch_description():
                 ),
 
                 #--------------controller
+
                 Node(
                     package='nav2_controller',
                     executable='controller_server',
@@ -207,6 +208,21 @@ def generate_launch_description():
                     remappings=[('/cmd_vel', '/cmd_vel_nav')]
                 ),
 
+                # Node(
+                #     package='nav2_controller',
+                #     executable='controller_server',
+                #     name='controller_server',
+                #     output='both',      # screen + ~/.ros/log 둘 다 저장
+                #     arguments=[
+                #         '--ros-args',
+                #         '--log-level',
+                #         'debug'
+                #     ],
+                #     parameters=[params_file],
+                #     remappings=[('/cmd_vel', '/cmd_vel_nav')]
+                # ),
+
+                
                 Node(
                     package='neo_robot_controller',
                     executable='lookahead_controller',
@@ -297,3 +313,12 @@ def generate_launch_description():
 # ros2 param dump /local_costmap/local_costmap
 
 # ros2 launch nav2_bringup navigation_launch.py
+
+# ros2 run tf2_ros tf2_monitor
+
+
+# 통신 이상할때 
+# ros2 daemon stop
+# export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+# ros2 daemon start
+

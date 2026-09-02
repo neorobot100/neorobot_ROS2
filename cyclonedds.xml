@@ -1,0 +1,10 @@
+<CycloneDDS>
+  <Domain>
+    <General>
+      <Interfaces>
+        <NetworkInterface name="eth0" priority="10"/>
+        <NetworkInterface name="wlan1" priority="5"/>    
+      </Interfaces>
+    </General>
+  </Domain>
+</CycloneDDS>

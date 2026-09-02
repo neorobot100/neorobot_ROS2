@@ -4,4 +4,6 @@ log/
 *.pyc
 __pycache__/
 .vscode/
-*.log
+*.logframes_*.gv
+frames_*.pdf
+log.txt

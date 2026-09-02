@@ -13,7 +13,7 @@ public:
         sub_ = this->create_subscription<std_msgs::msg::String>(
             "/sound",
             10,
-            std::bind(&SoundNode::callback, this, std::placeholders::_1)
+            std::bind(&SoundNode::sound_callback, this, std::placeholders::_1)
         );
 
         charge_onoff_sub_ = this->create_subscription<std_msgs::msg::Bool>(
@@ -22,6 +22,7 @@ public:
             std::bind(&SoundNode::charge_callback, this, std::placeholders::_1)
         );  
 
+        
         home_ = std::getenv("HOME");
         device_ = "plughw:0,0";  // 환경에 맞게 수정
     }
@@ -46,7 +47,7 @@ private:
         system(cmd.c_str());
     }
 
-    void callback(const std_msgs::msg::String::SharedPtr msg)
+    void sound_callback(const std_msgs::msg::String::SharedPtr msg)
     {
         std::string command = msg->data;
 
@@ -58,10 +59,23 @@ private:
         {
             play("stop.wav");
         }
-        else if (command == "charge")
+        else if (command == "Going to Dock Pose") // 처음 위치로 이동 합니다.
         {
-            play("charge_done.wav");
+            play("Move_to_the_initial_position.wav");
         }
+        else if (command == "Search for Station") // 충전 스테이션 탐색을 시작 합니다.
+        {
+            play("Starting_the_search_for_charging_stations.wav");
+        }
+        else if (command == "Setting complete") //설정 완료
+        {
+            play("Setting_complete.wav");
+        }
+        else if (command == "Tiriring~") //설정 실패
+        {
+            play("Tiriring_Bell.wav");
+        }
+        
     }
     bool charge_last = false;
     bool charge_Info = false;
